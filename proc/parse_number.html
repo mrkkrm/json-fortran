@@ -136,7 +136,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.8% of total for procedures.">52 statements</a>
+    title=" 1.0% of total for procedures.">65 statements</a>
      </li> 
      
      
@@ -374,6 +374,8 @@ private subroutine parse_number(json, unit, str, value)
     <span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span>            <span class="kd">::</span> <span class="k">value</span>
 
 <span class="k">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">tmp</span> <span class="c">!! temp string</span>
+    <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">saved_err_message</span> <span class="c">!! temp error message for</span>
+                                                              <span class="c">!! string to int conversion</span>
     <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="kd">::</span> <span class="n">c</span>           <span class="c">!! character returned by [[pop_char]]</span>
     <span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">eof</span>         <span class="c">!! end of file flag</span>
     <span class="kt">real</span><span class="p">(</span><span class="n">RK</span><span class="p">)</span>                 <span class="kd">::</span> <span class="n">rval</span>        <span class="c">!! real value</span>
@@ -433,10 +435,32 @@ private subroutine parse_number(json, unit, str, value)
 
                 <span class="c">!string to value:</span>
                 <span class="k">if</span> <span class="p">(</span><span class="n">is_integer</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">                    </span><span class="n">ival</span> <span class="o">=</span> <span class="n">json</span><span class="p">%</span><span class="n">string_to_int</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
-                    <span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">to_integer</span><span class="p">(</span><span class="k">value</span><span class="p">,</span><span class="n">ival</span><span class="p">)</span>
-                <span class="k">else</span>
-<span class="k">                    </span><span class="n">rval</span> <span class="o">=</span> <span class="n">json</span><span class="p">%</span><span class="n">string_to_dble</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+                    <span class="c">! it is an integer:</span>
+                    <span class="n">ival</span> <span class="o">=</span> <span class="n">json</span><span class="p">%</span><span class="n">string_to_int</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">exception_thrown</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="p">.</span><span class="nb">not</span><span class="p">.</span> <span class="n">json</span><span class="p">%</span><span class="n">strict_integer_type_checking</span><span class="p">)</span> <span class="k">then</span>
+                        <span class="c">! if it couldn&#39;t be converted to an integer,</span>
+                        <span class="c">! then try to convert it to a real value and see if that works</span>
+
+                        <span class="n">saved_err_message</span> <span class="o">=</span> <span class="n">json</span><span class="p">%</span><span class="n">err_message</span>  <span class="c">! keep the original error message</span>
+                        <span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">clear_exceptions</span><span class="p">()</span>          <span class="c">! clear exceptions</span>
+                        <span class="n">rval</span> <span class="o">=</span> <span class="n">json</span><span class="p">%</span><span class="n">string_to_dble</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">exception_thrown</span><span class="p">)</span> <span class="k">then</span>
+                            <span class="c">! restore original error message and continue</span>
+                            <span class="n">json</span><span class="p">%</span><span class="n">err_message</span> <span class="o">=</span> <span class="n">saved_err_message</span>
+                            <span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">to_integer</span><span class="p">(</span><span class="k">value</span><span class="p">,</span><span class="n">ival</span><span class="p">)</span> <span class="c">! just so we have something</span>
+                        <span class="k">else</span>
+                            <span class="c">! in this case, we return a real</span>
+                            <span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">to_real</span><span class="p">(</span><span class="k">value</span><span class="p">,</span><span class="n">rval</span><span class="p">)</span>
+                        <span class="k">end if</span>
+
+<span class="k">                    else</span>
+<span class="k">                        call </span><span class="n">json</span><span class="p">%</span><span class="n">to_integer</span><span class="p">(</span><span class="k">value</span><span class="p">,</span><span class="n">ival</span><span class="p">)</span>
+                    <span class="k">end if</span>
+
+<span class="k">                else</span>
+                    <span class="c">! it is a real:</span>
+                    <span class="n">rval</span> <span class="o">=</span> <span class="n">json</span><span class="p">%</span><span class="n">string_to_dble</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
                     <span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">to_real</span><span class="p">(</span><span class="k">value</span><span class="p">,</span><span class="n">rval</span><span class="p">)</span>
                 <span class="k">end if</span>
 
@@ -475,7 +499,7 @@ private subroutine parse_number(json, unit, str, value)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2020-04-04 14:51  
+             on 2020-04-04 17:13  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> JSON-Fortran was developed by Jacob Williams</p></div>

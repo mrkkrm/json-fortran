@@ -136,7 +136,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>28.3% of total for derived types.</p>Including implementation: 1794 statements, 17.6% of total for derived types.">90 statements</a>
+    title="<p>28.2% of total for derived types.</p>Including implementation: 1796 statements, 17.6% of total for derived types.">90 statements</a>
      </li> 
      
      
@@ -1013,7 +1013,7 @@
     
     
     <h3>
-private function <a href='../proc/initialize_json_file.html'>initialize_json_file</a>(p, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan) result(file_object)
+private function <a href='../proc/initialize_json_file.html'>initialize_json_file</a>(p, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking) result(file_object)
     
     
    
@@ -1401,10 +1401,22 @@ private function <a href='../proc/initialize_json_file.html'>initialize_json_fil
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>use_quiet_nan</strong></td><td><p>if true [default], <code>null_to_real_mode=2</code>
- and <a href="../proc/string_to_real.html">string_to_real</a> will use
- <code>ieee_quiet_nan</code> for NaN values. If false,
- <code>ieee_signaling_nan</code> will be used.</p></td>
+  <td><strong>use_quiet_nan</strong></td><td><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>strict_integer_type_checking</strong></td><td><p>(default is true)</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
   
 </tr>
 
@@ -1523,7 +1535,7 @@ private function <a href='../proc/initialize_json_file_v2.html'>initialize_json_
     
     
     <h3>
-private function <a href='../proc/initialize_json_file_from_string.html'>initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan) result(file_object)
+private function <a href='../proc/initialize_json_file_from_string.html'>initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking) result(file_object)
     
     
    
@@ -1909,10 +1921,22 @@ private function <a href='../proc/initialize_json_file_from_string.html'>initial
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>use_quiet_nan</strong></td><td><p>if true [default], <code>null_to_real_mode=2</code>
- and <a href="../proc/string_to_real.html">string_to_real</a> will use
- <code>ieee_quiet_nan</code> for NaN values. If false,
- <code>ieee_signaling_nan</code> will be used.</p></td>
+  <td><strong>use_quiet_nan</strong></td><td><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>strict_integer_type_checking</strong></td><td><p>(default is true)</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
   
 </tr>
 
@@ -1938,7 +1962,7 @@ private function <a href='../proc/initialize_json_file_from_string.html'>initial
     
     
     <h3>
-private function <a href='../proc/wrap_initialize_json_file_from_string.html'>wrap_initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan) result(file_object)
+private function <a href='../proc/wrap_initialize_json_file_from_string.html'>wrap_initialize_json_file_from_string</a>(str, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking) result(file_object)
     
     
    
@@ -2311,10 +2335,22 @@ private function <a href='../proc/wrap_initialize_json_file_from_string.html'>wr
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>use_quiet_nan</strong></td><td><p>if true [default], <code>null_to_real_mode=2</code>
- and <a href="../proc/string_to_real.html">string_to_real</a> will use
- <code>ieee_quiet_nan</code> for NaN values. If false,
- <code>ieee_signaling_nan</code> will be used.</p></td>
+  <td><strong>use_quiet_nan</strong></td><td><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>strict_integer_type_checking</strong></td><td><p>(default is true)</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
   
 </tr>
 
@@ -10567,7 +10603,7 @@ private subroutine <a href='../proc/wrap_json_file_variable_info.html'>wrap_json
             
     
     <h3>
-private subroutine <a href='../proc/initialize_json_core_in_file.html'>initialize_json_core_in_file</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan)
+private subroutine <a href='../proc/initialize_json_core_in_file.html'>initialize_json_core_in_file</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking)
     
     
    
@@ -10941,10 +10977,22 @@ private subroutine <a href='../proc/initialize_json_core_in_file.html'>initializ
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>use_quiet_nan</strong></td><td><p>if true [default], <code>null_to_real_mode=2</code>
- and <a href="../proc/string_to_real.html">string_to_real</a> will use
- <code>ieee_quiet_nan</code> for NaN values. If false,
- <code>ieee_signaling_nan</code> will be used.</p></td>
+  <td><strong>use_quiet_nan</strong></td><td><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>strict_integer_type_checking</strong></td><td><p>(default is true)</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
   
 </tr>
 
@@ -11052,7 +11100,7 @@ private subroutine <a href='../proc/set_json_core_in_file.html'>set_json_core_in
           
     
     <h3>
-private subroutine <a href='../proc/initialize_json_core_in_file.html'>initialize_json_core_in_file</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan)
+private subroutine <a href='../proc/initialize_json_core_in_file.html'>initialize_json_core_in_file</a>(me, verbose, compact_reals, print_signs, real_format, spaces_per_tab, strict_type_checking, trailing_spaces_significant, case_sensitive_keys, no_whitespace, unescape_strings, comment_char, path_mode, path_separator, compress_vectors, allow_duplicate_keys, escape_solidus, stop_on_error, null_to_real_mode, non_normal_mode, use_quiet_nan, strict_integer_type_checking)
     
     
    
@@ -11426,10 +11474,22 @@ private subroutine <a href='../proc/initialize_json_core_in_file.html'>initializ
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>use_quiet_nan</strong></td><td><p>if true [default], <code>null_to_real_mode=2</code>
- and <a href="../proc/string_to_real.html">string_to_real</a> will use
- <code>ieee_quiet_nan</code> for NaN values. If false,
- <code>ieee_signaling_nan</code> will be used.</p></td>
+  <td><strong>use_quiet_nan</strong></td><td><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>strict_integer_type_checking</strong></td><td><p>(default is true)</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
   
 </tr>
 
@@ -27398,7 +27458,7 @@ private subroutine <a href='../proc/wrap_json_file_variable_matrix_info.html'>wr
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2020-04-04 14:51  
+             on 2020-04-04 17:13  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> JSON-Fortran was developed by Jacob Williams</p></div>
