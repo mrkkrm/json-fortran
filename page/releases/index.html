@@ -148,6 +148,7 @@
 <li><a href="#changes-between-releases">Changes Between Releases</a><ul>
 <li><a href="#change-log">Change Log</a><ul>
 <li><a href="#unreleased">Unreleased</a></li>
+<li><a href="#800-2020-04-04">8.0.0 (2020-04-04)</a></li>
 <li><a href="#710-2019-06-23">7.1.0 (2019-06-23)</a></li>
 <li><a href="#700-2019-01-26">7.0.0 (2019-01-26)</a></li>
 <li><a href="#6110-2019-01-19">6.11.0 (2019-01-19)</a></li>
@@ -190,7 +191,7 @@ of the <code>master</code> branch, please head back to the
 <a href="../../index.html">main page</a>.</p>
 <h2 id="latest-stable-release">Latest Stable Release</h2>
 <p><strong>Documentation:</strong>
-<a href="http://jacobwilliams.github.io/json-fortran/7.1.0/index.html">7.1.0</a></p>
+<a href="http://jacobwilliams.github.io/json-fortran/8.0.0/index.html">8.0.0</a></p>
 <p><strong>Download:</strong>
 <a href="https://github.com/jacobwilliams/json-fortran/releases/latest">https://github.com/jacobwilliams/json-fortran/releases/latest</a></p>
 <h2 id="past-releases">Past Releases</h2>
@@ -199,6 +200,11 @@ documentation from the documentation for official releases other than
 using the browser&rsquo;s back button. Feel free to bookmark this page, or
 the <a href="../../index.html">main project page</a> for convenient navigation.</p>
 <ul>
+<li><a href="http://jacobwilliams.github.io/json-fortran/8.0.0/index.html">8.0.0</a>
+   (<a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a> generated documentation)<ul>
+<li><a href="https://github.com/jacobwilliams/json-fortran/releases/tag/8.0.0">Download</a></li>
+</ul>
+</li>
 <li><a href="http://jacobwilliams.github.io/json-fortran/7.1.0/index.html">7.1.0</a>
    (<a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a> generated documentation)<ul>
 <li><a href="https://github.com/jacobwilliams/json-fortran/releases/tag/7.1.0">Download</a></li>
@@ -347,7 +353,7 @@ the <a href="../../index.html">main project page</a> for convenient navigation.<
 </ul>
 <h1 id="development-version">Development Version</h1>
 <p>Documentation for the latest development version may be found at
-<a href="https://jacobwilliams.github.io/json-fortran/7.1.0/index.html">https://jacobwilliams.github.io/json-fortran/7.1.0/index.html</a>
+<a href="https://jacobwilliams.github.io/json-fortran/8.0.0/index.html">https://jacobwilliams.github.io/json-fortran/8.0.0/index.html</a>
 or generated locally using the
 <a href="../../page/development-resources/build.sh.html">build.sh</a> build
 script.</p>
@@ -359,6 +365,7 @@ implemented between each release.</p>
 <ul>
 <li><a href="#change-log">Change Log</a><ul>
 <li><a href="#unreleased">Unreleased</a></li>
+<li><a href="#800-2020-04-04">8.0.0 (2020-04-04)</a></li>
 <li><a href="#710-2019-06-23">7.1.0 (2019-06-23)</a></li>
 <li><a href="#700-2019-01-26">7.0.0 (2019-01-26)</a></li>
 <li><a href="#611-2019-01-19">6.11.0 (2019-01-19)</a></li>
@@ -392,15 +399,39 @@ implemented between each release.</p>
 </li>
 </ul>
 <h3 id="unreleased"><a href="https://github.com/jacobwilliams/json-fortran/tree/HEAD">Unreleased</a></h3>
-<p><a href="https://github.com/jacobwilliams/json-fortran/compare/7.1.0...HEAD">Complete Changeset</a></p>
+<p><a href="https://github.com/jacobwilliams/json-fortran/compare/8.0.0...HEAD">Complete Changeset</a></p>
+<h3 id="800-2020-04-04"><a href="https://github.com/jacobwilliams/json-fortran/tree/8.0.0">8.0.0</a> (2020-04-04)</h3>
+<p><a href="https://github.com/jacobwilliams/json-fortran/compare/7.1.0...8.0.0">Complete Changeset</a>
+or <a href="https://github.com/jacobwilliams/json-fortran/releases/tag/8.0.0">Download v8.0.0</a></p>
 <p><strong>Enhancements:</strong></p>
 <ul>
-<li>Allow linking to <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran from GFortran programs using
-  <a href="https://github.com/sourceryinstitute/OpenCoarrays#readme">OpenCoarrays</a>
-  as the coarray runtime implementation. Use the
-  <code>-DJSON_FORTRAN_USE_OpenCoarrays:BOOL=ON</code> option to cmake to enable
-  this. (NOTE: The fact that this is required may be a bug in
-  GFortran.)</li>
+<li>Cleanup of the <abbr title="Application Programming Interface: a set of routines, protocols, and tools for building software applications">API</abbr> for reading and writing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>. The main methods are now called <code>print</code>, <code>load</code>, <code>serialize</code> and <code>deserialize</code>. Note that the previous ones are still present for backward compatibility.  <a href="https://github.com/jacobwilliams/json-fortran/issues/397">#397</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/409">#409</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Added a finalizer to the <code>json_file</code> type <a href="https://github.com/jacobwilliams/json-fortran/issues/199">#199</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/406">#406</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Added new optional arguments (<code>null_to_real_mode</code>, <code>non_normal_mode</code>, <code>use_quiet_nan</code>) to the <code>initialize</code> routines to handle NaN and Infinity. <a href="https://github.com/jacobwilliams/json-fortran/issues/395">#395</a></li>
+<li>Added a new optional argument (<code>strict_integer_type_checking</code>) to the initialize routines. If enabled, when parsing an integer value, if the parsing fails (e.g., the integer is outside the range of the integer kind), it will then attempt to convert it to a real. <a href="https://github.com/jacobwilliams/json-fortran/issues/444">#444</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/446">#446</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li><code>json_info</code> will now check for exceptions and raise one if the pointer is not associated <a href="https://github.com/jacobwilliams/json-fortran/issues/424">#424</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/425">#425</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Allow the parser to work with some nonstandard real value representations (leading <code>+</code>, no leading digit before decimal, <code>D/d</code> format). <a href="https://github.com/jacobwilliams/json-fortran/issues/417">#417</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/418">#418</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Added a character string to <code>json_file</code> assignment operator <a href="https://github.com/jacobwilliams/json-fortran/issues/410">#410</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/411">#411</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Added a <code>json_print_to_console</code> method to <code>json_core</code> to match the one in <code>json_file</code> <a href="https://github.com/jacobwilliams/json-fortran/issues/408">#408</a></li>
+<li>The output array is now deallocated if an exception occurs in a <code>json_get_*_vec</code> routine <a href="https://github.com/jacobwilliams/json-fortran/issues/416">#416</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/419">#419</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+</ul>
+<p><strong>Bug fixes:</strong></p>
+<ul>
+<li>Fixed a crash in <code>json_file_check_for_errors</code> if the <code>error_msg</code> was not present. <a href="https://github.com/jacobwilliams/json-fortran/issues/420">#420</a></li>
+<li>Fixed a potential issue with real to integer conversion when the library is compiled with a non-default integer kind. <a href="https://github.com/jacobwilliams/json-fortran/issues/449">#449</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/450">#450</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Fixed a dangling pointer in unit test 10. <a href="https://github.com/jacobwilliams/json-fortran/issues/422">#422</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/423">#423</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+</ul>
+<p><strong>CMake updates:</strong></p>
+<ul>
+<li>Updated CMake to enable building <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran as a subdirectory of another project <a href="https://github.com/jacobwilliams/json-fortran/issues/445">#445</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/443">#443</a> (<a href="https://github.com/rouson">rouson</a>)</li>
+<li>Updated CMake for compatibility with older versions &lt; 3.7.  <a href="https://github.com/jacobwilliams/json-fortran/issues/442">#442</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/451">#451</a> <a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Allow linking to <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran from GFortran programs using <a href="https://github.com/sourceryinstitute/OpenCoarrays#readme">OpenCoarrays</a> as the coarray runtime implementation. Use the <code>-DJSON_FORTRAN_USE_OpenCoarrays:BOOL=ON</code> option to CMake to enable this. (NOTE: The fact that this is required may be a bug in GFortran.)</li>
+</ul>
+<p><strong>CI updates:</strong></p>
+<ul>
+<li>Updated the CI system to Travis-CI.com <a href="https://github.com/jacobwilliams/json-fortran/issues/447">#447</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/448">#448</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Migrate test setup/teardown to fixtures <a href="https://github.com/jacobwilliams/json-fortran/issues/413">#413</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/421">#421</a> (<a href="https://github.com/zbeekman">zbeekman</a>)</li>
+<li>Expanded compiler tests on Travis-CI <a href="https://github.com/jacobwilliams/json-fortran/pull/414">#414</a> <a href="https://github.com/jacobwilliams/json-fortran/issues/180">#180</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
 </ul>
 <h3 id="710-2019-06-23"><a href="https://github.com/jacobwilliams/json-fortran/tree/7.1.0">7.1.0</a> (2019-06-23)</h3>
 <p><a href="https://github.com/jacobwilliams/json-fortran/compare/7.0.0...7.1.0">Complete Changeset</a>
@@ -1202,7 +1233,7 @@ browser&rsquo;s back button to navigate back to
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2020-04-04 20:51  
+             on 2020-04-05 02:16  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> JSON-Fortran was developed by Jacob Williams</p></div>
