@@ -132,7 +132,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>67.0% of total for derived types.</p>Including implementation: 8470 statements, 82.4% of total for derived types.">218 statements</a>
+    title="<p>67.1% of total for derived types.</p>Including implementation: 8484 statements, 82.4% of total for derived types.">219 statements</a>
      </li> 
      
      
@@ -582,6 +582,8 @@
       <a class="list-group-item" href="../type/json_core.html#boundprocedure-parse_value">parse_value</a>
       
       <a class="list-group-item" href="../type/json_core.html#boundprocedure-pop_char">pop_char</a>
+      
+      <a class="list-group-item" href="../type/json_core.html#boundprocedure-prepare_parser">prepare_parser</a>
       
       <a class="list-group-item" href="../type/json_core.html#boundprocedure-print">print</a>
       
@@ -1291,6 +1293,8 @@
       
       <a class="list-group-item" href="../type/json_core.html#boundprocedure-pop_char">pop_char</a>
       
+      <a class="list-group-item" href="../type/json_core.html#boundprocedure-prepare_parser">prepare_parser</a>
+      
       <a class="list-group-item" href="../type/json_core.html#boundprocedure-print">print</a>
       
       <a class="list-group-item" href="../type/json_core.html#boundprocedure-print_error_message">print_error_message</a>
@@ -1508,7 +1512,7 @@
   <td>private</td>
   <td></td><td>::</td>
   <td><strong>allow_comments</strong></td><td> =</td><td>.true.</td><td><p>if true, any comments will be ignored when
- parsing a file. The comment token is defined
+ parsing a file. The comment tokens are defined
  by the <code>comment_char</code> character variable.</p></td>
   
 </tr>
@@ -1581,13 +1585,14 @@
   
 <tr>
   
-  <td><span class="anchor" id="variable-comment_char"></span>character(kind=CK,len=1),</td>
+  <td><span class="anchor" id="variable-comment_char"></span>character(kind=CK,len=:),</td>
   
-  <td>private</td>
-  <td></td><td>::</td>
-  <td><strong>comment_char</strong></td><td> =</td><td>CK_'!'</td><td><p>comment token when
+  <td>private,</td>
+  <td>allocatable</td><td>::</td>
+  <td><strong>comment_char</strong></td><td></td><td></td><td><p>comment tokens when
  <code>allow_comments</code> is true.
- Examples: &lsquo;<code>!</code>&lsquo; or &lsquo;<code>#</code>&rsquo;.</p></td>
+ Examples: &lsquo;<code>!</code>&lsquo; or &lsquo;<code>#</code>&rsquo;.
+ Default is <code>CK_'/!#'</code>.</p></td>
   
 </tr>
 
@@ -2251,17 +2256,17 @@ private function <a href='../proc/initialize_json_core.html'>initialize_json_cor
   
 <tr>
   
-  <td><span class="anchor" ></span>character(kind=CK,len=1),</td>
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>comment_char</strong></td><td><p>If present, this character is used
+  <td><strong>comment_char</strong></td><td><p>If present, these characters are used
  to denote comments in the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file,
  which will be ignored if present.
- Example: <code>!</code> or <code>#</code>. Setting this
+ Example: <code>!</code>, <code>#</code>, or <code>/!#</code>. Setting this
  to a blank string disables the
- ignoring of comments. (Default is <code>!</code>).</p></td>
+ ignoring of comments. (Default is <code>/!#</code>).</p></td>
   
 </tr>
 
@@ -20382,17 +20387,17 @@ private subroutine <a href='../proc/json_initialize.html'>json_initialize</a>(me
   
 <tr>
   
-  <td><span class="anchor" ></span>character(kind=CK,len=1),</td>
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>comment_char</strong></td><td><p>If present, this character is used
+  <td><strong>comment_char</strong></td><td><p>If present, these characters are used
  to denote comments in the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file,
  which will be ignored if present.
- Example: <code>!</code> or <code>#</code>. Setting this
+ Example: <code>!</code>, <code>#</code>, or <code>/!#</code>. Setting this
  to a blank string disables the
- ignoring of comments. (Default is <code>!</code>).</p></td>
+ ignoring of comments. (Default is <code>/!#</code>).</p></td>
   
 </tr>
 
@@ -36964,6 +36969,79 @@ private subroutine <a href='../proc/pop_char.html'>pop_char</a>(json, unit, str,
     
      
 <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-prepare_parser"></span><h3>procedure, private :: <strong>prepare_parser</strong>  => <a href='../proc/json_prepare_parser.html'>json_prepare_parser</a> 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+private subroutine <a href='../proc/json_prepare_parser.html'>json_prepare_parser</a>(json)
+    
+    
+   
+</h3>
+    
+
+
+
+
+
+
+
+<p>Internal routine to be called before parsing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>.
+  Currently, all this does it allocate the <code>comment_char</code> if none was specified.</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/json_core.html'>json_core</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>json</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
   <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print"></span><h3>generic, public :: <strong>print</strong>  => <a href='../type/json_core.html#boundprocedure-json_print_to_console'>json_print_to_console</a>, <a href='../type/json_core.html#boundprocedure-json_print_to_unit'>json_print_to_unit</a>, <a href='../type/json_core.html#boundprocedure-json_print_to_filename'>json_print_to_filename</a> 
     
   </h3></div>
@@ -50705,11 +50783,12 @@ private subroutine <a href='../proc/wrap_json_value_rename.html'>wrap_json_value
                                                    <span class="c">!! then the string is returned unescaped.</span>
 
         <span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span> <span class="kd">::</span> <span class="n">allow_comments</span> <span class="o">=</span> <span class="p">.</span><span class="n">true</span><span class="p">.</span>  <span class="c">!! if true, any comments will be ignored when</span>
-                                                <span class="c">!! parsing a file. The comment token is defined</span>
+                                                <span class="c">!! parsing a file. The comment tokens are defined</span>
                                                 <span class="c">!! by the `comment_char` character variable.</span>
-        <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="kd">::</span> <span class="n">comment_char</span> <span class="o">=</span> <span class="n">CK_</span><span class="s1">&#39;!&#39;</span>  <span class="c">!! comment token when</span>
-                                                           <span class="c">!! `allow_comments` is true.</span>
-                                                           <span class="c">!! Examples: &#39;`!`&#39; or &#39;`#`&#39;.</span>
+        <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span> <span class="kd">::</span> <span class="n">comment_char</span> <span class="c">!! comment tokens when</span>
+                                                             <span class="c">!! `allow_comments` is true.</span>
+                                                             <span class="c">!! Examples: &#39;`!`&#39; or &#39;`#`&#39;.</span>
+                                                             <span class="c">!! Default is `CK_&#39;/!#&#39;`.</span>
 
         <span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span> <span class="kd">::</span> <span class="n">path_mode</span> <span class="o">=</span> <span class="mi">1_IK</span>  <span class="c">!! How the path strings are interpreted in the</span>
                                          <span class="c">!! `get_by_path` routines:</span>
@@ -51367,6 +51446,7 @@ private subroutine <a href='../proc/wrap_json_value_rename.html'>wrap_json_value
         <span class="k">procedure</span>        <span class="kd">::</span> <span class="n">json_value_print</span>
         <span class="k">procedure</span>        <span class="kd">::</span> <span class="n">string_to_int</span>
         <span class="k">procedure</span>        <span class="kd">::</span> <span class="n">string_to_dble</span>
+        <span class="k">procedure</span>        <span class="kd">::</span> <span class="n">prepare_parser</span> <span class="o">=&gt;</span> <span class="n">json_prepare_parser</span>
         <span class="k">procedure</span>        <span class="kd">::</span> <span class="n">parse_end</span> <span class="o">=&gt;</span> <span class="n">json_parse_end</span>
         <span class="k">procedure</span>        <span class="kd">::</span> <span class="n">parse_value</span>
         <span class="k">procedure</span>        <span class="kd">::</span> <span class="n">parse_number</span>
@@ -51410,7 +51490,7 @@ private subroutine <a href='../proc/wrap_json_value_rename.html'>wrap_json_value
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2020-04-09 03:27  
+             on 2020-06-15 02:39  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> JSON-Fortran was developed by Jacob Williams</p></div>

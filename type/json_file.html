@@ -136,7 +136,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>28.2% of total for derived types.</p>Including implementation: 1796 statements, 17.5% of total for derived types.">90 statements</a>
+    title="<p>28.1% of total for derived types.</p>Including implementation: 1796 statements, 17.4% of total for derived types.">90 statements</a>
      </li> 
      
      
@@ -1237,17 +1237,17 @@ private function <a href='../proc/initialize_json_file.html'>initialize_json_fil
   
 <tr>
   
-  <td><span class="anchor" ></span>character(kind=CK,len=1),</td>
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>comment_char</strong></td><td><p>If present, this character is used
+  <td><strong>comment_char</strong></td><td><p>If present, these characters are used
  to denote comments in the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file,
  which will be ignored if present.
- Example: <code>!</code> or <code>#</code>. Setting this
+ Example: <code>!</code>, <code>#</code>, or <code>/!#</code>. Setting this
  to a blank string disables the
- ignoring of comments. (Default is <code>!</code>).</p></td>
+ ignoring of comments. (Default is <code>/!#</code>).</p></td>
   
 </tr>
 
@@ -1754,17 +1754,17 @@ private function <a href='../proc/initialize_json_file_from_string.html'>initial
   
 <tr>
   
-  <td><span class="anchor" ></span>character(kind=CK,len=1),</td>
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>comment_char</strong></td><td><p>If present, this character is used
+  <td><strong>comment_char</strong></td><td><p>If present, these characters are used
  to denote comments in the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file,
  which will be ignored if present.
- Example: <code>!</code> or <code>#</code>. Setting this
+ Example: <code>!</code>, <code>#</code>, or <code>/!#</code>. Setting this
  to a blank string disables the
- ignoring of comments. (Default is <code>!</code>).</p></td>
+ ignoring of comments. (Default is <code>/!#</code>).</p></td>
   
 </tr>
 
@@ -2165,17 +2165,17 @@ private function <a href='../proc/wrap_initialize_json_file_from_string.html'>wr
   
 <tr>
   
-  <td><span class="anchor" ></span>character(kind=CK,len=1),</td>
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>comment_char</strong></td><td><p>If present, this character is used
+  <td><strong>comment_char</strong></td><td><p>If present, these characters are used
  to denote comments in the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file,
  which will be ignored if present.
- Example: <code>!</code> or <code>#</code>. Setting this
+ Example: <code>!</code>, <code>#</code>, or <code>/!#</code>. Setting this
  to a blank string disables the
- ignoring of comments. (Default is <code>!</code>).</p></td>
+ ignoring of comments. (Default is <code>/!#</code>).</p></td>
   
 </tr>
 
@@ -10804,17 +10804,17 @@ private subroutine <a href='../proc/initialize_json_core_in_file.html'>initializ
   
 <tr>
   
-  <td><span class="anchor" ></span>character(kind=CK,len=1),</td>
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>comment_char</strong></td><td><p>If present, this character is used
+  <td><strong>comment_char</strong></td><td><p>If present, these characters are used
  to denote comments in the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file,
  which will be ignored if present.
- Example: <code>!</code> or <code>#</code>. Setting this
+ Example: <code>!</code>, <code>#</code>, or <code>/!#</code>. Setting this
  to a blank string disables the
- ignoring of comments. (Default is <code>!</code>).</p></td>
+ ignoring of comments. (Default is <code>/!#</code>).</p></td>
   
 </tr>
 
@@ -11298,17 +11298,17 @@ private subroutine <a href='../proc/initialize_json_core_in_file.html'>initializ
   
 <tr>
   
-  <td><span class="anchor" ></span>character(kind=CK,len=1),</td>
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
   <td>intent(in),</td>
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>comment_char</strong></td><td><p>If present, this character is used
+  <td><strong>comment_char</strong></td><td><p>If present, these characters are used
  to denote comments in the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file,
  which will be ignored if present.
- Example: <code>!</code> or <code>#</code>. Setting this
+ Example: <code>!</code>, <code>#</code>, or <code>/!#</code>. Setting this
  to a blank string disables the
- ignoring of comments. (Default is <code>!</code>).</p></td>
+ ignoring of comments. (Default is <code>/!#</code>).</p></td>
   
 </tr>
 
@@ -27443,7 +27443,7 @@ private subroutine <a href='../proc/wrap_json_file_variable_matrix_info.html'>wr
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2020-04-09 03:27  
+             on 2020-06-15 02:39  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> JSON-Fortran was developed by Jacob Williams</p></div>

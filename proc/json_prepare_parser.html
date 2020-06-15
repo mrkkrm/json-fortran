@@ -10,7 +10,7 @@
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
-    <title>json_file_get_alloc_string_vec &ndash; JSON-Fortran</title>
+    <title>json_prepare_parser &ndash; JSON-Fortran</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -114,7 +114,7 @@
     
   
   <div class="row">
-    <h1>json_file_get_alloc_string_vec
+    <h1>json_prepare_parser
       <small>Subroutine</small>
     
     </h1>
@@ -124,10 +124,6 @@
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
      
-     <li><i class="fa fa-pencil"></i> Jacob Williams</li>
-     
-     
-    <li><i class="fa fa-calendar-o"></i> 12/17/2016</li>
      
      
      
@@ -136,24 +132,24 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">9 statements</a>
+    title=" 0.1% of total for procedures.">7 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/json_file_module.F90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/json_file_module.f90.html'>json_file_module.F90</a></li>
+     <li><a href='../sourcefile/json_value_module.f90.html'>json_value_module.F90</a></li>
     
-     <li><a href='../module/json_file_module.html'>json_file_module</a></li>
+     <li><a href='../module/json_value_module.html'>json_value_module</a></li>
     
   
-     <li class="active">json_file_get_alloc_string_vec</li>
+     <li class="active">json_prepare_parser</li>
   </ol>
 </div>
 </div>
@@ -197,7 +193,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/json_file_get_alloc_string_vec.html#src">json_file_get_alloc_string_vec</a>
+    <a class="list-group-item" href="../proc/json_prepare_parser.html#src">json_prepare_parser</a>
   </div>
 </div>
 
@@ -209,7 +205,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine json_file_get_alloc_string_vec(me, path, vec, ilen, found)
+private subroutine json_prepare_parser(json)
     
     
    
@@ -219,8 +215,8 @@ private subroutine json_file_get_alloc_string_vec(me, path, vec, ilen, found)
 
 
     
-    <p>Get an (allocatable length) string vector from a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> file.
-  This is just a wrapper for <a href="../proc/json_get_alloc_string_vec_by_path.html">json_get_alloc_string_vec_by_path</a>.</p>
+    <p>Internal routine to be called before parsing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>.
+  Currently, all this does it allocate the <code>comment_char</code> if none was specified.</p>
     
 
     <h3>Arguments</h3>
@@ -241,74 +237,12 @@ private subroutine json_file_get_alloc_string_vec(me, path, vec, ilen, found)
   
 <tr>
   
-  <td><span class="anchor" id="variable-me%7E105"></span>class(<a href='../type/json_file.html'>json_file</a>),</td>
+  <td><span class="anchor" id="variable-json%7E76"></span>class(<a href='../type/json_core.html'>json_core</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>me</strong></td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-path%7E105"></span>character(kind=CK,len=*),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
-  <td><strong>path</strong></td><td><p>the path to the variable</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-vec%7E26"></span>character(kind=CK,len=:),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>vec</strong></td><td><p>value vector</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-ilen%7E12"></span>integer(kind=IK),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>ilen</strong></td><td><p>the actual length
- of each character
- string in the array</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-found%7E107"></span>logical(kind=LK),</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>found</strong></td><td></td>
+  <td><strong>json</strong></td><td></td>
   
 </tr>
 
@@ -350,7 +284,7 @@ private subroutine json_file_get_alloc_string_vec(me, path, vec, ilen, found)
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/json_file_get_alloc_string_vec.html#src">json_file_get_alloc_string_vec</a>
+    <a class="list-group-item" href="../proc/json_prepare_parser.html#src">json_prepare_parser</a>
   </div>
 </div>
 
@@ -379,21 +313,19 @@ private subroutine json_file_get_alloc_string_vec(me, path, vec, ilen, found)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">json_file_get_alloc_string_vec</span><span class="p">(</span><span class="n">me</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">vec</span><span class="p">,</span> <span class="n">ilen</span><span class="p">,</span> <span class="n">found</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">json_prepare_parser</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
 
     <span class="k">implicit none</span>
 
-<span class="k">    class</span><span class="p">(</span><span class="n">json_file</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>      <span class="kd">::</span> <span class="n">me</span>
-    <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">path</span> <span class="c">!! the path to the variable</span>
-    <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">vec</span> <span class="c">!! value vector</span>
-    <span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ilen</span> <span class="c">!! the actual length</span>
-                                                             <span class="c">!! of each character</span>
-                                                             <span class="c">!! string in the array</span>
-    <span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span> <span class="kd">::</span> <span class="n">found</span>
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">json</span>
 
-    <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">core</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">p</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">vec</span><span class="p">,</span> <span class="n">ilen</span><span class="p">,</span> <span class="n">found</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">allow_comments</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="p">.</span><span class="nb">not</span><span class="p">.</span> <span class="nb">allocated</span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">comment_char</span><span class="p">))</span> <span class="k">then</span>
+        <span class="c">! comments are enabled, but user hasn&#39;t set the comment char,</span>
+        <span class="c">! so in this case use the default:</span>
+        <span class="n">json</span><span class="p">%</span><span class="n">comment_char</span> <span class="o">=</span> <span class="n">CK_</span><span class="s1">&#39;/!#&#39;</span>
+    <span class="k">end if</span>
 
-    <span class="k">end subroutine </span><span class="n">json_file_get_alloc_string_vec</span>
+<span class="k">    end subroutine </span><span class="n">json_prepare_parser</span>
 </pre></div>
 
     </section>
