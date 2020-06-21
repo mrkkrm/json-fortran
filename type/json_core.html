@@ -132,7 +132,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>67.1% of total for derived types.</p>Including implementation: 8484 statements, 82.4% of total for derived types.">219 statements</a>
+    title="<p>67.1% of total for derived types.</p>Including implementation: 8734 statements, 82.4% of total for derived types.">219 statements</a>
      </li> 
      
      
@@ -14236,7 +14236,7 @@ private subroutine <a href='../proc/json_get_integer.html'>json_get_integer</a>(
             
     
     <h3>
-private subroutine <a href='../proc/json_get_integer_by_path.html'>json_get_integer_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/json_get_integer_by_path.html'>json_get_integer_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -14339,6 +14339,21 @@ private subroutine <a href='../proc/json_get_integer_by_path.html'>json_get_inte
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=IK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -14356,7 +14371,7 @@ private subroutine <a href='../proc/json_get_integer_by_path.html'>json_get_inte
             
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_integer_by_path.html'>wrap_json_get_integer_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/wrap_json_get_integer_by_path.html'>wrap_json_get_integer_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -14456,6 +14471,21 @@ private subroutine <a href='../proc/wrap_json_get_integer_by_path.html'>wrap_jso
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=IK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
   
 </tr>
 
@@ -14578,7 +14608,7 @@ private subroutine <a href='../proc/json_get_integer_vec.html'>json_get_integer_
             
     
     <h3>
-private subroutine <a href='../proc/json_get_integer_vec_by_path.html'>json_get_integer_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/json_get_integer_vec_by_path.html'>json_get_integer_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -14681,6 +14711,21 @@ private subroutine <a href='../proc/json_get_integer_vec_by_path.html'>json_get_
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=IK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -14698,7 +14743,7 @@ private subroutine <a href='../proc/json_get_integer_vec_by_path.html'>json_get_
             
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_integer_vec_by_path.html'>wrap_json_get_integer_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/wrap_json_get_integer_vec_by_path.html'>wrap_json_get_integer_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -14798,6 +14843,21 @@ private subroutine <a href='../proc/wrap_json_get_integer_vec_by_path.html'>wrap
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=IK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
   
 </tr>
 
@@ -14908,7 +14968,7 @@ private subroutine <a href='../proc/json_get_real32.html'>json_get_real32</a>(js
             
     
     <h3>
-private subroutine <a href='../proc/json_get_real32_by_path.html'>json_get_real32_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/json_get_real32_by_path.html'>json_get_real32_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -15011,6 +15071,21 @@ private subroutine <a href='../proc/json_get_real32_by_path.html'>json_get_real3
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -15028,7 +15103,7 @@ private subroutine <a href='../proc/json_get_real32_by_path.html'>json_get_real3
             
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_real32_by_path.html'>wrap_json_get_real32_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/wrap_json_get_real32_by_path.html'>wrap_json_get_real32_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -15128,6 +15203,21 @@ private subroutine <a href='../proc/wrap_json_get_real32_by_path.html'>wrap_json
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
   
 </tr>
 
@@ -15238,7 +15328,7 @@ private subroutine <a href='../proc/json_get_real32_vec.html'>json_get_real32_ve
             
     
     <h3>
-private subroutine <a href='../proc/json_get_real32_vec_by_path.html'>json_get_real32_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/json_get_real32_vec_by_path.html'>json_get_real32_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -15341,6 +15431,21 @@ private subroutine <a href='../proc/json_get_real32_vec_by_path.html'>json_get_r
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -15358,7 +15463,7 @@ private subroutine <a href='../proc/json_get_real32_vec_by_path.html'>json_get_r
             
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_real32_vec_by_path.html'>wrap_json_get_real32_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/wrap_json_get_real32_vec_by_path.html'>wrap_json_get_real32_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -15458,6 +15563,21 @@ private subroutine <a href='../proc/wrap_json_get_real32_vec_by_path.html'>wrap_
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
   
 </tr>
 
@@ -15568,7 +15688,7 @@ private subroutine <a href='../proc/json_get_real.html'>json_get_real</a>(json, 
             
     
     <h3>
-private subroutine <a href='../proc/json_get_real_by_path.html'>json_get_real_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/json_get_real_by_path.html'>json_get_real_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -15671,6 +15791,21 @@ private subroutine <a href='../proc/json_get_real_by_path.html'>json_get_real_by
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=RK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -15688,7 +15823,7 @@ private subroutine <a href='../proc/json_get_real_by_path.html'>json_get_real_by
             
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_real_by_path.html'>wrap_json_get_real_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/wrap_json_get_real_by_path.html'>wrap_json_get_real_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -15788,6 +15923,21 @@ private subroutine <a href='../proc/wrap_json_get_real_by_path.html'>wrap_json_g
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=RK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
   
 </tr>
 
@@ -15910,7 +16060,7 @@ private subroutine <a href='../proc/json_get_real_vec.html'>json_get_real_vec</a
             
     
     <h3>
-private subroutine <a href='../proc/json_get_real_vec_by_path.html'>json_get_real_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/json_get_real_vec_by_path.html'>json_get_real_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -16013,6 +16163,21 @@ private subroutine <a href='../proc/json_get_real_vec_by_path.html'>json_get_rea
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=RK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -16030,7 +16195,7 @@ private subroutine <a href='../proc/json_get_real_vec_by_path.html'>json_get_rea
             
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_real_vec_by_path.html'>wrap_json_get_real_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/wrap_json_get_real_vec_by_path.html'>wrap_json_get_real_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -16130,6 +16295,21 @@ private subroutine <a href='../proc/wrap_json_get_real_vec_by_path.html'>wrap_js
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=RK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
   
 </tr>
 
@@ -16240,7 +16420,7 @@ private subroutine <a href='../proc/json_get_logical.html'>json_get_logical</a>(
             
     
     <h3>
-private subroutine <a href='../proc/json_get_logical_by_path.html'>json_get_logical_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/json_get_logical_by_path.html'>json_get_logical_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -16343,6 +16523,21 @@ private subroutine <a href='../proc/json_get_logical_by_path.html'>json_get_logi
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -16360,7 +16555,7 @@ private subroutine <a href='../proc/json_get_logical_by_path.html'>json_get_logi
             
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_logical_by_path.html'>wrap_json_get_logical_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/wrap_json_get_logical_by_path.html'>wrap_json_get_logical_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -16460,6 +16655,21 @@ private subroutine <a href='../proc/wrap_json_get_logical_by_path.html'>wrap_jso
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
   
 </tr>
 
@@ -16582,7 +16792,7 @@ private subroutine <a href='../proc/json_get_logical_vec.html'>json_get_logical_
             
     
     <h3>
-private subroutine <a href='../proc/json_get_logical_vec_by_path.html'>json_get_logical_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/json_get_logical_vec_by_path.html'>json_get_logical_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -16685,6 +16895,21 @@ private subroutine <a href='../proc/json_get_logical_vec_by_path.html'>json_get_
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -16702,7 +16927,7 @@ private subroutine <a href='../proc/json_get_logical_vec_by_path.html'>json_get_
             
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_logical_vec_by_path.html'>wrap_json_get_logical_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/wrap_json_get_logical_vec_by_path.html'>wrap_json_get_logical_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -16802,6 +17027,21 @@ private subroutine <a href='../proc/wrap_json_get_logical_vec_by_path.html'>wrap
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td></td>
   
 </tr>
 
@@ -16912,7 +17152,7 @@ private subroutine <a href='../proc/json_get_string.html'>json_get_string</a>(js
             
     
     <h3>
-private subroutine <a href='../proc/json_get_string_by_path.html'>json_get_string_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/json_get_string_by_path.html'>json_get_string_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -17015,6 +17255,21 @@ private subroutine <a href='../proc/json_get_string_by_path.html'>json_get_strin
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -17032,7 +17287,7 @@ private subroutine <a href='../proc/json_get_string_by_path.html'>json_get_strin
             
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_string_by_path.html'>wrap_json_get_string_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/wrap_json_get_string_by_path.html'>wrap_json_get_string_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -17132,6 +17387,21 @@ private subroutine <a href='../proc/wrap_json_get_string_by_path.html'>wrap_json
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td></td>
   
 </tr>
 
@@ -17254,7 +17524,7 @@ private subroutine <a href='../proc/json_get_string_vec.html'>json_get_string_ve
             
     
     <h3>
-private subroutine <a href='../proc/json_get_string_vec_by_path.html'>json_get_string_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/json_get_string_vec_by_path.html'>json_get_string_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -17357,6 +17627,21 @@ private subroutine <a href='../proc/json_get_string_vec_by_path.html'>json_get_s
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -17374,7 +17659,7 @@ private subroutine <a href='../proc/json_get_string_vec_by_path.html'>json_get_s
             
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_string_vec_by_path.html'>wrap_json_get_string_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/wrap_json_get_string_vec_by_path.html'>wrap_json_get_string_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -17474,6 +17759,21 @@ private subroutine <a href='../proc/wrap_json_get_string_vec_by_path.html'>wrap_
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td></td>
   
 </tr>
 
@@ -17617,7 +17917,7 @@ private subroutine <a href='../proc/json_get_alloc_string_vec.html'>json_get_all
             
     
     <h3>
-private subroutine <a href='../proc/json_get_alloc_string_vec_by_path.html'>json_get_alloc_string_vec_by_path</a>(json, me, path, vec, ilen, found)
+private subroutine <a href='../proc/json_get_alloc_string_vec_by_path.html'>json_get_alloc_string_vec_by_path</a>(json, me, path, vec, ilen, found, default, default_ilen)
     
     
    
@@ -17737,6 +18037,37 @@ private subroutine <a href='../proc/json_get_alloc_string_vec_by_path.html'>json
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=IK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default_ilen</strong></td><td><p>the actual
+ length of <code>default</code></p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -17754,7 +18085,7 @@ private subroutine <a href='../proc/json_get_alloc_string_vec_by_path.html'>json
             
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_alloc_string_vec_by_path.html'>wrap_json_get_alloc_string_vec_by_path</a>(json, me, path, vec, ilen, found)
+private subroutine <a href='../proc/wrap_json_get_alloc_string_vec_by_path.html'>wrap_json_get_alloc_string_vec_by_path</a>(json, me, path, vec, ilen, found, default, default_ilen)
     
     
    
@@ -17871,6 +18202,37 @@ private subroutine <a href='../proc/wrap_json_get_alloc_string_vec_by_path.html'
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=IK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default_ilen</strong></td><td><p>the actual
+ length of <code>default</code></p></td>
   
 </tr>
 
@@ -23675,7 +24037,7 @@ private subroutine <a href='../proc/json_get_alloc_string_vec.html'>json_get_all
           
     
     <h3>
-private subroutine <a href='../proc/json_get_alloc_string_vec_by_path.html'>json_get_alloc_string_vec_by_path</a>(json, me, path, vec, ilen, found)
+private subroutine <a href='../proc/json_get_alloc_string_vec_by_path.html'>json_get_alloc_string_vec_by_path</a>(json, me, path, vec, ilen, found, default, default_ilen)
     
     
    
@@ -23792,6 +24154,37 @@ private subroutine <a href='../proc/json_get_alloc_string_vec_by_path.html'>json
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=IK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default_ilen</strong></td><td><p>the actual
+ length of <code>default</code></p></td>
   
 </tr>
 
@@ -24798,7 +25191,7 @@ private subroutine <a href='../proc/json_get_integer.html'>json_get_integer</a>(
           
     
     <h3>
-private subroutine <a href='../proc/json_get_integer_by_path.html'>json_get_integer_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/json_get_integer_by_path.html'>json_get_integer_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -24898,6 +25291,21 @@ private subroutine <a href='../proc/json_get_integer_by_path.html'>json_get_inte
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=IK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
   
 </tr>
 
@@ -25044,7 +25452,7 @@ private subroutine <a href='../proc/json_get_integer_vec.html'>json_get_integer_
           
     
     <h3>
-private subroutine <a href='../proc/json_get_integer_vec_by_path.html'>json_get_integer_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/json_get_integer_vec_by_path.html'>json_get_integer_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -25144,6 +25552,21 @@ private subroutine <a href='../proc/json_get_integer_vec_by_path.html'>json_get_
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=IK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
   
 </tr>
 
@@ -25278,7 +25701,7 @@ private subroutine <a href='../proc/json_get_logical.html'>json_get_logical</a>(
           
     
     <h3>
-private subroutine <a href='../proc/json_get_logical_by_path.html'>json_get_logical_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/json_get_logical_by_path.html'>json_get_logical_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -25378,6 +25801,21 @@ private subroutine <a href='../proc/json_get_logical_by_path.html'>json_get_logi
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
   
 </tr>
 
@@ -25524,7 +25962,7 @@ private subroutine <a href='../proc/json_get_logical_vec.html'>json_get_logical_
           
     
     <h3>
-private subroutine <a href='../proc/json_get_logical_vec_by_path.html'>json_get_logical_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/json_get_logical_vec_by_path.html'>json_get_logical_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -25624,6 +26062,21 @@ private subroutine <a href='../proc/json_get_logical_vec_by_path.html'>json_get_
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td></td>
   
 </tr>
 
@@ -26012,7 +26465,7 @@ private subroutine <a href='../proc/json_get_real32.html'>json_get_real32</a>(js
           
     
     <h3>
-private subroutine <a href='../proc/json_get_real32_by_path.html'>json_get_real32_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/json_get_real32_by_path.html'>json_get_real32_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -26112,6 +26565,21 @@ private subroutine <a href='../proc/json_get_real32_by_path.html'>json_get_real3
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
   
 </tr>
 
@@ -26246,7 +26714,7 @@ private subroutine <a href='../proc/json_get_real32_vec.html'>json_get_real32_ve
           
     
     <h3>
-private subroutine <a href='../proc/json_get_real32_vec_by_path.html'>json_get_real32_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/json_get_real32_vec_by_path.html'>json_get_real32_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -26349,6 +26817,21 @@ private subroutine <a href='../proc/json_get_real32_vec_by_path.html'>json_get_r
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -26378,7 +26861,7 @@ private subroutine <a href='../proc/json_get_real32_vec_by_path.html'>json_get_r
           
     
     <h3>
-private subroutine <a href='../proc/json_get_real_by_path.html'>json_get_real_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/json_get_real_by_path.html'>json_get_real_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -26478,6 +26961,21 @@ private subroutine <a href='../proc/json_get_real_by_path.html'>json_get_real_by
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=RK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
   
 </tr>
 
@@ -26624,7 +27122,7 @@ private subroutine <a href='../proc/json_get_real_vec.html'>json_get_real_vec</a
           
     
     <h3>
-private subroutine <a href='../proc/json_get_real_vec_by_path.html'>json_get_real_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/json_get_real_vec_by_path.html'>json_get_real_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -26724,6 +27222,21 @@ private subroutine <a href='../proc/json_get_real_vec_by_path.html'>json_get_rea
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=RK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
   
 </tr>
 
@@ -26858,7 +27371,7 @@ private subroutine <a href='../proc/json_get_string.html'>json_get_string</a>(js
           
     
     <h3>
-private subroutine <a href='../proc/json_get_string_by_path.html'>json_get_string_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/json_get_string_by_path.html'>json_get_string_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -26958,6 +27471,21 @@ private subroutine <a href='../proc/json_get_string_by_path.html'>json_get_strin
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td></td>
   
 </tr>
 
@@ -27104,7 +27632,7 @@ private subroutine <a href='../proc/json_get_string_vec.html'>json_get_string_ve
           
     
     <h3>
-private subroutine <a href='../proc/json_get_string_vec_by_path.html'>json_get_string_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/json_get_string_vec_by_path.html'>json_get_string_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -27204,6 +27732,21 @@ private subroutine <a href='../proc/json_get_string_vec_by_path.html'>json_get_s
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td></td>
   
 </tr>
 
@@ -44662,7 +45205,7 @@ private subroutine <a href='../proc/wrap_json_create_by_path.html'>wrap_json_cre
           
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_alloc_string_vec_by_path.html'>wrap_json_get_alloc_string_vec_by_path</a>(json, me, path, vec, ilen, found)
+private subroutine <a href='../proc/wrap_json_get_alloc_string_vec_by_path.html'>wrap_json_get_alloc_string_vec_by_path</a>(json, me, path, vec, ilen, found, default, default_ilen)
     
     
    
@@ -44779,6 +45322,37 @@ private subroutine <a href='../proc/wrap_json_get_alloc_string_vec_by_path.html'
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=IK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default_ilen</strong></td><td><p>the actual
+ length of <code>default</code></p></td>
   
 </tr>
 
@@ -45075,7 +45649,7 @@ private subroutine <a href='../proc/wrap_json_get_by_path.html'>wrap_json_get_by
           
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_integer_by_path.html'>wrap_json_get_integer_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/wrap_json_get_integer_by_path.html'>wrap_json_get_integer_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -45178,6 +45752,21 @@ private subroutine <a href='../proc/wrap_json_get_integer_by_path.html'>wrap_jso
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=IK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -45207,7 +45796,7 @@ private subroutine <a href='../proc/wrap_json_get_integer_by_path.html'>wrap_jso
           
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_integer_vec_by_path.html'>wrap_json_get_integer_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/wrap_json_get_integer_vec_by_path.html'>wrap_json_get_integer_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -45310,6 +45899,21 @@ private subroutine <a href='../proc/wrap_json_get_integer_vec_by_path.html'>wrap
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=IK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -45339,7 +45943,7 @@ private subroutine <a href='../proc/wrap_json_get_integer_vec_by_path.html'>wrap
           
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_logical_by_path.html'>wrap_json_get_logical_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/wrap_json_get_logical_by_path.html'>wrap_json_get_logical_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -45442,6 +46046,21 @@ private subroutine <a href='../proc/wrap_json_get_logical_by_path.html'>wrap_jso
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -45471,7 +46090,7 @@ private subroutine <a href='../proc/wrap_json_get_logical_by_path.html'>wrap_jso
           
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_logical_vec_by_path.html'>wrap_json_get_logical_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/wrap_json_get_logical_vec_by_path.html'>wrap_json_get_logical_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -45571,6 +46190,21 @@ private subroutine <a href='../proc/wrap_json_get_logical_vec_by_path.html'>wrap
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical(kind=LK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td></td>
   
 </tr>
 
@@ -45753,7 +46387,7 @@ private subroutine <a href='../proc/wrap_json_get_path.html'>wrap_json_get_path<
           
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_real32_by_path.html'>wrap_json_get_real32_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/wrap_json_get_real32_by_path.html'>wrap_json_get_real32_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -45856,6 +46490,21 @@ private subroutine <a href='../proc/wrap_json_get_real32_by_path.html'>wrap_json
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -45885,7 +46534,7 @@ private subroutine <a href='../proc/wrap_json_get_real32_by_path.html'>wrap_json
           
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_real32_vec_by_path.html'>wrap_json_get_real32_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/wrap_json_get_real32_vec_by_path.html'>wrap_json_get_real32_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -45988,6 +46637,21 @@ private subroutine <a href='../proc/wrap_json_get_real32_vec_by_path.html'>wrap_
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=real32),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -46017,7 +46681,7 @@ private subroutine <a href='../proc/wrap_json_get_real32_vec_by_path.html'>wrap_
           
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_real_by_path.html'>wrap_json_get_real_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/wrap_json_get_real_by_path.html'>wrap_json_get_real_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -46120,6 +46784,21 @@ private subroutine <a href='../proc/wrap_json_get_real_by_path.html'>wrap_json_g
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=RK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -46149,7 +46828,7 @@ private subroutine <a href='../proc/wrap_json_get_real_by_path.html'>wrap_json_g
           
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_real_vec_by_path.html'>wrap_json_get_real_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/wrap_json_get_real_vec_by_path.html'>wrap_json_get_real_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -46252,6 +46931,21 @@ private subroutine <a href='../proc/wrap_json_get_real_vec_by_path.html'>wrap_js
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=RK),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -46281,7 +46975,7 @@ private subroutine <a href='../proc/wrap_json_get_real_vec_by_path.html'>wrap_js
           
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_string_by_path.html'>wrap_json_get_string_by_path</a>(json, me, path, value, found)
+private subroutine <a href='../proc/wrap_json_get_string_by_path.html'>wrap_json_get_string_by_path</a>(json, me, path, value, found, default)
     
     
    
@@ -46384,6 +47078,21 @@ private subroutine <a href='../proc/wrap_json_get_string_by_path.html'>wrap_json
   
 </tr>
 
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>default</strong></td><td></td>
+  
+</tr>
+
 </tbody>
 </table>
 
@@ -46413,7 +47122,7 @@ private subroutine <a href='../proc/wrap_json_get_string_by_path.html'>wrap_json
           
     
     <h3>
-private subroutine <a href='../proc/wrap_json_get_string_vec_by_path.html'>wrap_json_get_string_vec_by_path</a>(json, me, path, vec, found)
+private subroutine <a href='../proc/wrap_json_get_string_vec_by_path.html'>wrap_json_get_string_vec_by_path</a>(json, me, path, vec, found, default)
     
     
    
@@ -46513,6 +47222,21 @@ private subroutine <a href='../proc/wrap_json_get_string_vec_by_path.html'>wrap_
   
   <td></td><td>::</td>
   <td><strong>found</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(kind=CK,len=*),</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td>dimension(:)</td><td>::</td>
+  <td><strong>default</strong></td><td></td>
   
 </tr>
 
@@ -51490,7 +52214,7 @@ private subroutine <a href='../proc/wrap_json_value_rename.html'>wrap_json_value
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2020-06-15 02:39  
+             on 2020-06-21 22:13  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> JSON-Fortran was developed by Jacob Williams</p></div>
