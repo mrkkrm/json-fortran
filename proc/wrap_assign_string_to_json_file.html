@@ -10,7 +10,7 @@
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
-    <title>json_get_integer_vec_by_path &ndash; JSON-Fortran</title>
+    <title>wrap_assign_string_to_json_file &ndash; JSON-Fortran</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -114,7 +114,7 @@
     
   
   <div class="row">
-    <h1>json_get_integer_vec_by_path
+    <h1>wrap_assign_string_to_json_file
       <small>Subroutine</small>
     
     </h1>
@@ -124,6 +124,8 @@
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
      
+     <li><i class="fa fa-pencil"></i> Jacob Williams</li>
+     
      
      
      
@@ -132,24 +134,24 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.5% of total for procedures.">32 statements</a>
+    title=" 0.1% of total for procedures.">6 statements</a>
      </li> 
      
      
      
-    <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/json_file_module.F90"> Source File</a></li>
      
      
   </ul>
   <ol class="breadcrumb in-well text-right">
   
     
-     <li><a href='../sourcefile/json_value_module.f90.html'>json_value_module.F90</a></li>
+     <li><a href='../sourcefile/json_file_module.f90.html'>json_file_module.F90</a></li>
     
-     <li><a href='../module/json_value_module.html'>json_value_module</a></li>
+     <li><a href='../module/json_file_module.html'>json_file_module</a></li>
     
   
-     <li class="active">json_get_integer_vec_by_path</li>
+     <li class="active">wrap_assign_string_to_json_file</li>
   </ol>
 </div>
 </div>
@@ -193,7 +195,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/json_get_integer_vec_by_path.html#src">json_get_integer_vec_by_path</a>
+    <a class="list-group-item" href="../proc/wrap_assign_string_to_json_file.html#src">wrap_assign_string_to_json_file</a>
   </div>
 </div>
 
@@ -205,7 +207,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine json_get_integer_vec_by_path(json, me, path, vec, found, default)
+private subroutine wrap_assign_string_to_json_file(me, str)
     
     
    
@@ -215,7 +217,7 @@ private subroutine json_get_integer_vec_by_path(json, me, path, vec, found, defa
 
 
     
-    <p>Get an integer vector from a <a href="../type/json_value.html">json_value</a>, given the path string.</p>
+    <p>Alternate version of <a href="../proc/assign_string_to_json_file.html">assign_string_to_json_file</a>, where &ldquo;str&rdquo; is kind=CDK.</p>
     
 
     <h3>Arguments</h3>
@@ -236,26 +238,11 @@ private subroutine json_get_integer_vec_by_path(json, me, path, vec, found, defa
   
 <tr>
   
-  <td><span class="anchor" id="variable-json%7E47"></span>class(<a href='../type/json_core.html'>json_core</a>),</td>
+  <td><span class="anchor" id="variable-me%7E142"></span>class(<a href='../type/json_file.html'>json_file</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>json</strong></td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-me%7E29"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-  <td>intent(in),</td>
-  <td></td>
-  
-  <td>pointer</td><td>::</td>
   <td><strong>me</strong></td><td></td>
   
 </tr>
@@ -266,57 +253,12 @@ private subroutine json_get_integer_vec_by_path(json, me, path, vec, found, defa
   
 <tr>
   
-  <td><span class="anchor" id="variable-path%7E28"></span>character(kind=CK,len=*),</td>
+  <td><span class="anchor" id="variable-str%7E37"></span>character(kind=CDK,len=*),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>path</strong></td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-vec%7E4"></span>integer(kind=IK),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>vec</strong></td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-found%7E27"></span>logical(kind=LK),</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>found</strong></td><td></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-default%7E3"></span>integer(kind=IK),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td>dimension(:)</td><td>::</td>
-  <td><strong>default</strong></td><td><p>default value if not found</p></td>
+  <td><strong>str</strong></td><td></td>
   
 </tr>
 
@@ -339,29 +281,55 @@ private subroutine json_get_integer_vec_by_path(json, me, path, vec, found, defa
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.36.0 (20140111.2315)
  -->
-<!-- Title: proc~~json_get_integer_vec_by_path~~CallsGraph Pages: 1 -->
-<svg id="procjson_get_integer_vec_by_pathCallsGraph" width="288pt" height="32pt"
- viewBox="0.00 0.00 288.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~json_get_integer_vec_by_path~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
-<title>proc~~json_get_integer_vec_by_path~~CallsGraph</title>
-<polygon fill="white" stroke="none" points="-4,4 -4,-28 284,-28 284,4 -4,4"/>
-<!-- proc~json_get_integer_vec_by_path -->
-<g id="proc~~json_get_integer_vec_by_path~~CallsGraph_node1" class="node"><title>proc~json_get_integer_vec_by_path</title>
-<polygon fill="none" stroke="black" points="159.5,-24 0.5,-24 0.5,-0 159.5,-0 159.5,-24"/>
-<text text-anchor="middle" x="80" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">json_get_integer_vec_by_path</text>
+<!-- Title: proc~~wrap_assign_string_to_json_file~~CallsGraph Pages: 1 -->
+<svg id="procwrap_assign_string_to_json_fileCallsGraph" width="376pt" height="74pt"
+ viewBox="0.00 0.00 376.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~wrap_assign_string_to_json_file~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<title>proc~~wrap_assign_string_to_json_file~~CallsGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-70 372,-70 372,4 -4,4"/>
+<!-- proc~wrap_assign_string_to_json_file -->
+<g id="proc~~wrap_assign_string_to_json_file~~CallsGraph_node1" class="node"><title>proc~wrap_assign_string_to_json_file</title>
+<polygon fill="none" stroke="black" points="165.5,-45 0.5,-45 0.5,-21 165.5,-21 165.5,-45"/>
+<text text-anchor="middle" x="83" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">wrap_assign_string_to_json_file</text>
 </g>
-<!-- proc~flag_not_found -->
-<g id="proc~~json_get_integer_vec_by_path~~CallsGraph_node2" class="node"><title>proc~flag_not_found</title>
-<g id="a_proc~~json_get_integer_vec_by_path~~CallsGraph_node2"><a xlink:href=".././proc/flag_not_found.html" xlink:title="flag_not_found">
-<polygon fill="#d9534f" stroke="#d9534f" points="280,-24 196,-24 196,-0 280,-0 280,-24"/>
-<text text-anchor="middle" x="238" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">flag_not_found</text>
+<!-- interface~to_unicode -->
+<g id="proc~~wrap_assign_string_to_json_file~~CallsGraph_node2" class="node"><title>interface~to_unicode</title>
+<g id="a_proc~~wrap_assign_string_to_json_file~~CallsGraph_node2"><a xlink:href=".././interface/to_unicode.html" xlink:title="to_unicode">
+<polygon fill="#a7506f" stroke="#a7506f" points="267.5,-45 202.5,-45 202.5,-21 267.5,-21 267.5,-45"/>
+<text text-anchor="middle" x="235" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_unicode</text>
 </a>
 </g>
 </g>
-<!-- proc~json_get_integer_vec_by_path&#45;&gt;proc~flag_not_found -->
-<g id="proc~~json_get_integer_vec_by_path~~CallsGraph_edge1" class="edge"><title>proc~json_get_integer_vec_by_path&#45;&gt;proc~flag_not_found</title>
-<path fill="none" stroke="#ff0000" d="M159.914,-12C168.628,-12 177.328,-12 185.576,-12"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="185.751,-15.5001 195.751,-12 185.751,-8.5001 185.751,-15.5001"/>
+<!-- proc~wrap_assign_string_to_json_file&#45;&gt;interface~to_unicode -->
+<g id="proc~~wrap_assign_string_to_json_file~~CallsGraph_edge1" class="edge"><title>proc~wrap_assign_string_to_json_file&#45;&gt;interface~to_unicode</title>
+<path fill="none" stroke="#ff0000" d="M165.584,-33C174.764,-33 183.811,-33 192.17,-33"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="192.348,-36.5001 202.348,-33 192.348,-29.5001 192.348,-36.5001"/>
+</g>
+<!-- proc~to_uni -->
+<g id="proc~~wrap_assign_string_to_json_file~~CallsGraph_node3" class="node"><title>proc~to_uni</title>
+<g id="a_proc~~wrap_assign_string_to_json_file~~CallsGraph_node3"><a xlink:href=".././proc/to_uni.html" xlink:title="to_uni">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="363,-66 309,-66 309,-42 363,-42 363,-66"/>
+<text text-anchor="middle" x="336" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni</text>
+</a>
+</g>
+</g>
+<!-- interface~to_unicode&#45;&gt;proc~to_uni -->
+<g id="proc~~wrap_assign_string_to_json_file~~CallsGraph_edge2" class="edge"><title>interface~to_unicode&#45;&gt;proc~to_uni</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M267.596,-39.7023C277.612,-41.8269 288.759,-44.1913 299.057,-46.3757"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="298.49,-49.8333 308.999,-48.4846 299.943,-42.9857 298.49,-49.8333"/>
+</g>
+<!-- proc~to_uni_vec -->
+<g id="proc~~wrap_assign_string_to_json_file~~CallsGraph_node4" class="node"><title>proc~to_uni_vec</title>
+<g id="a_proc~~wrap_assign_string_to_json_file~~CallsGraph_node4"><a xlink:href=".././proc/to_uni_vec.html" xlink:title="to_uni_vec">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="368,-24 304,-24 304,-0 368,-0 368,-24"/>
+<text text-anchor="middle" x="336" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">to_uni_vec</text>
+</a>
+</g>
+</g>
+<!-- interface~to_unicode&#45;&gt;proc~to_uni_vec -->
+<g id="proc~~wrap_assign_string_to_json_file~~CallsGraph_edge3" class="edge"><title>interface~to_unicode&#45;&gt;proc~to_uni_vec</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M267.596,-26.2977C275.894,-24.5377 284.966,-22.6132 293.69,-20.7627"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="294.647,-24.1376 303.703,-18.6387 293.195,-17.29 294.647,-24.1376"/>
 </g>
 </g>
 </svg>
@@ -452,7 +420,7 @@ private subroutine json_get_integer_vec_by_path(json, me, path, vec, found, defa
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/json_get_integer_vec_by_path.html#src">json_get_integer_vec_by_path</a>
+    <a class="list-group-item" href="../proc/wrap_assign_string_to_json_file.html#src">wrap_assign_string_to_json_file</a>
   </div>
 </div>
 
@@ -481,22 +449,16 @@ private subroutine json_get_integer_vec_by_path(json, me, path, vec, found, defa
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">json_get_integer_vec_by_path</span><span class="p">(</span><span class="n">json</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">vec</span><span class="p">,</span> <span class="n">found</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">wrap_assign_string_to_json_file</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">str</span><span class="p">)</span>
 
     <span class="k">implicit none</span>
 
-<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>                   <span class="kd">::</span> <span class="n">json</span>
-    <span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">me</span>
-    <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>              <span class="kd">::</span> <span class="n">path</span>
-    <span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">vec</span>
-    <span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span>                 <span class="kd">::</span> <span class="n">found</span>
-    <span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span>     <span class="kd">::</span> <span class="n">default</span> <span class="c">!! default value if not found</span>
+<span class="k">    class</span><span class="p">(</span><span class="n">json_file</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">me</span>
+    <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CDK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">str</span>
 
-    <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">parameter</span> <span class="kd">::</span> <span class="n">routine</span> <span class="o">=</span> <span class="n">CK_</span><span class="s1">&#39;json_get_integer_vec_by_path&#39;</span>
+    <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">assign_string_to_json_file</span><span class="p">(</span><span class="n">to_unicode</span><span class="p">(</span><span class="n">str</span><span class="p">))</span>
 
-<span class="cp">#include &quot;json_get_vec_by_path.inc&quot;</span>
-
-    <span class="k">end subroutine </span><span class="n">json_get_integer_vec_by_path</span>
+    <span class="k">end subroutine </span><span class="n">wrap_assign_string_to_json_file</span>
 </pre></div>
 
     </section>
