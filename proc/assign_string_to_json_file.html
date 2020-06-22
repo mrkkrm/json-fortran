@@ -10,7 +10,7 @@
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
-    <title>json_file_get_real32_vec &ndash; JSON-Fortran</title>
+    <title>assign_string_to_json_file &ndash; JSON-Fortran</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -114,7 +114,7 @@
     
   
   <div class="row">
-    <h1>json_file_get_real32_vec
+    <h1>assign_string_to_json_file
       <small>Subroutine</small>
     
     </h1>
@@ -127,8 +127,6 @@
      <li><i class="fa fa-pencil"></i> Jacob Williams</li>
      
      
-    <li><i class="fa fa-calendar-o"></i> 1/21/2019</li>
-     
      
      
     
@@ -136,7 +134,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.1% of total for procedures.">9 statements</a>
+    title=" 0.1% of total for procedures.">8 statements</a>
      </li> 
      
      
@@ -153,7 +151,7 @@
      <li><a href='../module/json_file_module.html'>json_file_module</a></li>
     
   
-     <li class="active">json_file_get_real32_vec</li>
+     <li class="active">assign_string_to_json_file</li>
   </ol>
 </div>
 </div>
@@ -197,7 +195,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/json_file_get_real32_vec.html#src">json_file_get_real32_vec</a>
+    <a class="list-group-item" href="../proc/assign_string_to_json_file.html#src">assign_string_to_json_file</a>
   </div>
 </div>
 
@@ -209,7 +207,7 @@
     
     <div class="col-md-9" id='text'>
     <h2>
-private subroutine json_file_get_real32_vec(me, path, vec, found, default)
+private subroutine assign_string_to_json_file(me, str)
     
     
    
@@ -219,7 +217,8 @@ private subroutine json_file_get_real32_vec(me, path, vec, found, default)
 
 
     
-    <p>Alternate version of <a href="../proc/json_file_get_real_vec.html">json_file_get_real_vec</a> where <code>vec</code> is <code>real32</code>.</p>
+    <p>Assignment operator for <a href="../type/json_core.html">json_core</a> = character.
+  This is just a wrapper for the <a href="../proc/json_file_load_from_string.html">json_file_load_from_string</a> routine.</p>
     
 
     <h3>Arguments</h3>
@@ -240,7 +239,7 @@ private subroutine json_file_get_real32_vec(me, path, vec, found, default)
   
 <tr>
   
-  <td><span class="anchor" id="variable-me%7E114"></span>class(<a href='../type/json_file.html'>json_file</a>),</td>
+  <td><span class="anchor" id="variable-me%7E83"></span>class(<a href='../type/json_file.html'>json_file</a>),</td>
   <td>intent(inout)</td>
   <td></td>
   
@@ -255,57 +254,12 @@ private subroutine json_file_get_real32_vec(me, path, vec, found, default)
   
 <tr>
   
-  <td><span class="anchor" id="variable-path%7E113"></span>character(kind=CK,len=*),</td>
+  <td><span class="anchor" id="variable-str%7E34"></span>character(kind=CK,len=*),</td>
   <td>intent(in)</td>
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>path</strong></td><td><p>the path to the variable</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-vec%7E29"></span>real(kind=real32),</td>
-  <td>intent(out),</td>
-  <td></td>
-  
-  <td>dimension(:), allocatable</td><td>::</td>
-  <td><strong>vec</strong></td><td><p>the value vector</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-found%7E116"></span>logical(kind=LK),</td>
-  <td>intent(out),</td>
-  <td>optional</td>
-  
-  <td></td><td>::</td>
-  <td><strong>found</strong></td><td><p>if it was really found</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" id="variable-default%7E30"></span>real(kind=real32),</td>
-  <td>intent(in),</td>
-  <td>optional</td>
-  
-  <td>dimension(:)</td><td>::</td>
-  <td><strong>default</strong></td><td></td>
+  <td><strong>str</strong></td><td></td>
   
 </tr>
 
@@ -347,7 +301,7 @@ private subroutine json_file_get_real32_vec(me, path, vec, found, default)
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/json_file_get_real32_vec.html#src">json_file_get_real32_vec</a>
+    <a class="list-group-item" href="../proc/assign_string_to_json_file.html#src">assign_string_to_json_file</a>
   </div>
 </div>
 
@@ -376,19 +330,18 @@ private subroutine json_file_get_real32_vec(me, path, vec, found, default)
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">json_file_get_real32_vec</span><span class="p">(</span><span class="n">me</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">vec</span><span class="p">,</span> <span class="n">found</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span>    <span class="k">subroutine </span><span class="n">assign_string_to_json_file</span><span class="p">(</span><span class="n">me</span><span class="p">,</span><span class="n">str</span><span class="p">)</span>
 
     <span class="k">implicit none</span>
 
-<span class="k">    class</span><span class="p">(</span><span class="n">json_file</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span>                    <span class="kd">::</span> <span class="n">me</span>
-    <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>               <span class="kd">::</span> <span class="n">path</span>  <span class="c">!! the path to the variable</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">vec</span>   <span class="c">!! the value vector</span>
-    <span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span>                  <span class="kd">::</span> <span class="n">found</span> <span class="c">!! if it was really found</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">real32</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span>     <span class="kd">::</span> <span class="n">default</span>
+<span class="k">    class</span><span class="p">(</span><span class="n">json_file</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">me</span>
+    <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">str</span>
 
-    <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">core</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">p</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">vec</span><span class="p">,</span> <span class="n">found</span><span class="p">,</span> <span class="n">default</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">p</span><span class="p">))</span> <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">destroy</span><span class="p">()</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">core</span><span class="p">%</span><span class="n">failed</span><span class="p">())</span> <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">core</span><span class="p">%</span><span class="n">clear_exceptions</span><span class="p">()</span>
+    <span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">deserialize</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
 
-    <span class="k">end subroutine </span><span class="n">json_file_get_real32_vec</span>
+    <span class="k">end subroutine </span><span class="n">assign_string_to_json_file</span>
 </pre></div>
 
     </section>
