@@ -10,7 +10,7 @@
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../../favicon.png">
 
-    <title>deploy.sh &ndash; JSON-Fortran</title>
+    <title>CI.yml &ndash; JSON-Fortran</title>
 
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <link href="../../css/pygments.css" rel="stylesheet">
@@ -113,7 +113,7 @@
     <div class="container">
     
   <div class="row">
-    <h1>deploy.sh</h1>
+    <h1>CI.yml</h1>
     <div class="row">
     <div class="col-lg-12">
     <div class="well well-sm" style="min-height: 40px;">
@@ -130,7 +130,7 @@
       
          <li><a href='../../page/development-resources/index.html'>Development Resources</a></li>
       
-         <li class="active">deploy.sh</li>
+         <li class="active">CI.yml</li>
       </ol>
     </div>
     </div>
@@ -139,46 +139,11 @@
   
   <div class="row">
     <div class="col-md-9 col-md-push-3" id='text'>
-      <p>This is the script that deploys the automatically generated
-<a href="https://github.com/cmacmackin/FORD">FORD</a> documentation which you are
-currently reading.</p>
-<div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-<span class="c1"># Script to deploy documentation after successful build of master branch or tag</span>
-<span class="c1"># If running under travis-ci this will automatically deploy updates to the master branch&#39;s</span>
-<span class="c1"># documentation on build events for the master branch, and will add/update documentation for</span>
-<span class="c1"># any new/updated tags that are pushed.</span>
-<span class="nb">set</span> -o errexit
-<span class="nb">set</span> -o verbose
-<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$TRAVIS</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="c1">#running under travis</span>
-    <span class="k">if</span> <span class="nv">$TRAVIS_SECURE_ENV_VARS</span> <span class="p">;</span> <span class="k">then</span>
-    <span class="c1"># only try to update master&#39;s development documentation</span>
-    <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$TRAVIS_BRANCH</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;master&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
-           <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$TRAVIS_PULL_REQUEST</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;false&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
-           <span class="o">[</span> <span class="s2">&quot;</span><span class="k">$(</span>ls -A <span class="s2">&quot;</span><span class="nv">$TRAVIS_BUILD_DIR</span><span class="s2">/doc&quot;</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span> <span class="c1">#not empty</span>
-            git clone -q --branch<span class="o">=</span>gh-pages <span class="s2">&quot;https://</span><span class="si">${</span><span class="nv">GH_TOKEN</span><span class="si">}</span><span class="s2">@github.com/</span><span class="nv">$TRAVIS_REPO_SLUG</span><span class="s2">&quot;</span> gh-pages &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
-            <span class="nb">cd</span> gh-pages <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
-        rm -rf -- css fonts interface lists module proc search.html src <span class="nb">type</span> favicon.png index.html <span class="se">\</span>
-           js media page program sourcefile tipuesearch <span class="o">||</span> <span class="nb">true</span>
-        cp -r <span class="s2">&quot;</span><span class="nv">$TRAVIS_BUILD_DIR</span><span class="s2">&quot;</span>/doc/* .
-            git add -A <span class="o">||</span> <span class="nb">true</span> <span class="c1"># Add all the new files</span>
-            git commit -m <span class="s2">&quot;Development documentation updated by travis job </span><span class="nv">$TRAVIS_JOB_NUMBER</span><span class="s2"> for commits </span><span class="nv">$TRAVIS_COMMIT_RANGE</span><span class="s2">&quot;</span> <span class="o">||</span> <span class="nb">true</span>
-            git push -fq origin gh-pages &gt; /dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="o">||</span> <span class="nb">true</span>
-    <span class="k">fi</span>
-    <span class="c1"># If publishing a new/updated tag, deploy its documentation</span>
-    <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$TRAVIS_TAG</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="k">$(</span>ls -A <span class="s2">&quot;</span><span class="nv">$TRAVIS_BUILD_DIR</span><span class="s2">/doc&quot;</span><span class="k">)</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span> <span class="c1">#not empty</span>
-        <span class="nb">cd</span> <span class="s2">&quot;</span><span class="nv">$TRAVIS_BUILD_DIR</span><span class="s2">&quot;</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
-        git clone -q --branch<span class="o">=</span>gh-pages <span class="s2">&quot;https://</span><span class="si">${</span><span class="nv">GH_TOKEN</span><span class="si">}</span><span class="s2">@github.com/</span><span class="nv">$TRAVIS_REPO_SLUG</span><span class="s2">&quot;</span> gh-pages &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
-        sed <span class="s2">&quot;2 s/^/version: </span><span class="si">${</span><span class="nv">TRAVIS_TAG</span><span class="si">}</span><span class="s2">\n/&quot;</span> json-fortran.md &gt; json-fortran.tagged.md
-        head json-fortran.tagged.md <span class="c1"># Debug output</span>
-        <span class="c1"># rebuild FORD documentation without pages, with version info, wiping out any existing tag folder</span>
-        ford --debug -o <span class="s2">&quot;gh-pages/</span><span class="nv">$TRAVIS_TAG</span><span class="s2">&quot;</span> json-fortran.tagged.md
-        <span class="nb">cd</span> gh-pages <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
-        git add -A <span class="c1"># add all new files in $TRAVIS_TAG/</span>
-        git commit -m <span class="s2">&quot;Tag/release documentation updated by travis job </span><span class="nv">$TRAVIS_JOB_NUMBER</span><span class="s2"> for tag </span><span class="nv">$TRAVIS_TAG</span><span class="s2"> </span><span class="nv">$TRAVIS_COMMIT</span><span class="s2">&quot;</span>
-        git push -f -q origin gh-pages &gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
-    <span class="k">fi</span>
-    <span class="k">fi</span>
-<span class="k">fi</span>
+      <p>This is the
+<a href="https://github.com/jacobwilliams/json-fortran/actions">GitHub Actions</a> script
+used to perform continuous integration testing for <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran, and
+trigger automatic documentation deployment.</p>
+<div class="codehilite"><pre><span></span><code>
 </code></pre></div>
 
 <div class="footnote">
@@ -213,6 +178,11 @@ browser&rsquo;s back button to navigate back to
             
             <ul class="nav nav-stacked nav-pills">
               
+            <li role="presentation" class="disabled">
+            <a href='../../page/development-resources/CI.yml.html'>CI.yml</a>
+            
+            </li>
+            
             <li role="presentation">
             <a href='../../page/development-resources/CONTRIBUTING.html'>Contributing Guidelines</a>
             
@@ -233,11 +203,6 @@ browser&rsquo;s back button to navigate back to
             
             </li>
             
-            <li role="presentation" class="disabled">
-            <a href='../../page/development-resources/deploy.sh.html'>deploy.sh</a>
-            
-            </li>
-            
             <li role="presentation">
             <a href='../../page/development-resources/gccr.pl.html'>gccr.pl</a>
             
@@ -250,11 +215,6 @@ browser&rsquo;s back button to navigate back to
             
             <li role="presentation">
             <a href='../../page/development-resources/release-checklist.html'>Release Checklist</a>
-            
-            </li>
-            
-            <li role="presentation">
-            <a href='../../page/development-resources/travis.yml.html'>.travis.yml</a>
             
             </li>
             
@@ -284,7 +244,7 @@ browser&rsquo;s back button to navigate back to
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2021-01-02 17:06  
+             on 2021-06-05 14:39  
           </p>
         </div>
         <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> JSON-Fortran was developed by Jacob Williams</p></div>
