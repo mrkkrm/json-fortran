@@ -74,8 +74,11 @@
                
             <li><a href="../lists/types.html">Derived Types</a></li>
         
+               
+        
         
             </ul>
+        
             </li>
 
 
@@ -93,6 +96,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
 
 
           </ul>
@@ -127,12 +132,13 @@
      
      
      
+     
     
     
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>67.0% of total for derived types.</p>Including implementation: 8751 statements, 82.2% of total for derived types.">220 statements</a>
+    title="<p>67.0% of total for derived types.</p>Including implementation: 8745 statements, 82.2% of total for derived types.">220 statements</a>
      </li> 
      
      
@@ -601,7 +607,7 @@
       
       <a class="list-group-item" href="../type/json_core.html#boundprocedure-rename">rename</a>
       
-      <a class="list-group-item" href="../type/json_core.html#boundprocedure-rename~2">rename</a>
+      <a class="list-group-item" href="../type/json_core.html#boundprocedure-rename~3">rename</a>
       
       <a class="list-group-item" href="../type/json_core.html#boundprocedure-replace">replace</a>
       
@@ -1318,7 +1324,7 @@
       
       <a class="list-group-item" href="../type/json_core.html#boundprocedure-rename">rename</a>
       
-      <a class="list-group-item" href="../type/json_core.html#boundprocedure-rename~2">rename</a>
+      <a class="list-group-item" href="../type/json_core.html#boundprocedure-rename~3">rename</a>
       
       <a class="list-group-item" href="../type/json_core.html#boundprocedure-replace">replace</a>
       
@@ -2079,6 +2085,7 @@ private function <a href='../proc/initialize_json_core.html'>initialize_json_cor
     
     
     
+    
   </dl>
 
 
@@ -2291,7 +2298,14 @@ private function <a href='../proc/initialize_json_core.html'>initialize_json_cor
   
   <td></td><td>::</td>
   <td><strong>path_mode</strong></td><td><p>How the path strings are interpreted in the
- <code>get_by_path</code> routines:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ <code>get_by_path</code> routines:</p>
+<ul>
+<li>1 : Default mode (see <a href="../proc/json_get_by_path_default.html">json_get_by_path_default</a>)</li>
+<li>2 : as RFC 6901 &ldquo;<abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> Pointer&rdquo; paths
+   (see <a href="../proc/json_get_by_path_rfc6901.html">json_get_by_path_rfc6901</a>)</li>
+<li>3 : JSONPath &ldquo;bracket-notation&rdquo;
+   see <a href="../proc/json_get_by_path_jsonpath_bracket.html">json_get_by_path_jsonpath_bracket</a>)</li>
+</ul></td>
   
 </tr>
 
@@ -2362,9 +2376,14 @@ private function <a href='../proc/initialize_json_core.html'>initialize_json_cor
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>escape_solidus</strong></td><td><p>Note that this option does not affect parsing
+  <td><strong>escape_solidus</strong></td><td><ul>
+<li>If True then the solidus &ldquo;<code>/</code>&rdquo; is always escaped
+   &ldquo;<code>\/</code>&rdquo; when serializing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr></li>
+<li>If False [default], then it is not escaped.</li>
+</ul>
+<p>Note that this option does not affect parsing
  (both escaped and unescaped are still valid in
- all cases).</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ all cases).</p></td>
   
 </tr>
 
@@ -2395,7 +2414,15 @@ private function <a href='../proc/initialize_json_core.html'>initialize_json_cor
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p>
+<ul>
+<li>1 : an exception will be raised if
+   try to retrieve a <code>null</code> as a real.</li>
+<li>2 : a <code>null</code> retrieved as a real
+   will return a NaN. [default]</li>
+<li>3 : a <code>null</code> retrieved as a real
+   will return 0.0.</li>
+</ul></td>
   
 </tr>
 
@@ -2411,7 +2438,12 @@ private function <a href='../proc/initialize_json_core.html'>initialize_json_cor
   
   <td></td><td>::</td>
   <td><strong>non_normal_mode</strong></td><td><p>How to serialize NaN, Infinity, and
- -Infinity real values:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ -Infinity real values:</p>
+<ul>
+<li>1 : as strings (e.g., &ldquo;NaN&rdquo;,
+   &ldquo;Infinity&rdquo;, &ldquo;-Infinity&rdquo;) [default]</li>
+<li>2 : as <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> <code>null</code> values</li>
+</ul></td>
   
 </tr>
 
@@ -2441,7 +2473,15 @@ private function <a href='../proc/initialize_json_core.html'>initialize_json_cor
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>strict_integer_type_checking</strong></td><td><p>(default is true)</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>strict_integer_type_checking</strong></td><td><ul>
+<li>If false, when parsing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>, if an integer numeric value
+   cannot be converted to an integer (<code>integer(IK)</code>),
+   then an attempt is then make to convert it
+   to a real (<code>real(RK)</code>).</li>
+<li>If true, an exception will be raised if the integer
+   value cannot be read.</li>
+</ul>
+<p>(default is true)</p></td>
   
 </tr>
 
@@ -2793,6 +2833,7 @@ private subroutine <a href='../proc/json_value_add_integer.html'>json_value_add_
     
     
     
+    
   </dl>
 
 
@@ -3011,6 +3052,7 @@ private subroutine <a href='../proc/json_value_add_integer_vec.html'>json_value_
     
     
     <dt>Date</dt><dd>1/20/2014</dd>
+    
     
     
     
@@ -3657,6 +3699,7 @@ private subroutine <a href='../proc/json_value_add_real.html'>json_value_add_rea
     
     
     
+    
   </dl>
 
 
@@ -3875,6 +3918,7 @@ private subroutine <a href='../proc/json_value_add_real_vec.html'>json_value_add
     
     
     <dt>Date</dt><dd>1/20/2014</dd>
+    
     
     
     
@@ -4101,6 +4145,7 @@ private subroutine <a href='../proc/json_value_add_logical.html'>json_value_add_
     
     
     
+    
   </dl>
 
 
@@ -4323,6 +4368,7 @@ private subroutine <a href='../proc/json_value_add_logical_vec.html'>json_value_
     
     
     
+    
   </dl>
 
 
@@ -4541,6 +4587,7 @@ private subroutine <a href='../proc/json_value_add_string.html'>json_value_add_s
     
     
     <dt>Date</dt><dd>1/19/2014</dd>
+    
     
     
     
@@ -4823,6 +4870,7 @@ private subroutine <a href='../proc/json_value_add_string_vec.html'>json_value_a
     
     
     <dt>Date</dt><dd>1/19/2014</dd>
+    
     
     
     
@@ -9660,6 +9708,7 @@ private subroutine <a href='../proc/json_check_children_for_duplicate_keys.html'
     
     
     
+    
   </dl>
 
 
@@ -9817,6 +9866,7 @@ private subroutine <a href='../proc/json_check_all_for_duplicate_keys.html'>json
     
     
     <dt>Date</dt><dd>8/25/2017</dd>
+    
     
     
     
@@ -9984,6 +10034,7 @@ private subroutine <a href='../proc/json_check_for_errors.html'>json_check_for_e
     
     
     
+    
   </dl>
 
 
@@ -10110,6 +10161,7 @@ private pure subroutine <a href='../proc/json_clear_exceptions.html'>json_clear_
     
     
     
+    
   </dl>
 
 
@@ -10197,6 +10249,7 @@ private subroutine <a href='../proc/json_clone.html'>json_clone</a>(json, from, 
     
     
     <dt>Date</dt><dd>10/31/2015</dd>
+    
     
     
     
@@ -10840,6 +10893,7 @@ private subroutine <a href='../proc/json_value_create_array.html'>json_value_cre
     
     
     
+    
   </dl>
 
 
@@ -10936,6 +10990,7 @@ private subroutine <a href='../proc/wrap_json_value_create_array.html'>wrap_json
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Izaak Beekman</dd>
+    
     
     
     
@@ -11063,6 +11118,7 @@ private subroutine <a href='../proc/json_value_create_real.html'>json_value_crea
     
     
     
+    
   </dl>
 
 
@@ -11174,6 +11230,7 @@ private subroutine <a href='../proc/wrap_json_value_create_real.html'>wrap_json_
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Izaak Beekman</dd>
+    
     
     
     
@@ -11543,6 +11600,7 @@ private subroutine <a href='../proc/json_value_create_integer.html'>json_value_c
     
     
     
+    
   </dl>
 
 
@@ -11654,6 +11712,7 @@ private subroutine <a href='../proc/wrap_json_value_create_integer.html'>wrap_js
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Izaak Beekman</dd>
+    
     
     
     
@@ -11801,6 +11860,7 @@ private subroutine <a href='../proc/json_value_create_logical.html'>json_value_c
     
     
     
+    
   </dl>
 
 
@@ -11912,6 +11972,7 @@ private subroutine <a href='../proc/wrap_json_value_create_logical.html'>wrap_js
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Izaak Beekman</dd>
+    
     
     
     
@@ -12058,6 +12119,7 @@ private subroutine <a href='../proc/json_value_create_null.html'>json_value_crea
     
     
     
+    
   </dl>
 
 
@@ -12154,6 +12216,7 @@ private subroutine <a href='../proc/wrap_json_value_create_null.html'>wrap_json_
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Izaak Beekman</dd>
+    
     
     
     
@@ -12289,6 +12352,7 @@ private subroutine <a href='../proc/json_value_create_object.html'>json_value_cr
     
     
     
+    
   </dl>
 
 
@@ -12385,6 +12449,7 @@ private subroutine <a href='../proc/wrap_json_value_create_object.html'>wrap_jso
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Izaak Beekman</dd>
+    
     
     
     
@@ -12523,6 +12588,7 @@ private subroutine <a href='../proc/json_value_create_real.html'>json_value_crea
     
     
     
+    
   </dl>
 
 
@@ -12634,6 +12700,7 @@ private subroutine <a href='../proc/wrap_json_value_create_real.html'>wrap_json_
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Izaak Beekman</dd>
+    
     
     
     
@@ -13003,6 +13070,7 @@ private subroutine <a href='../proc/json_value_create_string.html'>json_value_cr
     
     
     
+    
   </dl>
 
 
@@ -13144,6 +13212,7 @@ private subroutine <a href='../proc/wrap_json_value_create_string.html'>wrap_jso
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Izaak Beekman</dd>
+    
     
     
     
@@ -13548,6 +13617,7 @@ private pure recursive subroutine <a href='../proc/json_value_destroy.html'>json
     
     
     
+    
   </dl>
 
 
@@ -13651,6 +13721,7 @@ private subroutine <a href='../proc/destroy_json_core.html'>destroy_json_core</a
     
     
     
+    
   </dl>
 
 
@@ -13731,6 +13802,7 @@ private subroutine <a href='../proc/destroy_json_core.html'>destroy_json_core</a
     
     
     <dt>Date</dt><dd>4/17/2016</dd>
+    
     
     
     
@@ -13822,6 +13894,7 @@ private pure function <a href='../proc/json_failed.html'>json_failed</a>(json) r
     
     
     <dt>Date</dt><dd>12/5/2013</dd>
+    
     
     
     
@@ -14528,6 +14601,7 @@ private subroutine <a href='../proc/json_get_integer_vec.html'>json_get_integer_
     
     
     <dt>Date</dt><dd>5/14/2014</dd>
+    
     
     
     
@@ -15984,6 +16058,7 @@ private subroutine <a href='../proc/json_get_real_vec.html'>json_get_real_vec</a
     
     
     
+    
   </dl>
 
 
@@ -16712,6 +16787,7 @@ private subroutine <a href='../proc/json_get_logical_vec.html'>json_get_logical_
     
     
     <dt>Date</dt><dd>5/14/2014</dd>
+    
     
     
     
@@ -17448,6 +17524,7 @@ private subroutine <a href='../proc/json_get_string_vec.html'>json_get_string_ve
     
     
     
+    
   </dl>
 
 
@@ -17816,6 +17893,7 @@ private subroutine <a href='../proc/json_get_alloc_string_vec.html'>json_get_all
     
     
     <dt>Date</dt><dd>12/16/2016</dd>
+    
     
     
     
@@ -19103,6 +19181,7 @@ private subroutine <a href='../proc/get_current_line_from_file_sequential.html'>
     
     
     
+    
   </dl>
 
 
@@ -19197,6 +19276,7 @@ private subroutine <a href='../proc/get_current_line_from_file_stream.html'>get_
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -19325,6 +19405,7 @@ private subroutine <a href='../proc/json_get_next.html'>json_get_next</a>(json, 
     
     
     
+    
   </dl>
 
 
@@ -19443,6 +19524,7 @@ private subroutine <a href='../proc/json_get_parent.html'>json_get_parent</a>(js
     
     
     <dt>Date</dt><dd>10/16/2015</dd>
+    
     
     
     
@@ -19866,6 +19948,7 @@ private subroutine <a href='../proc/json_get_previous.html'>json_get_previous</a
     
     
     
+    
   </dl>
 
 
@@ -19984,6 +20067,7 @@ private subroutine <a href='../proc/json_get_tail.html'>json_get_tail</a>(json, 
     
     
     <dt>Date</dt><dd>10/31/2015</dd>
+    
     
     
     
@@ -20107,6 +20191,7 @@ private subroutine <a href='../proc/json_info.html'>json_info</a>(json, p, var_t
     
     
     <dt>Date</dt><dd>2/13/2014</dd>
+    
     
     
     
@@ -20554,6 +20639,7 @@ private subroutine <a href='../proc/json_initialize.html'>json_initialize</a>(me
     
     
     
+    
   </dl>
 
 
@@ -20780,7 +20866,14 @@ private subroutine <a href='../proc/json_initialize.html'>json_initialize</a>(me
   
   <td></td><td>::</td>
   <td><strong>path_mode</strong></td><td><p>How the path strings are interpreted in the
- <code>get_by_path</code> routines:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ <code>get_by_path</code> routines:</p>
+<ul>
+<li>1 : Default mode (see <a href="../proc/json_get_by_path_default.html">json_get_by_path_default</a>)</li>
+<li>2 : as RFC 6901 &ldquo;<abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> Pointer&rdquo; paths
+   (see <a href="../proc/json_get_by_path_rfc6901.html">json_get_by_path_rfc6901</a>)</li>
+<li>3 : JSONPath &ldquo;bracket-notation&rdquo;
+   see <a href="../proc/json_get_by_path_jsonpath_bracket.html">json_get_by_path_jsonpath_bracket</a>)</li>
+</ul></td>
   
 </tr>
 
@@ -20851,9 +20944,14 @@ private subroutine <a href='../proc/json_initialize.html'>json_initialize</a>(me
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>escape_solidus</strong></td><td><p>Note that this option does not affect parsing
+  <td><strong>escape_solidus</strong></td><td><ul>
+<li>If True then the solidus &ldquo;<code>/</code>&rdquo; is always escaped
+   &ldquo;<code>\/</code>&rdquo; when serializing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr></li>
+<li>If False [default], then it is not escaped.</li>
+</ul>
+<p>Note that this option does not affect parsing
  (both escaped and unescaped are still valid in
- all cases).</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ all cases).</p></td>
   
 </tr>
 
@@ -20884,7 +20982,15 @@ private subroutine <a href='../proc/json_initialize.html'>json_initialize</a>(me
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p>
+<ul>
+<li>1 : an exception will be raised if
+   try to retrieve a <code>null</code> as a real.</li>
+<li>2 : a <code>null</code> retrieved as a real
+   will return a NaN. [default]</li>
+<li>3 : a <code>null</code> retrieved as a real
+   will return 0.0.</li>
+</ul></td>
   
 </tr>
 
@@ -20900,7 +21006,12 @@ private subroutine <a href='../proc/json_initialize.html'>json_initialize</a>(me
   
   <td></td><td>::</td>
   <td><strong>non_normal_mode</strong></td><td><p>How to serialize NaN, Infinity, and
- -Infinity real values:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ -Infinity real values:</p>
+<ul>
+<li>1 : as strings (e.g., &ldquo;NaN&rdquo;,
+   &ldquo;Infinity&rdquo;, &ldquo;-Infinity&rdquo;) [default]</li>
+<li>2 : as <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> <code>null</code> values</li>
+</ul></td>
   
 </tr>
 
@@ -20930,7 +21041,15 @@ private subroutine <a href='../proc/json_initialize.html'>json_initialize</a>(me
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>strict_integer_type_checking</strong></td><td><p>(default is true)</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>strict_integer_type_checking</strong></td><td><ul>
+<li>If false, when parsing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>, if an integer numeric value
+   cannot be converted to an integer (<code>integer(IK)</code>),
+   then an attempt is then make to convert it
+   to a real (<code>real(RK)</code>).</li>
+<li>If true, an exception will be raised if the integer
+   value cannot be read.</li>
+</ul>
+<p>(default is true)</p></td>
   
 </tr>
 
@@ -21210,6 +21329,7 @@ private function <a href='../proc/json_value_is_child_of.html'>json_value_is_chi
     
     
     <dt>Date</dt><dd>4/28/2016</dd>
+    
     
     
     
@@ -24027,6 +24147,7 @@ private subroutine <a href='../proc/json_get_alloc_string_vec.html'>json_get_all
     
     
     
+    
   </dl>
 
 
@@ -24881,6 +25002,7 @@ private subroutine <a href='../proc/json_get_by_path_jsonpath_bracket.html'>json
     
     
     
+    
   </dl>
 
 
@@ -25063,6 +25185,7 @@ private subroutine <a href='../proc/json_get_by_path_rfc6901.html'>json_get_by_p
     
     
     <dt>Date</dt><dd>2/4/2017</dd>
+    
     
     
     
@@ -25459,6 +25582,7 @@ private subroutine <a href='../proc/json_get_integer_vec.html'>json_get_integer_
     
     
     <dt>Date</dt><dd>5/14/2014</dd>
+    
     
     
     
@@ -25969,6 +26093,7 @@ private subroutine <a href='../proc/json_get_logical_vec.html'>json_get_logical_
     
     
     <dt>Date</dt><dd>5/14/2014</dd>
+    
     
     
     
@@ -27133,6 +27258,7 @@ private subroutine <a href='../proc/json_get_real_vec.html'>json_get_real_vec</a
     
     
     
+    
   </dl>
 
 
@@ -27643,6 +27769,7 @@ private subroutine <a href='../proc/json_get_string_vec.html'>json_get_string_ve
     
     
     
+    
   </dl>
 
 
@@ -27900,6 +28027,7 @@ private subroutine <a href='../proc/json_info.html'>json_info</a>(json, p, var_t
     
     
     <dt>Date</dt><dd>2/13/2014</dd>
+    
     
     
     
@@ -28198,6 +28326,7 @@ private subroutine <a href='../proc/json_matrix_info.html'>json_matrix_info</a>(
     
     
     <dt>Date</dt><dd>10/16/2015</dd>
+    
     
     
     
@@ -28882,6 +29011,7 @@ private subroutine <a href='../proc/json_print_to_filename.html'>json_print_to_f
     
     
     
+    
   </dl>
 
 
@@ -28993,6 +29123,7 @@ private subroutine <a href='../proc/json_print_to_unit.html'>json_print_to_unit<
     
     
     <dt>Date</dt><dd>6/20/2014</dd>
+    
     
     
     
@@ -29508,6 +29639,7 @@ private subroutine <a href='../proc/json_string_info.html'>json_string_info</a>(
     
     
     
+    
   </dl>
 
 
@@ -29664,6 +29796,7 @@ private subroutine <a href='../proc/json_throw_exception.html'>json_throw_except
     
     
     
+    
   </dl>
 
 
@@ -29779,6 +29912,7 @@ private subroutine <a href='../proc/json_update_integer.html'>json_update_intege
     
     
     <dt>Date</dt><dd>12/6/2014</dd>
+    
     
     
     
@@ -29929,6 +30063,7 @@ private subroutine <a href='../proc/json_update_logical.html'>json_update_logica
     
     
     
+    
   </dl>
 
 
@@ -30071,6 +30206,7 @@ private subroutine <a href='../proc/json_update_real.html'>json_update_real</a>(
     
     
     <dt>Date</dt><dd>12/6/2014</dd>
+    
     
     
     
@@ -30349,6 +30485,7 @@ private subroutine <a href='../proc/json_update_string.html'>json_update_string<
     
     
     <dt>Date</dt><dd>12/6/2014</dd>
+    
     
     
     
@@ -30973,6 +31110,7 @@ private subroutine <a href='../proc/json_value_add_integer.html'>json_value_add_
     
     
     
+    
   </dl>
 
 
@@ -31098,6 +31236,7 @@ private subroutine <a href='../proc/json_value_add_integer_vec.html'>json_value_
     
     
     <dt>Date</dt><dd>1/20/2014</dd>
+    
     
     
     
@@ -31231,6 +31370,7 @@ private subroutine <a href='../proc/json_value_add_logical.html'>json_value_add_
     
     
     
+    
   </dl>
 
 
@@ -31356,6 +31496,7 @@ private subroutine <a href='../proc/json_value_add_logical_vec.html'>json_value_
     
     
     <dt>Date</dt><dd>1/20/2014</dd>
+    
     
     
     
@@ -31691,6 +31832,7 @@ private subroutine <a href='../proc/json_value_add_real.html'>json_value_add_rea
     
     
     <dt>Date</dt><dd>1/19/2014</dd>
+    
     
     
     
@@ -32058,6 +32200,7 @@ private subroutine <a href='../proc/json_value_add_real_vec.html'>json_value_add
     
     
     
+    
   </dl>
 
 
@@ -32183,6 +32326,7 @@ private subroutine <a href='../proc/json_value_add_string.html'>json_value_add_s
     
     
     <dt>Date</dt><dd>1/19/2014</dd>
+    
     
     
     
@@ -32640,6 +32784,7 @@ private subroutine <a href='../proc/json_value_add_string_vec.html'>json_value_a
     
     
     
+    
   </dl>
 
 
@@ -33072,7 +33217,7 @@ private subroutine <a href='../proc/json_value_add_string_vec_val_ascii.html'>js
           
     
     <h3>
-private recursive subroutine <a href='../proc/json_value_clone_func.html'>json_value_clone_func</a>(from, to, parent, previous, next, children, tail)
+private recursive subroutine <a href='../proc/json_value_clone_func.html'>json_value_clone_func</a>(from, to, parent, previous, tail)
     
     
    
@@ -33089,6 +33234,7 @@ private recursive subroutine <a href='../proc/json_value_clone_func.html'>json_v
     
     
     <dt>Date</dt><dd>10/31/2015</dd>
+    
     
     
     
@@ -33179,36 +33325,6 @@ private recursive subroutine <a href='../proc/json_value_clone_func.html'>json_v
   
 <tr>
   
-  <td><span class="anchor" ></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-  <td></td>
-  <td>optional</td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>next</strong></td><td><p>to%next</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
-  <td><span class="anchor" ></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-  <td></td>
-  <td>optional</td>
-  
-  <td>pointer</td><td>::</td>
-  <td><strong>children</strong></td><td><p>to%children</p></td>
-  
-</tr>
-
-  
-  
-  
-  
-<tr>
-  
   <td><span class="anchor" ></span>logical,</td>
   <td></td>
   <td>optional</td>
@@ -33262,6 +33378,7 @@ private subroutine <a href='../proc/json_value_create_array.html'>json_value_cre
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -33375,6 +33492,7 @@ private subroutine <a href='../proc/json_value_create_integer.html'>json_value_c
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -33508,6 +33626,7 @@ private subroutine <a href='../proc/json_value_create_logical.html'>json_value_c
     
     
     
+    
   </dl>
 
 
@@ -33636,6 +33755,7 @@ private subroutine <a href='../proc/json_value_create_null.html'>json_value_crea
     
     
     
+    
   </dl>
 
 
@@ -33749,6 +33869,7 @@ private subroutine <a href='../proc/json_value_create_object.html'>json_value_cr
     
     
     
+    
   </dl>
 
 
@@ -33857,6 +33978,7 @@ private subroutine <a href='../proc/json_value_create_real.html'>json_value_crea
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -34107,6 +34229,7 @@ private subroutine <a href='../proc/json_value_create_string.html'>json_value_cr
     
     
     
+    
   </dl>
 
 
@@ -34263,6 +34386,7 @@ private pure recursive subroutine <a href='../proc/json_value_destroy.html'>json
     
     
     <dt>Date</dt><dd>1/22/2014</dd>
+    
     
     
     
@@ -35201,6 +35325,7 @@ private subroutine <a href='../proc/json_value_remove_if_present.html'>json_valu
     
     
     
+    
   </dl>
 
 
@@ -35312,6 +35437,7 @@ private subroutine <a href='../proc/json_value_rename.html'>json_value_rename</a
     
     
     <dt>Date</dt><dd>4/29/2016</dd>
+    
     
     
     
@@ -35557,6 +35683,7 @@ private subroutine <a href='../proc/json_matrix_info.html'>json_matrix_info</a>(
     
     
     <dt>Date</dt><dd>10/16/2015</dd>
+    
     
     
     
@@ -36105,6 +36232,7 @@ private function <a href='../proc/name_equal.html'>name_equal</a>(json, p, name)
     
     
     
+    
   </dl>
 
 
@@ -36226,6 +36354,7 @@ private function <a href='../proc/name_strings_equal.html'>name_strings_equal</a
     
     
     <dt>Date</dt><dd>8/25/2017</dd>
+    
     
     
     
@@ -36994,6 +37123,7 @@ private subroutine <a href='../proc/parse_number.html'>parse_number</a>(json, un
     
     
     <dt>Date</dt><dd>1/20/2014</dd>
+    
     
     
     
@@ -37810,6 +37940,7 @@ private subroutine <a href='../proc/json_print_to_unit.html'>json_print_to_unit<
     
     
     
+    
   </dl>
 
 
@@ -37909,6 +38040,7 @@ private subroutine <a href='../proc/json_print_to_filename.html'>json_print_to_f
     
     
     <dt>Date</dt><dd>12/23/2014</dd>
+    
     
     
     
@@ -38034,6 +38166,7 @@ private subroutine <a href='../proc/json_print_error_message.html'>json_print_er
     
     
     
+    
   </dl>
 
 
@@ -38137,6 +38270,7 @@ private subroutine <a href='../proc/json_value_to_string.html'>json_value_to_str
     
     
     <dt>Date</dt><dd>2/12/2014</dd>
+    
     
     
     
@@ -38350,6 +38484,7 @@ private subroutine <a href='../proc/json_value_remove.html'>json_value_remove</a
     
     
     
+    
   </dl>
 
 
@@ -38411,7 +38546,12 @@ private subroutine <a href='../proc/json_value_remove.html'>json_value_remove</a
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>destroy</strong></td><td><p>Option to destroy <code>p</code> after it is removed:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>destroy</strong></td><td><p>Option to destroy <code>p</code> after it is removed:</p>
+<ul>
+<li>If <code>destroy</code> is not present, it is also destroyed.</li>
+<li>If <code>destroy</code> is present and true, it is destroyed.</li>
+<li>If <code>destroy</code> is present and false, it is not destroyed.</li>
+</ul></td>
   
 </tr>
 
@@ -38468,6 +38608,7 @@ private subroutine <a href='../proc/json_value_remove_if_present.html'>json_valu
     
     
     <dt>Date</dt><dd>12/6/2014</dd>
+    
     
     
     
@@ -38684,6 +38825,7 @@ private subroutine <a href='../proc/json_value_rename.html'>json_value_rename</a
     
     
     
+    
   </dl>
 
 
@@ -38782,6 +38924,7 @@ private subroutine <a href='../proc/wrap_json_value_rename.html'>wrap_json_value
     
     
     <dt>Date</dt><dd>4/29/2016</dd>
+    
     
     
     
@@ -39107,7 +39250,7 @@ private subroutine <a href='../proc/wrap_json_rename_by_path.html'>wrap_json_ren
     
      
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-rename~2"></span><h3>generic, public :: <strong>rename</strong>  => <a href='../type/json_core.html#boundprocedure-json_rename_by_path_name_ascii'>json_rename_by_path_name_ascii</a>, <a href='../type/json_core.html#boundprocedure-json_rename_by_path_path_ascii'>json_rename_by_path_path_ascii</a> 
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-rename~3"></span><h3>generic, public :: <strong>rename</strong>  => <a href='../type/json_core.html#boundprocedure-json_rename_by_path_name_ascii'>json_rename_by_path_name_ascii</a>, <a href='../type/json_core.html#boundprocedure-json_rename_by_path_path_ascii'>json_rename_by_path_path_ascii</a> 
     
   </h3></div>
   
@@ -39528,6 +39671,7 @@ private subroutine <a href='../proc/json_value_reverse.html'>json_value_reverse<
     
     
     
+    
   </dl>
 
 
@@ -39630,6 +39774,7 @@ private subroutine <a href='../proc/json_value_to_string.html'>json_value_to_str
     
     
     <dt>Date</dt><dd>2/12/2014</dd>
+    
     
     
     
@@ -39751,6 +39896,7 @@ private subroutine <a href='../proc/json_string_info.html'>json_string_info</a>(
     
     
     <dt>Date</dt><dd>12/18/2016</dd>
+    
     
     
     
@@ -40112,6 +40258,7 @@ private subroutine <a href='../proc/json_value_swap.html'>json_value_swap</a>(js
     
     
     
+    
   </dl>
 
 
@@ -40230,6 +40377,7 @@ private subroutine <a href='../proc/json_throw_exception.html'>json_throw_except
     
     
     <dt>Date</dt><dd>12/4/2013</dd>
+    
     
     
     
@@ -40444,6 +40592,7 @@ private subroutine <a href='../proc/to_array.html'>to_array</a>(json, p, name)
     
     
     
+    
   </dl>
 
 
@@ -40551,6 +40700,7 @@ private subroutine <a href='../proc/to_integer.html'>to_integer</a>(json, p, val
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -40684,6 +40834,7 @@ private subroutine <a href='../proc/to_logical.html'>to_logical</a>(json, p, val
     
     
     
+    
   </dl>
 
 
@@ -40812,6 +40963,7 @@ private subroutine <a href='../proc/to_null.html'>to_null</a>(json, p, name)
     
     
     
+    
   </dl>
 
 
@@ -40924,6 +41076,7 @@ private subroutine <a href='../proc/to_object.html'>to_object</a>(json, p, name)
     
     
     
+    
   </dl>
 
 
@@ -41031,6 +41184,7 @@ private subroutine <a href='../proc/to_real.html'>to_real</a>(json, p, val, name
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -41159,6 +41313,7 @@ private subroutine <a href='../proc/to_string.html'>to_string</a>(json, p, val, 
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -41335,6 +41490,7 @@ private subroutine <a href='../proc/json_traverse.html'>json_traverse</a>(json, 
     
     
     
+    
   </dl>
 
 
@@ -41468,6 +41624,7 @@ private subroutine <a href='../proc/json_update_logical.html'>json_update_logica
     
     
     <dt>Date</dt><dd>12/6/2014</dd>
+    
     
     
     
@@ -41966,6 +42123,7 @@ private subroutine <a href='../proc/json_update_real.html'>json_update_real</a>(
     
     
     
+    
   </dl>
 
 
@@ -42220,6 +42378,7 @@ private subroutine <a href='../proc/json_update_integer.html'>json_update_intege
     
     
     
+    
   </dl>
 
 
@@ -42470,6 +42629,7 @@ private subroutine <a href='../proc/json_update_string.html'>json_update_string<
     
     
     <dt>Date</dt><dd>12/6/2014</dd>
+    
     
     
     
@@ -43348,6 +43508,7 @@ private subroutine <a href='../proc/json_value_validate.html'>json_value_validat
     
     
     <dt>Date</dt><dd>5/2/2016</dd>
+    
     
     
     
@@ -50225,6 +50386,7 @@ private subroutine <a href='../proc/wrap_json_value_create_array.html'>wrap_json
     
     
     
+    
   </dl>
 
 
@@ -50334,6 +50496,7 @@ private subroutine <a href='../proc/wrap_json_value_create_integer.html'>wrap_js
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Izaak Beekman</dd>
+    
     
     
     
@@ -50468,6 +50631,7 @@ private subroutine <a href='../proc/wrap_json_value_create_logical.html'>wrap_js
     
     
     
+    
   </dl>
 
 
@@ -50596,6 +50760,7 @@ private subroutine <a href='../proc/wrap_json_value_create_null.html'>wrap_json_
     
     
     
+    
   </dl>
 
 
@@ -50710,6 +50875,7 @@ private subroutine <a href='../proc/wrap_json_value_create_object.html'>wrap_jso
     
     
     
+    
   </dl>
 
 
@@ -50819,6 +50985,7 @@ private subroutine <a href='../proc/wrap_json_value_create_real.html'>wrap_json_
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Izaak Beekman</dd>
+    
     
     
     
@@ -51065,6 +51232,7 @@ private subroutine <a href='../proc/wrap_json_value_create_string.html'>wrap_jso
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Izaak Beekman</dd>
+    
     
     
     
@@ -51461,6 +51629,7 @@ private subroutine <a href='../proc/wrap_json_value_rename.html'>wrap_json_value
     
     
     <dt>Date</dt><dd>4/29/2016</dd>
+    
     
     
     
@@ -52313,16 +52482,17 @@ private subroutine <a href='../proc/wrap_json_value_rename.html'>wrap_json_value
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
-                                          </p></div>
-        <div class="col-xs-6 col-md-4 col-md-push-4">
+        <div class="col-xs-6 col-md-6"><p>JSON-Fortran was developed by Jacob Williams<br>&copy; 2021 
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
-            <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2021-06-06 20:20  
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-08-14 15:48  
+            
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> JSON-Fortran was developed by Jacob Williams</p></div>
       </div>
       <br>
       </div> <!-- /container -->    

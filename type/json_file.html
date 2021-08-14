@@ -74,8 +74,11 @@
                
             <li><a href="../lists/types.html">Derived Types</a></li>
         
+               
+        
         
             </ul>
+        
             </li>
 
 
@@ -93,6 +96,8 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
 
 
           </ul>
@@ -128,6 +133,7 @@
      
      
     <li><i class="fa fa-calendar-o"></i> 12/9/2013</li>
+     
      
      
      
@@ -385,7 +391,7 @@
       
       <a class="list-group-item" href="../type/json_file.html#boundprocedure-remove~2">remove</a>
       
-      <a class="list-group-item" href="../type/json_file.html#boundprocedure-rename~3">rename</a>
+      <a class="list-group-item" href="../type/json_file.html#boundprocedure-rename~2">rename</a>
       
       <a class="list-group-item" href="../type/json_file.html#boundprocedure-rename~4">rename</a>
       
@@ -846,7 +852,7 @@
       
       <a class="list-group-item" href="../type/json_file.html#boundprocedure-remove~2">remove</a>
       
-      <a class="list-group-item" href="../type/json_file.html#boundprocedure-rename~3">rename</a>
+      <a class="list-group-item" href="../type/json_file.html#boundprocedure-rename~2">rename</a>
       
       <a class="list-group-item" href="../type/json_file.html#boundprocedure-rename~4">rename</a>
       
@@ -1045,6 +1051,7 @@ private function <a href='../proc/initialize_json_file.html'>initialize_json_fil
     
     
     <dt>Date</dt><dd>07/23/2015</dd>
+    
     
     
     
@@ -1278,7 +1285,14 @@ private function <a href='../proc/initialize_json_file.html'>initialize_json_fil
   
   <td></td><td>::</td>
   <td><strong>path_mode</strong></td><td><p>How the path strings are interpreted in the
- <code>get_by_path</code> routines:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ <code>get_by_path</code> routines:</p>
+<ul>
+<li>1 : Default mode (see <a href="../proc/json_get_by_path_default.html">json_get_by_path_default</a>)</li>
+<li>2 : as RFC 6901 &ldquo;<abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> Pointer&rdquo; paths
+   (see <a href="../proc/json_get_by_path_rfc6901.html">json_get_by_path_rfc6901</a>)</li>
+<li>3 : JSONPath &ldquo;bracket-notation&rdquo;
+   see <a href="../proc/json_get_by_path_jsonpath_bracket.html">json_get_by_path_jsonpath_bracket</a>)</li>
+</ul></td>
   
 </tr>
 
@@ -1349,9 +1363,14 @@ private function <a href='../proc/initialize_json_file.html'>initialize_json_fil
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>escape_solidus</strong></td><td><p>Note that this option does not affect parsing
+  <td><strong>escape_solidus</strong></td><td><ul>
+<li>If True then the solidus &ldquo;<code>/</code>&rdquo; is always escaped
+   &ldquo;<code>\/</code>&rdquo; when serializing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr></li>
+<li>If False [default], then it is not escaped.</li>
+</ul>
+<p>Note that this option does not affect parsing
  (both escaped and unescaped are still valid in
- all cases).</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ all cases).</p></td>
   
 </tr>
 
@@ -1382,7 +1401,15 @@ private function <a href='../proc/initialize_json_file.html'>initialize_json_fil
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p>
+<ul>
+<li>1 : an exception will be raised if
+   try to retrieve a <code>null</code> as a real.</li>
+<li>2 : a <code>null</code> retrieved as a real
+   will return a NaN. [default]</li>
+<li>3 : a <code>null</code> retrieved as a real
+   will return 0.0.</li>
+</ul></td>
   
 </tr>
 
@@ -1398,7 +1425,12 @@ private function <a href='../proc/initialize_json_file.html'>initialize_json_fil
   
   <td></td><td>::</td>
   <td><strong>non_normal_mode</strong></td><td><p>How to serialize NaN, Infinity, and
- -Infinity real values:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ -Infinity real values:</p>
+<ul>
+<li>1 : as strings (e.g., &ldquo;NaN&rdquo;,
+   &ldquo;Infinity&rdquo;, &ldquo;-Infinity&rdquo;) [default]</li>
+<li>2 : as <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> <code>null</code> values</li>
+</ul></td>
   
 </tr>
 
@@ -1428,7 +1460,15 @@ private function <a href='../proc/initialize_json_file.html'>initialize_json_fil
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>strict_integer_type_checking</strong></td><td><p>(default is true)</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>strict_integer_type_checking</strong></td><td><ul>
+<li>If false, when parsing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>, if an integer numeric value
+   cannot be converted to an integer (<code>integer(IK)</code>),
+   then an attempt is then make to convert it
+   to a real (<code>real(RK)</code>).</li>
+<li>If true, an exception will be raised if the integer
+   value cannot be read.</li>
+</ul>
+<p>(default is true)</p></td>
   
 </tr>
 
@@ -1471,6 +1511,7 @@ private function <a href='../proc/initialize_json_file_v2.html'>initialize_json_
     
     
     <dt>Date</dt><dd>4/26/2016</dd>
+    
     
     
     
@@ -1564,6 +1605,7 @@ private function <a href='../proc/initialize_json_file_from_string.html'>initial
     
     
     <dt>Date</dt><dd>01/19/2019</dd>
+    
     
     
     
@@ -1795,7 +1837,14 @@ private function <a href='../proc/initialize_json_file_from_string.html'>initial
   
   <td></td><td>::</td>
   <td><strong>path_mode</strong></td><td><p>How the path strings are interpreted in the
- <code>get_by_path</code> routines:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ <code>get_by_path</code> routines:</p>
+<ul>
+<li>1 : Default mode (see <a href="../proc/json_get_by_path_default.html">json_get_by_path_default</a>)</li>
+<li>2 : as RFC 6901 &ldquo;<abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> Pointer&rdquo; paths
+   (see <a href="../proc/json_get_by_path_rfc6901.html">json_get_by_path_rfc6901</a>)</li>
+<li>3 : JSONPath &ldquo;bracket-notation&rdquo;
+   see <a href="../proc/json_get_by_path_jsonpath_bracket.html">json_get_by_path_jsonpath_bracket</a>)</li>
+</ul></td>
   
 </tr>
 
@@ -1866,9 +1915,14 @@ private function <a href='../proc/initialize_json_file_from_string.html'>initial
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>escape_solidus</strong></td><td><p>Note that this option does not affect parsing
+  <td><strong>escape_solidus</strong></td><td><ul>
+<li>If True then the solidus &ldquo;<code>/</code>&rdquo; is always escaped
+   &ldquo;<code>\/</code>&rdquo; when serializing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr></li>
+<li>If False [default], then it is not escaped.</li>
+</ul>
+<p>Note that this option does not affect parsing
  (both escaped and unescaped are still valid in
- all cases).</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ all cases).</p></td>
   
 </tr>
 
@@ -1899,7 +1953,15 @@ private function <a href='../proc/initialize_json_file_from_string.html'>initial
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p>
+<ul>
+<li>1 : an exception will be raised if
+   try to retrieve a <code>null</code> as a real.</li>
+<li>2 : a <code>null</code> retrieved as a real
+   will return a NaN. [default]</li>
+<li>3 : a <code>null</code> retrieved as a real
+   will return 0.0.</li>
+</ul></td>
   
 </tr>
 
@@ -1915,7 +1977,12 @@ private function <a href='../proc/initialize_json_file_from_string.html'>initial
   
   <td></td><td>::</td>
   <td><strong>non_normal_mode</strong></td><td><p>How to serialize NaN, Infinity, and
- -Infinity real values:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ -Infinity real values:</p>
+<ul>
+<li>1 : as strings (e.g., &ldquo;NaN&rdquo;,
+   &ldquo;Infinity&rdquo;, &ldquo;-Infinity&rdquo;) [default]</li>
+<li>2 : as <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> <code>null</code> values</li>
+</ul></td>
   
 </tr>
 
@@ -1945,7 +2012,15 @@ private function <a href='../proc/initialize_json_file_from_string.html'>initial
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>strict_integer_type_checking</strong></td><td><p>(default is true)</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>strict_integer_type_checking</strong></td><td><ul>
+<li>If false, when parsing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>, if an integer numeric value
+   cannot be converted to an integer (<code>integer(IK)</code>),
+   then an attempt is then make to convert it
+   to a real (<code>real(RK)</code>).</li>
+<li>If true, an exception will be raised if the integer
+   value cannot be read.</li>
+</ul>
+<p>(default is true)</p></td>
   
 </tr>
 
@@ -2206,7 +2281,14 @@ private function <a href='../proc/wrap_initialize_json_file_from_string.html'>wr
   
   <td></td><td>::</td>
   <td><strong>path_mode</strong></td><td><p>How the path strings are interpreted in the
- <code>get_by_path</code> routines:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ <code>get_by_path</code> routines:</p>
+<ul>
+<li>1 : Default mode (see <a href="../proc/json_get_by_path_default.html">json_get_by_path_default</a>)</li>
+<li>2 : as RFC 6901 &ldquo;<abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> Pointer&rdquo; paths
+   (see <a href="../proc/json_get_by_path_rfc6901.html">json_get_by_path_rfc6901</a>)</li>
+<li>3 : JSONPath &ldquo;bracket-notation&rdquo;
+   see <a href="../proc/json_get_by_path_jsonpath_bracket.html">json_get_by_path_jsonpath_bracket</a>)</li>
+</ul></td>
   
 </tr>
 
@@ -2277,9 +2359,14 @@ private function <a href='../proc/wrap_initialize_json_file_from_string.html'>wr
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>escape_solidus</strong></td><td><p>Note that this option does not affect parsing
+  <td><strong>escape_solidus</strong></td><td><ul>
+<li>If True then the solidus &ldquo;<code>/</code>&rdquo; is always escaped
+   &ldquo;<code>\/</code>&rdquo; when serializing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr></li>
+<li>If False [default], then it is not escaped.</li>
+</ul>
+<p>Note that this option does not affect parsing
  (both escaped and unescaped are still valid in
- all cases).</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ all cases).</p></td>
   
 </tr>
 
@@ -2310,7 +2397,15 @@ private function <a href='../proc/wrap_initialize_json_file_from_string.html'>wr
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p>
+<ul>
+<li>1 : an exception will be raised if
+   try to retrieve a <code>null</code> as a real.</li>
+<li>2 : a <code>null</code> retrieved as a real
+   will return a NaN. [default]</li>
+<li>3 : a <code>null</code> retrieved as a real
+   will return 0.0.</li>
+</ul></td>
   
 </tr>
 
@@ -2326,7 +2421,12 @@ private function <a href='../proc/wrap_initialize_json_file_from_string.html'>wr
   
   <td></td><td>::</td>
   <td><strong>non_normal_mode</strong></td><td><p>How to serialize NaN, Infinity, and
- -Infinity real values:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ -Infinity real values:</p>
+<ul>
+<li>1 : as strings (e.g., &ldquo;NaN&rdquo;,
+   &ldquo;Infinity&rdquo;, &ldquo;-Infinity&rdquo;) [default]</li>
+<li>2 : as <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> <code>null</code> values</li>
+</ul></td>
   
 </tr>
 
@@ -2356,7 +2456,15 @@ private function <a href='../proc/wrap_initialize_json_file_from_string.html'>wr
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>strict_integer_type_checking</strong></td><td><p>(default is true)</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>strict_integer_type_checking</strong></td><td><ul>
+<li>If false, when parsing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>, if an integer numeric value
+   cannot be converted to an integer (<code>integer(IK)</code>),
+   then an attempt is then make to convert it
+   to a real (<code>real(RK)</code>).</li>
+<li>If true, an exception will be raised if the integer
+   value cannot be read.</li>
+</ul>
+<p>(default is true)</p></td>
   
 </tr>
 
@@ -2399,6 +2507,7 @@ private function <a href='../proc/initialize_json_file_from_string_v2.html'>init
     
     
     <dt>Date</dt><dd>1/19/2019</dd>
+    
     
     
     
@@ -2694,6 +2803,7 @@ private subroutine <a href='../proc/json_file_add.html'>json_file_add</a>(me, p,
     
     
     
+    
   </dl>
 
 
@@ -2791,6 +2901,7 @@ private subroutine <a href='../proc/json_file_add_object.html'>json_file_add_obj
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -2926,6 +3037,7 @@ private subroutine <a href='../proc/wrap_json_file_add_object.html'>wrap_json_fi
     
     
     
+    
   </dl>
 
 
@@ -3051,6 +3163,7 @@ private subroutine <a href='../proc/json_file_add_integer.html'>json_file_add_in
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -3186,6 +3299,7 @@ private subroutine <a href='../proc/wrap_json_file_add_integer.html'>wrap_json_f
     
     
     
+    
   </dl>
 
 
@@ -3311,6 +3425,7 @@ private subroutine <a href='../proc/json_file_add_real32.html'>json_file_add_rea
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -3446,6 +3561,7 @@ private subroutine <a href='../proc/wrap_json_file_add_real32.html'>wrap_json_fi
     
     
     
+    
   </dl>
 
 
@@ -3571,6 +3687,7 @@ private subroutine <a href='../proc/json_file_add_real.html'>json_file_add_real<
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -3706,6 +3823,7 @@ private subroutine <a href='../proc/wrap_json_file_add_real.html'>wrap_json_file
     
     
     
+    
   </dl>
 
 
@@ -3831,6 +3949,7 @@ private subroutine <a href='../proc/json_file_add_logical.html'>json_file_add_lo
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -3966,6 +4085,7 @@ private subroutine <a href='../proc/wrap_json_file_add_logical.html'>wrap_json_f
     
     
     
+    
   </dl>
 
 
@@ -4091,6 +4211,7 @@ private subroutine <a href='../proc/json_file_add_string.html'>json_file_add_str
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -4257,6 +4378,7 @@ private subroutine <a href='../proc/wrap_json_file_add_string.html'>wrap_json_fi
     
     
     
+    
   </dl>
 
 
@@ -4418,6 +4540,7 @@ private subroutine <a href='../proc/json_file_add_integer_vec.html'>json_file_ad
     
     
     
+    
   </dl>
 
 
@@ -4543,6 +4666,7 @@ private subroutine <a href='../proc/wrap_json_file_add_integer_vec.html'>wrap_js
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -4678,6 +4802,7 @@ private subroutine <a href='../proc/json_file_add_real32_vec.html'>json_file_add
     
     
     
+    
   </dl>
 
 
@@ -4803,6 +4928,7 @@ private subroutine <a href='../proc/wrap_json_file_add_real32_vec.html'>wrap_jso
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -4938,6 +5064,7 @@ private subroutine <a href='../proc/json_file_add_real_vec.html'>json_file_add_r
     
     
     
+    
   </dl>
 
 
@@ -5063,6 +5190,7 @@ private subroutine <a href='../proc/wrap_json_file_add_real_vec.html'>wrap_json_
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -5198,6 +5326,7 @@ private subroutine <a href='../proc/json_file_add_logical_vec.html'>json_file_ad
     
     
     
+    
   </dl>
 
 
@@ -5328,6 +5457,7 @@ private subroutine <a href='../proc/wrap_json_file_add_logical_vec.html'>wrap_js
     
     
     
+    
   </dl>
 
 
@@ -5453,6 +5583,7 @@ private subroutine <a href='../proc/json_file_add_string_vec.html'>json_file_add
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -5632,6 +5763,7 @@ private subroutine <a href='../proc/wrap_json_file_add_string_vec.html'>wrap_jso
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -5828,6 +5960,7 @@ private subroutine <a href='../proc/json_file_add_string_path_ascii.html'>json_f
     
     
     
+    
   </dl>
 
 
@@ -5989,6 +6122,7 @@ private subroutine <a href='../proc/json_file_add_string_value_ascii.html'>json_
     
     
     
+    
   </dl>
 
 
@@ -6145,6 +6279,7 @@ private subroutine <a href='../proc/json_file_add_string_vec_path_ascii.html'>js
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -6324,6 +6459,7 @@ private subroutine <a href='../proc/json_file_add_string_vec_vec_ascii.html'>jso
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -6520,6 +6656,7 @@ private subroutine <a href='../proc/assign_json_file.html'>assign_json_file</a>(
     
     
     
+    
   </dl>
 
 
@@ -6614,6 +6751,7 @@ private subroutine <a href='../proc/assign_json_file_to_string.html'>assign_json
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -6717,6 +6855,7 @@ private subroutine <a href='../proc/assign_string_to_json_file.html'>assign_stri
     
     
     
+    
   </dl>
 
 
@@ -6815,6 +6954,7 @@ private subroutine <a href='../proc/assign_json_file.html'>assign_json_file</a>(
     
     
     
+    
   </dl>
 
 
@@ -6897,6 +7037,7 @@ private subroutine <a href='../proc/assign_json_file_to_string.html'>assign_json
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -6988,6 +7129,7 @@ private subroutine <a href='../proc/assign_string_to_json_file.html'>assign_stri
     
     
     
+    
   </dl>
 
 
@@ -7069,6 +7211,7 @@ private subroutine <a href='../proc/wrap_assign_string_to_json_file.html'>wrap_a
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -7355,6 +7498,7 @@ private subroutine <a href='../proc/json_file_load_from_string.html'>json_file_l
     
     
     
+    
   </dl>
 
 
@@ -7522,6 +7666,7 @@ private subroutine <a href='../proc/json_file_destroy.html'>json_file_destroy</a
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -7714,6 +7859,7 @@ private subroutine <a href='../proc/json_file_get_object.html'>json_file_get_obj
     
     
     <dt>Date</dt><dd>2/3/2014</dd>
+    
     
     
     
@@ -7936,6 +8082,7 @@ private subroutine <a href='../proc/json_file_get_integer.html'>json_file_get_in
     
     
     <dt>Date</dt><dd>12/9/2013</dd>
+    
     
     
     
@@ -8192,6 +8339,7 @@ private subroutine <a href='../proc/json_file_get_real32.html'>json_file_get_rea
     
     
     
+    
   </dl>
 
 
@@ -8440,6 +8588,7 @@ private subroutine <a href='../proc/json_file_get_real.html'>json_file_get_real<
     
     
     <dt>Date</dt><dd>12/9/2013</dd>
+    
     
     
     
@@ -8696,6 +8845,7 @@ private subroutine <a href='../proc/json_file_get_logical.html'>json_file_get_lo
     
     
     
+    
   </dl>
 
 
@@ -8944,6 +9094,7 @@ private subroutine <a href='../proc/json_file_get_string.html'>json_file_get_str
     
     
     <dt>Date</dt><dd>12/9/2013</dd>
+    
     
     
     
@@ -9201,6 +9352,7 @@ private subroutine <a href='../proc/json_file_get_integer_vec.html'>json_file_ge
     
     
     
+    
   </dl>
 
 
@@ -9449,6 +9601,7 @@ private subroutine <a href='../proc/json_file_get_real32_vec.html'>json_file_get
     
     
     <dt>Date</dt><dd>1/21/2019</dd>
+    
     
     
     
@@ -9705,6 +9858,7 @@ private subroutine <a href='../proc/json_file_get_real_vec.html'>json_file_get_r
     
     
     
+    
   </dl>
 
 
@@ -9953,6 +10107,7 @@ private subroutine <a href='../proc/json_file_get_logical_vec.html'>json_file_ge
     
     
     <dt>Date</dt><dd>1/20/2014</dd>
+    
     
     
     
@@ -10209,6 +10364,7 @@ private subroutine <a href='../proc/json_file_get_string_vec.html'>json_file_get
     
     
     
+    
   </dl>
 
 
@@ -10457,6 +10613,7 @@ private subroutine <a href='../proc/json_file_get_alloc_string_vec.html'>json_fi
     
     
     <dt>Date</dt><dd>12/17/2016</dd>
+    
     
     
     
@@ -10781,6 +10938,7 @@ private subroutine <a href='../proc/json_file_get_root.html'>json_file_get_root<
     
     
     
+    
   </dl>
 
 
@@ -10963,6 +11121,7 @@ private subroutine <a href='../proc/json_file_variable_info.html'>json_file_vari
     
     
     <dt>Date</dt><dd>2/3/2014</dd>
+    
     
     
     
@@ -11476,7 +11635,14 @@ private subroutine <a href='../proc/initialize_json_core_in_file.html'>initializ
   
   <td></td><td>::</td>
   <td><strong>path_mode</strong></td><td><p>How the path strings are interpreted in the
- <code>get_by_path</code> routines:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ <code>get_by_path</code> routines:</p>
+<ul>
+<li>1 : Default mode (see <a href="../proc/json_get_by_path_default.html">json_get_by_path_default</a>)</li>
+<li>2 : as RFC 6901 &ldquo;<abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> Pointer&rdquo; paths
+   (see <a href="../proc/json_get_by_path_rfc6901.html">json_get_by_path_rfc6901</a>)</li>
+<li>3 : JSONPath &ldquo;bracket-notation&rdquo;
+   see <a href="../proc/json_get_by_path_jsonpath_bracket.html">json_get_by_path_jsonpath_bracket</a>)</li>
+</ul></td>
   
 </tr>
 
@@ -11547,9 +11713,14 @@ private subroutine <a href='../proc/initialize_json_core_in_file.html'>initializ
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>escape_solidus</strong></td><td><p>Note that this option does not affect parsing
+  <td><strong>escape_solidus</strong></td><td><ul>
+<li>If True then the solidus &ldquo;<code>/</code>&rdquo; is always escaped
+   &ldquo;<code>\/</code>&rdquo; when serializing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr></li>
+<li>If False [default], then it is not escaped.</li>
+</ul>
+<p>Note that this option does not affect parsing
  (both escaped and unescaped are still valid in
- all cases).</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ all cases).</p></td>
   
 </tr>
 
@@ -11580,7 +11751,15 @@ private subroutine <a href='../proc/initialize_json_core_in_file.html'>initializ
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p>
+<ul>
+<li>1 : an exception will be raised if
+   try to retrieve a <code>null</code> as a real.</li>
+<li>2 : a <code>null</code> retrieved as a real
+   will return a NaN. [default]</li>
+<li>3 : a <code>null</code> retrieved as a real
+   will return 0.0.</li>
+</ul></td>
   
 </tr>
 
@@ -11596,7 +11775,12 @@ private subroutine <a href='../proc/initialize_json_core_in_file.html'>initializ
   
   <td></td><td>::</td>
   <td><strong>non_normal_mode</strong></td><td><p>How to serialize NaN, Infinity, and
- -Infinity real values:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ -Infinity real values:</p>
+<ul>
+<li>1 : as strings (e.g., &ldquo;NaN&rdquo;,
+   &ldquo;Infinity&rdquo;, &ldquo;-Infinity&rdquo;) [default]</li>
+<li>2 : as <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> <code>null</code> values</li>
+</ul></td>
   
 </tr>
 
@@ -11626,7 +11810,15 @@ private subroutine <a href='../proc/initialize_json_core_in_file.html'>initializ
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>strict_integer_type_checking</strong></td><td><p>(default is true)</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>strict_integer_type_checking</strong></td><td><ul>
+<li>If false, when parsing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>, if an integer numeric value
+   cannot be converted to an integer (<code>integer(IK)</code>),
+   then an attempt is then make to convert it
+   to a real (<code>real(RK)</code>).</li>
+<li>If true, an exception will be raised if the integer
+   value cannot be read.</li>
+</ul>
+<p>(default is true)</p></td>
   
 </tr>
 
@@ -11970,7 +12162,14 @@ private subroutine <a href='../proc/initialize_json_core_in_file.html'>initializ
   
   <td></td><td>::</td>
   <td><strong>path_mode</strong></td><td><p>How the path strings are interpreted in the
- <code>get_by_path</code> routines:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ <code>get_by_path</code> routines:</p>
+<ul>
+<li>1 : Default mode (see <a href="../proc/json_get_by_path_default.html">json_get_by_path_default</a>)</li>
+<li>2 : as RFC 6901 &ldquo;<abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> Pointer&rdquo; paths
+   (see <a href="../proc/json_get_by_path_rfc6901.html">json_get_by_path_rfc6901</a>)</li>
+<li>3 : JSONPath &ldquo;bracket-notation&rdquo;
+   see <a href="../proc/json_get_by_path_jsonpath_bracket.html">json_get_by_path_jsonpath_bracket</a>)</li>
+</ul></td>
   
 </tr>
 
@@ -12041,9 +12240,14 @@ private subroutine <a href='../proc/initialize_json_core_in_file.html'>initializ
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>escape_solidus</strong></td><td><p>Note that this option does not affect parsing
+  <td><strong>escape_solidus</strong></td><td><ul>
+<li>If True then the solidus &ldquo;<code>/</code>&rdquo; is always escaped
+   &ldquo;<code>\/</code>&rdquo; when serializing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr></li>
+<li>If False [default], then it is not escaped.</li>
+</ul>
+<p>Note that this option does not affect parsing
  (both escaped and unescaped are still valid in
- all cases).</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ all cases).</p></td>
   
 </tr>
 
@@ -12074,7 +12278,15 @@ private subroutine <a href='../proc/initialize_json_core_in_file.html'>initializ
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p>
+<ul>
+<li>1 : an exception will be raised if
+   try to retrieve a <code>null</code> as a real.</li>
+<li>2 : a <code>null</code> retrieved as a real
+   will return a NaN. [default]</li>
+<li>3 : a <code>null</code> retrieved as a real
+   will return 0.0.</li>
+</ul></td>
   
 </tr>
 
@@ -12090,7 +12302,12 @@ private subroutine <a href='../proc/initialize_json_core_in_file.html'>initializ
   
   <td></td><td>::</td>
   <td><strong>non_normal_mode</strong></td><td><p>How to serialize NaN, Infinity, and
- -Infinity real values:</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+ -Infinity real values:</p>
+<ul>
+<li>1 : as strings (e.g., &ldquo;NaN&rdquo;,
+   &ldquo;Infinity&rdquo;, &ldquo;-Infinity&rdquo;) [default]</li>
+<li>2 : as <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> <code>null</code> values</li>
+</ul></td>
   
 </tr>
 
@@ -12120,7 +12337,15 @@ private subroutine <a href='../proc/initialize_json_core_in_file.html'>initializ
   <td>optional</td>
   
   <td></td><td>::</td>
-  <td><strong>strict_integer_type_checking</strong></td><td><p>(default is true)</p><a href="None" class="pull-right"><emph>Read more&hellip;</emph></a></td>
+  <td><strong>strict_integer_type_checking</strong></td><td><ul>
+<li>If false, when parsing <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>, if an integer numeric value
+   cannot be converted to an integer (<code>integer(IK)</code>),
+   then an attempt is then make to convert it
+   to a real (<code>real(RK)</code>).</li>
+<li>If true, an exception will be raised if the integer
+   value cannot be read.</li>
+</ul>
+<p>(default is true)</p></td>
   
 </tr>
 
@@ -12167,6 +12392,7 @@ private subroutine <a href='../proc/json_file_add.html'>json_file_add</a>(me, p,
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -12281,6 +12507,7 @@ private subroutine <a href='../proc/json_file_add_integer.html'>json_file_add_in
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -12428,6 +12655,7 @@ private subroutine <a href='../proc/json_file_add_integer_vec.html'>json_file_ad
     
     
     
+    
   </dl>
 
 
@@ -12565,6 +12793,7 @@ private subroutine <a href='../proc/json_file_add_logical.html'>json_file_add_lo
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -12712,6 +12941,7 @@ private subroutine <a href='../proc/json_file_add_logical_vec.html'>json_file_ad
     
     
     
+    
   </dl>
 
 
@@ -12849,6 +13079,7 @@ private subroutine <a href='../proc/json_file_add_object.html'>json_file_add_obj
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -12996,6 +13227,7 @@ private subroutine <a href='../proc/json_file_add_real.html'>json_file_add_real<
     
     
     
+    
   </dl>
 
 
@@ -13133,6 +13365,7 @@ private subroutine <a href='../proc/json_file_add_real32.html'>json_file_add_rea
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -13280,6 +13513,7 @@ private subroutine <a href='../proc/json_file_add_real32_vec.html'>json_file_add
     
     
     
+    
   </dl>
 
 
@@ -13422,6 +13656,7 @@ private subroutine <a href='../proc/json_file_add_real_vec.html'>json_file_add_r
     
     
     
+    
   </dl>
 
 
@@ -13559,6 +13794,7 @@ private subroutine <a href='../proc/json_file_add_string.html'>json_file_add_str
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -13737,6 +13973,7 @@ private subroutine <a href='../proc/json_file_add_string_path_ascii.html'>json_f
     
     
     
+    
   </dl>
 
 
@@ -13910,6 +14147,7 @@ private subroutine <a href='../proc/json_file_add_string_value_ascii.html'>json_
     
     
     
+    
   </dl>
 
 
@@ -14078,6 +14316,7 @@ private subroutine <a href='../proc/json_file_add_string_vec.html'>json_file_add
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -14274,6 +14513,7 @@ private subroutine <a href='../proc/json_file_add_string_vec_path_ascii.html'>js
     
     
     
+    
   </dl>
 
 
@@ -14460,6 +14700,7 @@ private subroutine <a href='../proc/json_file_add_string_vec_vec_ascii.html'>jso
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -14658,6 +14899,7 @@ private subroutine <a href='../proc/json_file_get_alloc_string_vec.html'>json_fi
     
     
     
+    
   </dl>
 
 
@@ -14836,6 +15078,7 @@ private subroutine <a href='../proc/json_file_get_integer.html'>json_file_get_in
     
     
     
+    
   </dl>
 
 
@@ -14976,6 +15219,7 @@ private subroutine <a href='../proc/json_file_get_integer_vec.html'>json_file_ge
     
     
     <dt>Date</dt><dd>1/20/2014</dd>
+    
     
     
     
@@ -15124,6 +15368,7 @@ private subroutine <a href='../proc/json_file_get_logical.html'>json_file_get_lo
     
     
     
+    
   </dl>
 
 
@@ -15264,6 +15509,7 @@ private subroutine <a href='../proc/json_file_get_logical_vec.html'>json_file_ge
     
     
     <dt>Date</dt><dd>1/20/2014</dd>
+    
     
     
     
@@ -15412,6 +15658,7 @@ private subroutine <a href='../proc/json_file_get_object.html'>json_file_get_obj
     
     
     
+    
   </dl>
 
 
@@ -15537,6 +15784,7 @@ private subroutine <a href='../proc/json_file_get_real.html'>json_file_get_real<
     
     
     <dt>Date</dt><dd>12/9/2013</dd>
+    
     
     
     
@@ -15685,6 +15933,7 @@ private subroutine <a href='../proc/json_file_get_real32.html'>json_file_get_rea
     
     
     
+    
   </dl>
 
 
@@ -15825,6 +16074,7 @@ private subroutine <a href='../proc/json_file_get_real32_vec.html'>json_file_get
     
     
     <dt>Date</dt><dd>1/21/2019</dd>
+    
     
     
     
@@ -15973,6 +16223,7 @@ private subroutine <a href='../proc/json_file_get_real_vec.html'>json_file_get_r
     
     
     
+    
   </dl>
 
 
@@ -16117,6 +16368,7 @@ private subroutine <a href='../proc/json_file_get_root.html'>json_file_get_root<
     
     
     
+    
   </dl>
 
 
@@ -16212,6 +16464,7 @@ private subroutine <a href='../proc/json_file_get_string.html'>json_file_get_str
     
     
     <dt>Date</dt><dd>12/9/2013</dd>
+    
     
     
     
@@ -16361,6 +16614,7 @@ private subroutine <a href='../proc/json_file_get_string_vec.html'>json_file_get
     
     
     
+    
   </dl>
 
 
@@ -16505,6 +16759,7 @@ private subroutine <a href='../proc/json_file_load_from_string.html'>json_file_l
     
     
     
+    
   </dl>
 
 
@@ -16604,6 +16859,7 @@ private subroutine <a href='../proc/json_file_print_to_console.html'>json_file_p
     
     
     
+    
   </dl>
 
 
@@ -16684,6 +16940,7 @@ private subroutine <a href='../proc/json_file_print_to_filename.html'>json_file_
     
     
     <dt>Date</dt><dd>1/11/2015</dd>
+    
     
     
     
@@ -16788,6 +17045,7 @@ private subroutine <a href='../proc/json_file_print_to_unit.html'>json_file_prin
     
     
     
+    
   </dl>
 
 
@@ -16887,6 +17145,7 @@ private subroutine <a href='../proc/json_file_remove.html'>json_file_remove</a>(
     
     
     
+    
   </dl>
 
 
@@ -16979,6 +17238,7 @@ private subroutine <a href='../proc/json_file_rename.html'>json_file_rename</a>(
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -17111,6 +17371,7 @@ private subroutine <a href='../proc/json_file_rename_name_ascii.html'>json_file_
     
     
     
+    
   </dl>
 
 
@@ -17233,6 +17494,7 @@ private subroutine <a href='../proc/json_file_rename_path_ascii.html'>json_file_
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -17363,6 +17625,7 @@ private subroutine <a href='../proc/json_file_update_integer.html'>json_file_upd
     
     
     <dt>Date</dt><dd>1/10/2015</dd>
+    
     
     
     
@@ -17498,6 +17761,7 @@ private subroutine <a href='../proc/json_file_update_logical.html'>json_file_upd
     
     
     
+    
   </dl>
 
 
@@ -17625,6 +17889,7 @@ private subroutine <a href='../proc/json_file_update_real.html'>json_file_update
     
     
     <dt>Date</dt><dd>1/10/2015</dd>
+    
     
     
     
@@ -17760,6 +18025,7 @@ private subroutine <a href='../proc/json_file_update_real32.html'>json_file_upda
     
     
     
+    
   </dl>
 
 
@@ -17885,6 +18151,7 @@ private subroutine <a href='../proc/json_file_update_string.html'>json_file_upda
     
     
     <dt>Date</dt><dd>1/10/2015</dd>
+    
     
     
     
@@ -18345,6 +18612,7 @@ private function <a href='../proc/json_file_valid_path.html'>json_file_valid_pat
     
     
     
+    
   </dl>
 
 
@@ -18446,6 +18714,7 @@ private function <a href='../proc/json_file_valid_path_op.html'>json_file_valid_
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -18555,6 +18824,7 @@ private subroutine <a href='../proc/json_file_variable_info.html'>json_file_vari
     
     
     <dt>Date</dt><dd>2/3/2014</dd>
+    
     
     
     
@@ -18714,6 +18984,7 @@ private subroutine <a href='../proc/json_file_variable_matrix_info.html'>json_fi
     
     
     <dt>Date</dt><dd>6/26/2016</dd>
+    
     
     
     
@@ -18918,6 +19189,7 @@ private subroutine <a href='../proc/json_file_load.html'>json_file_load</a>(me, 
     
     
     
+    
   </dl>
 
 
@@ -19041,6 +19313,7 @@ private subroutine <a href='../proc/json_file_load.html'>json_file_load</a>(me, 
     
     
     
+    
   </dl>
 
 
@@ -19160,6 +19433,7 @@ private subroutine <a href='../proc/json_file_load_from_string.html'>json_file_l
     
     
     <dt>Date</dt><dd>1/13/2015</dd>
+    
     
     
     
@@ -19334,6 +19608,7 @@ private subroutine <a href='../proc/json_file_variable_matrix_info.html'>json_fi
     
     
     <dt>Date</dt><dd>6/26/2016</dd>
+    
     
     
     
@@ -19700,6 +19975,7 @@ private subroutine <a href='../proc/json_file_move_pointer.html'>json_file_move_
     
     
     
+    
   </dl>
 
 
@@ -19798,6 +20074,7 @@ private subroutine <a href='../proc/json_file_nullify.html'>json_file_nullify</a
     
     
     
+    
   </dl>
 
 
@@ -19876,6 +20153,7 @@ private function <a href='../proc/json_file_valid_path_op.html'>json_file_valid_
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -19970,6 +20248,7 @@ private function <a href='../proc/wrap_json_file_valid_path_op.html'>wrap_json_f
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -20083,6 +20362,7 @@ private subroutine <a href='../proc/json_file_print_to_console.html'>json_file_p
     
     
     
+    
   </dl>
 
 
@@ -20151,6 +20431,7 @@ private subroutine <a href='../proc/json_file_print_to_unit.html'>json_file_prin
     
     
     <dt>Date</dt><dd>12/9/2013</dd>
+    
     
     
     
@@ -20238,6 +20519,7 @@ private subroutine <a href='../proc/json_file_print_to_filename.html'>json_file_
     
     
     <dt>Date</dt><dd>1/11/2015</dd>
+    
     
     
     
@@ -20436,6 +20718,7 @@ private subroutine <a href='../proc/json_file_print_to_console.html'>json_file_p
     
     
     
+    
   </dl>
 
 
@@ -20504,6 +20787,7 @@ private subroutine <a href='../proc/json_file_print_to_unit.html'>json_file_prin
     
     
     <dt>Date</dt><dd>12/9/2013</dd>
+    
     
     
     
@@ -20591,6 +20875,7 @@ private subroutine <a href='../proc/json_file_print_to_filename.html'>json_file_
     
     
     <dt>Date</dt><dd>1/11/2015</dd>
+    
     
     
     
@@ -20702,6 +20987,7 @@ private subroutine <a href='../proc/json_file_print_to_string.html'>json_file_pr
     
     
     
+    
   </dl>
 
 
@@ -20805,6 +21091,7 @@ private subroutine <a href='../proc/json_file_remove.html'>json_file_remove</a>(
     
     
     <dt>Date</dt><dd>7/7/2018</dd>
+    
     
     
     
@@ -20950,7 +21237,7 @@ private subroutine <a href='../proc/wrap_json_file_remove.html'>wrap_json_file_r
     
      
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-rename~3"></span><h3>generic, public :: <strong>rename</strong>  => <a href='../type/json_file.html#boundprocedure-json_file_rename'>json_file_rename</a>, <a href='../type/json_file.html#boundprocedure-wrap_json_file_rename'>wrap_json_file_rename</a> 
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-rename~2"></span><h3>generic, public :: <strong>rename</strong>  => <a href='../type/json_file.html#boundprocedure-json_file_rename'>json_file_rename</a>, <a href='../type/json_file.html#boundprocedure-wrap_json_file_rename'>wrap_json_file_rename</a> 
     
   </h3></div>
   
@@ -20983,6 +21270,7 @@ private subroutine <a href='../proc/json_file_rename.html'>json_file_rename</a>(
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -21098,6 +21386,7 @@ private subroutine <a href='../proc/wrap_json_file_rename.html'>wrap_json_file_r
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -21230,6 +21519,7 @@ private subroutine <a href='../proc/json_file_rename_path_ascii.html'>json_file_
     
     
     
+    
   </dl>
 
 
@@ -21340,6 +21630,7 @@ private subroutine <a href='../proc/json_file_rename_name_ascii.html'>json_file_
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -21477,6 +21768,7 @@ private subroutine <a href='../proc/json_file_print_to_string.html'>json_file_pr
     
     
     <dt>Date</dt><dd>1/11/2015</dd>
+    
     
     
     
@@ -21667,6 +21959,7 @@ private subroutine <a href='../proc/json_file_traverse.html'>json_file_traverse<
     
     
     
+    
   </dl>
 
 
@@ -21775,6 +22068,7 @@ private subroutine <a href='../proc/json_file_update_integer.html'>json_file_upd
     
     
     <dt>Date</dt><dd>1/10/2015</dd>
+    
     
     
     
@@ -22003,6 +22297,7 @@ private subroutine <a href='../proc/json_file_update_logical.html'>json_file_upd
     
     
     
+    
   </dl>
 
 
@@ -22223,6 +22518,7 @@ private subroutine <a href='../proc/json_file_update_real32.html'>json_file_upda
     
     
     <dt>Date</dt><dd>1/21/2019</dd>
+    
     
     
     
@@ -22449,6 +22745,7 @@ private subroutine <a href='../proc/json_file_update_real.html'>json_file_update
     
     
     
+    
   </dl>
 
 
@@ -22669,6 +22966,7 @@ private subroutine <a href='../proc/json_file_update_string.html'>json_file_upda
     
     
     <dt>Date</dt><dd>1/10/2015</dd>
+    
     
     
     
@@ -23261,6 +23559,7 @@ private function <a href='../proc/json_file_valid_path.html'>json_file_valid_pat
     
     
     
+    
   </dl>
 
 
@@ -23350,6 +23649,7 @@ private function <a href='../proc/wrap_json_file_valid_path.html'>wrap_json_file
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -23461,6 +23761,7 @@ private subroutine <a href='../proc/wrap_assign_string_to_json_file.html'>wrap_a
     
     
     
+    
   </dl>
 
 
@@ -23553,6 +23854,7 @@ private subroutine <a href='../proc/wrap_json_file_add_integer.html'>wrap_json_f
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -23700,6 +24002,7 @@ private subroutine <a href='../proc/wrap_json_file_add_integer_vec.html'>wrap_js
     
     
     
+    
   </dl>
 
 
@@ -23837,6 +24140,7 @@ private subroutine <a href='../proc/wrap_json_file_add_logical.html'>wrap_json_f
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -23984,6 +24288,7 @@ private subroutine <a href='../proc/wrap_json_file_add_logical_vec.html'>wrap_js
     
     
     
+    
   </dl>
 
 
@@ -24121,6 +24426,7 @@ private subroutine <a href='../proc/wrap_json_file_add_object.html'>wrap_json_fi
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -24268,6 +24574,7 @@ private subroutine <a href='../proc/wrap_json_file_add_real.html'>wrap_json_file
     
     
     
+    
   </dl>
 
 
@@ -24405,6 +24712,7 @@ private subroutine <a href='../proc/wrap_json_file_add_real32.html'>wrap_json_fi
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -24552,6 +24860,7 @@ private subroutine <a href='../proc/wrap_json_file_add_real32_vec.html'>wrap_jso
     
     
     
+    
   </dl>
 
 
@@ -24694,6 +25003,7 @@ private subroutine <a href='../proc/wrap_json_file_add_real_vec.html'>wrap_json_
     
     
     
+    
   </dl>
 
 
@@ -24831,6 +25141,7 @@ private subroutine <a href='../proc/wrap_json_file_add_string.html'>wrap_json_fi
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -25004,6 +25315,7 @@ private subroutine <a href='../proc/wrap_json_file_add_string_vec.html'>wrap_jso
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -26977,6 +27289,7 @@ private subroutine <a href='../proc/wrap_json_file_rename.html'>wrap_json_file_r
     
     
     
+    
   </dl>
 
 
@@ -27720,6 +28033,7 @@ private function <a href='../proc/wrap_json_file_valid_path.html'>wrap_json_file
     
     
     
+    
   </dl>
 
 
@@ -27821,6 +28135,7 @@ private function <a href='../proc/wrap_json_file_valid_path_op.html'>wrap_json_f
   <dl class="dl-horizontal">
     
     <dt>Author</dt><dd>Jacob Williams</dd>
+    
     
     
     
@@ -28544,16 +28859,17 @@ private subroutine <a href='../proc/wrap_json_file_variable_matrix_info.html'>wr
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
-                                          </p></div>
-        <div class="col-xs-6 col-md-4 col-md-push-4">
+        <div class="col-xs-6 col-md-6"><p>JSON-Fortran was developed by Jacob Williams<br>&copy; 2021 
+                                          </p>
+        </div>
+        <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
-            <a href="https://github.com/cmacmackin/ford">FORD</a>
-             on 2021-06-06 20:20  
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+             on 2021-08-14 15:48  
+            
           </p>
         </div>
-        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> JSON-Fortran was developed by Jacob Williams</p></div>
       </div>
       <br>
       </div> <!-- /container -->    
