@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-   <meta name="description" content="JSON-Fortran – A Fortran 2008 JSON API">
+   <meta name="description" content="JSON-Fortran – A Modern Fortran JSON API">
     
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
@@ -138,7 +138,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">26 statements</a>
+    title=" 0.5% of total for procedures.">34 statements</a>
      </li> 
      
      
@@ -370,10 +370,15 @@ private subroutine json_get_logical(json, me, value)
 <span class="k">        value</span> <span class="o">=</span> <span class="n">me</span><span class="p">%</span><span class="n">log_value</span>
     <span class="k">else</span>
 <span class="k">        if</span> <span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">strict_type_checking</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">            call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in json_get_logical: &#39;</span><span class="o">//</span><span class="p">&amp;</span>
-                                      <span class="s1">&#39;Unable to resolve value to logical: &#39;</span><span class="o">//</span><span class="p">&amp;</span>
-                                      <span class="n">me</span><span class="p">%</span><span class="n">name</span><span class="p">)</span>
-        <span class="k">else</span>
+<span class="k">            if</span> <span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">name</span><span class="p">))</span> <span class="k">then</span>
+<span class="k">                call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in json_get_logical: &#39;</span><span class="o">//</span><span class="p">&amp;</span>
+                                          <span class="s1">&#39;Unable to resolve value to logical: &#39;</span><span class="o">//</span><span class="p">&amp;</span>
+                                          <span class="n">me</span><span class="p">%</span><span class="n">name</span><span class="p">)</span>
+            <span class="k">else</span>
+<span class="k">                call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in json_get_logical: &#39;</span><span class="o">//</span><span class="p">&amp;</span>
+                                          <span class="s1">&#39;Unable to resolve value to logical&#39;</span><span class="p">)</span>
+            <span class="k">end if</span>
+<span class="k">        else</span>
             <span class="c">!type conversions</span>
             <span class="k">select case</span> <span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">var_type</span><span class="p">)</span>
             <span class="k">case</span> <span class="p">(</span><span class="n">json_integer</span><span class="p">)</span>
@@ -383,10 +388,15 @@ private subroutine json_get_logical(json, me, value)
             <span class="k">case</span> <span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
                 <span class="k">value</span> <span class="o">=</span> <span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">str_value</span> <span class="o">==</span> <span class="n">true_str</span><span class="p">)</span>
             <span class="k">case </span><span class="n">default</span>
-                <span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in json_get_logical: &#39;</span><span class="o">//</span><span class="p">&amp;</span>
-                                          <span class="s1">&#39;Unable to resolve value to logical: &#39;</span><span class="o">//</span><span class="p">&amp;</span>
-                                          <span class="n">me</span><span class="p">%</span><span class="n">name</span><span class="p">)</span>
-            <span class="k">end select</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">name</span><span class="p">))</span> <span class="k">then</span>
+<span class="k">                    call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in json_get_logical: &#39;</span><span class="o">//</span><span class="p">&amp;</span>
+                                              <span class="s1">&#39;Unable to resolve value to logical: &#39;</span><span class="o">//</span><span class="p">&amp;</span>
+                                              <span class="n">me</span><span class="p">%</span><span class="n">name</span><span class="p">)</span>
+                <span class="k">else</span>
+<span class="k">                    call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in json_get_logical: &#39;</span><span class="o">//</span><span class="p">&amp;</span>
+                                              <span class="s1">&#39;Unable to resolve value to logical&#39;</span><span class="p">)</span>
+                <span class="k">end if</span>
+<span class="k">            end select</span>
 <span class="k">        end if</span>
 <span class="k">    end if</span>
 
@@ -413,7 +423,7 @@ private subroutine json_get_logical(json, me, value)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-08-14 15:48  
+             on 2021-08-14 19:13  
             
           </p>
         </div>
