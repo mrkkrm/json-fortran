@@ -148,29 +148,29 @@
 <a href="https://github.com/jacobwilliams/json-fortran/actions">GitHub Actions</a> script
 used to perform continuous integration testing for <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran, and
 trigger automatic documentation deployment.</p>
-<div class="codehilite"><pre><span></span><code><span class="nl">name</span><span class="p">:</span> <span class="n">CI</span>
+<div class="codehilite"><pre><span></span><code><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="n">CI</span><span class="w"></span>
 
-<span class="nl">on</span><span class="p">:</span> <span class="p">[</span><span class="n">push</span><span class="p">]</span>
+<span class="nl">on</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">push</span><span class="p">]</span><span class="w"></span>
 
-<span class="nl">jobs</span><span class="p">:</span>
+<span class="nl">jobs</span><span class="p">:</span><span class="w"></span>
 
-  <span class="nl">Build</span><span class="p">:</span>
-    <span class="n">runs</span><span class="o">-</span><span class="nl">on</span><span class="p">:</span> <span class="n">$</span><span class="p">{{</span> <span class="n">matrix</span><span class="p">.</span><span class="n">os</span> <span class="p">}}</span>
-    <span class="nl">strategy</span><span class="p">:</span>
-      <span class="n">fail</span><span class="o">-</span><span class="nl">fast</span><span class="p">:</span> <span class="nb">false</span>
-      <span class="nl">matrix</span><span class="p">:</span>
-        <span class="nl">os</span><span class="p">:</span> <span class="p">[</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">latest</span><span class="p">]</span>
-        <span class="nl">gcc_v</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span> <span class="err">#</span> <span class="n">Version</span> <span class="n">of</span> <span class="n">GFortran</span> <span class="n">we</span> <span class="n">want</span> <span class="n">to</span> <span class="n">use</span><span class="p">.</span>
-        <span class="n">python</span><span class="o">-</span><span class="nl">version</span><span class="p">:</span> <span class="p">[</span><span class="mf">3.7</span><span class="p">]</span>
-    <span class="nl">env</span><span class="p">:</span>
-      <span class="nl">FC</span><span class="p">:</span> <span class="n">gfortran</span><span class="o">-</span><span class="n">$</span><span class="p">{{</span><span class="n">matrix</span><span class="p">.</span><span class="n">gcc_v</span><span class="p">}}</span>
-      <span class="nl">GCC_V</span><span class="p">:</span> <span class="n">$</span><span class="p">{{</span><span class="n">matrix</span><span class="p">.</span><span class="n">gcc_v</span><span class="p">}}</span>
+<span class="w">  </span><span class="nl">Build</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="n">runs</span><span class="o">-</span><span class="nl">on</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="w"> </span><span class="n">matrix</span><span class="p">.</span><span class="n">os</span><span class="w"> </span><span class="p">}}</span><span class="w"></span>
+<span class="w">    </span><span class="nl">strategy</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="n">fail</span><span class="o">-</span><span class="nl">fast</span><span class="p">:</span><span class="w"> </span><span class="nb">false</span><span class="w"></span>
+<span class="w">      </span><span class="nl">matrix</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nl">os</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">ubuntu</span><span class="o">-</span><span class="n">latest</span><span class="p">]</span><span class="w"></span>
+<span class="w">        </span><span class="nl">gcc_v</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">Version</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">GFortran</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="n">python</span><span class="o">-</span><span class="nl">version</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">3.7</span><span class="p">]</span><span class="w"></span>
+<span class="w">    </span><span class="nl">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nl">FC</span><span class="p">:</span><span class="w"> </span><span class="n">gfortran</span><span class="o">-</span><span class="n">$</span><span class="p">{{</span><span class="n">matrix</span><span class="p">.</span><span class="n">gcc_v</span><span class="p">}}</span><span class="w"></span>
+<span class="w">      </span><span class="nl">GCC_V</span><span class="p">:</span><span class="w"> </span><span class="n">$</span><span class="p">{{</span><span class="n">matrix</span><span class="p">.</span><span class="n">gcc_v</span><span class="p">}}</span><span class="w"></span>
 
-    <span class="nl">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="nl">steps</span><span class="p">:</span><span class="w"></span>
 
-    <span class="o">-</span> <span class="nl">name</span><span class="p">:</span> <span class="n">Set</span> <span class="n">vars</span>
-      <span class="kt">id</span><span class="o">:</span> <span class="n">vars</span>
-      <span class="nl">run</span><span class="p">:</span> <span class="n">echo</span> <span class="o">::</span><span class="n">set</span><span class="o">-</span><span class="n">output</span> <span class="n">name</span><span class="o">=</span><span class="n">tag</span><span class="o">::</span><span class="n">$</span><span class="p">{</span><span class="n">GITHUB_REF</span><span class="err">#</span><span class="n">refs</span><span class="cm">/*/}</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="n">Set</span><span class="w"> </span><span class="n">vars</span><span class="w"></span>
+<span class="w">      </span><span class="kt">id</span><span class="o">:</span><span class="w"> </span><span class="n">vars</span><span class="w"></span>
+<span class="w">      </span><span class="nl">run</span><span class="p">:</span><span class="w"> </span><span class="n">echo</span><span class="w"> </span><span class="o">::</span><span class="n">set</span><span class="o">-</span><span class="n">output</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="n">tag</span><span class="o">::</span><span class="n">$</span><span class="p">{</span><span class="n">GITHUB_REF</span><span class="err">#</span><span class="n">refs</span><span class="cm">/*/}</span>
 
 <span class="cm">    - name: Checkout code</span>
 <span class="cm">      uses: actions/checkout@v2</span>
@@ -376,7 +376,7 @@ browser&rsquo;s back button to navigate back to
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-08-14 23:14  
+             on 2021-08-16 02:37  
             
           </p>
         </div>
