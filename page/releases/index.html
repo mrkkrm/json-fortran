@@ -153,6 +153,7 @@
 <li><a href="#changes-between-releases">Changes Between Releases</a><ul>
 <li><a href="#change-log">Change Log</a><ul>
 <li><a href="#unreleased">Unreleased</a></li>
+<li><a href="#824-2021-08-15">8.2.4 (2021-08-15)</a></li>
 <li><a href="#823-2020-06-05">8.2.3 (2020-06-05)</a></li>
 <li><a href="#822-2020-06-05">8.2.2 (2020-06-05)</a></li>
 <li><a href="#821-2020-01-02">8.2.1 (2020-01-02)</a></li>
@@ -201,7 +202,7 @@ of the <code>master</code> branch, please head back to the
 <a href="./index.html">main page</a>.</p>
 <h2 id="latest-stable-release">Latest Stable Release</h2>
 <p><strong>Documentation:</strong>
-<a href="https://jacobwilliams.github.io/json-fortran/prev/8.2.3/index.html">8.2.3</a></p>
+<a href="https://jacobwilliams.github.io/json-fortran/prev/8.2.4/index.html">8.2.4</a></p>
 <p><strong>Download:</strong>
 <a href="https://github.com/jacobwilliams/json-fortran/releases/latest">https://github.com/jacobwilliams/json-fortran/releases/latest</a></p>
 <h2 id="past-releases">Past Releases</h2>
@@ -210,6 +211,11 @@ documentation from the documentation for official releases other than
 using the browser&rsquo;s back button. Feel free to bookmark this page, or
 the <a href="./index.html">main project page</a> for convenient navigation.</p>
 <ul>
+<li><a href="https://jacobwilliams.github.io/json-fortran/prev/8.2.4/index.html">8.2.4</a>
+   (<a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a> generated documentation)<ul>
+<li><a href="https://github.com/jacobwilliams/json-fortran/releases/tag/8.2.4">Download</a></li>
+</ul>
+</li>
 <li><a href="https://jacobwilliams.github.io/json-fortran/prev/8.2.3/index.html">8.2.3</a>
    (<a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a> generated documentation)<ul>
 <li><a href="https://github.com/jacobwilliams/json-fortran/releases/tag/8.2.3">Download</a></li>
@@ -388,7 +394,7 @@ the <a href="./index.html">main project page</a> for convenient navigation.</p>
 </ul>
 <h1 id="development-version">Development Version</h1>
 <p>Documentation for the latest development version may be found at
-<a href="https://jacobwilliams.github.io/json-fortran/prev/8.2.3/index.html">https://jacobwilliams.github.io/json-fortran/prev/8.2.3/index.html</a>
+<a href="https://jacobwilliams.github.io/json-fortran/prev/8.2.4/index.html">https://jacobwilliams.github.io/json-fortran/prev/8.2.4/index.html</a>
 or generated locally using the
 <a href="./page/development-resources/build.sh.html">build.sh</a> build
 script.</p>
@@ -400,6 +406,7 @@ implemented between each release.</p>
 <ul>
 <li><a href="#change-log">Change Log</a><ul>
 <li><a href="#unreleased">Unreleased</a></li>
+<li><a href="#824-2021-08-15">8.2.4 (2021-08-15)</a></li>
 <li><a href="#823-2021-06-05">8.2.3 (2021-06-05)</a></li>
 <li><a href="#822-2021-06-05">8.2.2 (2021-06-05)</a></li>
 <li><a href="#821-2021-01-02">8.2.1 (2021-01-02)</a></li>
@@ -439,7 +446,21 @@ implemented between each release.</p>
 </li>
 </ul>
 <h3 id="unreleased"><a href="https://github.com/jacobwilliams/json-fortran/tree/HEAD">Unreleased</a></h3>
-<p><a href="https://github.com/jacobwilliams/json-fortran/compare/8.2.3...HEAD">Complete Changeset</a></p>
+<p><a href="https://github.com/jacobwilliams/json-fortran/compare/8.2.4...HEAD">Complete Changeset</a></p>
+<h3 id="824-2021-08-15"><a href="https://github.com/jacobwilliams/json-fortran/tree/8.2.4">8.2.4</a> (2021-08-15)</h3>
+<p><a href="https://github.com/jacobwilliams/json-fortran/compare/8.2.3...8.2.4">Complete Changeset</a>
+or <a href="https://github.com/jacobwilliams/json-fortran/releases/tag/8.2.4">Download v8.2.4</a></p>
+<p><strong>Enhancements:</strong></p>
+<ul>
+<li>Documentation updates. <a href="https://github.com/jacobwilliams/json-fortran/pull/492">#492</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Added <code>MultiProcessorCompilation="true"</code> to the Visual Studio project file.</li>
+</ul>
+<p><strong>Bug Fixes:</strong></p>
+<ul>
+<li>Fixed a memory leak when deserializing an empty list. <a href="https://github.com/jacobwilliams/json-fortran/issues/488">#488</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/493">#493</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Fixed a memory leak when cloning a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> pointer. <a href="https://github.com/jacobwilliams/json-fortran/issues/489">#489</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/490">#490</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
+<li>Fixed a bug where some error messages would attempt to print unallocated <code>name</code> values. <a href="https://github.com/jacobwilliams/json-fortran/issues/491">#491</a></li>
+</ul>
 <h3 id="823-2020-06-05"><a href="https://github.com/jacobwilliams/json-fortran/tree/8.2.3">8.2.3</a> (2020-06-05)</h3>
 <p><a href="https://github.com/jacobwilliams/json-fortran/compare/8.2.2...8.2.3">Complete Changeset</a>
 or <a href="https://github.com/jacobwilliams/json-fortran/releases/tag/8.2.3">Download v8.2.3</a></p>
@@ -453,7 +474,7 @@ or <a href="https://github.com/jacobwilliams/json-fortran/releases/tag/8.2.2">Do
 <p><strong>Enhancements:</strong></p>
 <ul>
 <li>Added support for the Fortran Package Manger. <a href="https://github.com/jacobwilliams/json-fortran/issues/483">#483</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
-<li>Updated CI to use GitHub Actions, including auto-deployment of documentation. <a href="https://github.com/jacobwilliams/json-fortran/issues/476">#476</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/484">#484</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)  </li>
+<li>Updated CI to use GitHub Actions, including auto-deployment of documentation. <a href="https://github.com/jacobwilliams/json-fortran/issues/476">#476</a> <a href="https://github.com/jacobwilliams/json-fortran/pull/484">#484</a> (<a href="https://github.com/jacobwilliams">jacobwilliams</a>)</li>
 <li>Eliminated some compiler warnings about real conversions.</li>
 </ul>
 <p><strong>Bug fixes:</strong></p>
@@ -1324,7 +1345,7 @@ browser&rsquo;s back button to navigate back to
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-08-16 04:07  
+             on 2021-08-16 04:14  
             
           </p>
         </div>
