@@ -138,7 +138,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.9% of total for procedures.">64 statements</a>
+    title=" 1.0% of total for procedures.">66 statements</a>
      </li> 
      
      
@@ -497,7 +497,7 @@ private recursive subroutine parse_object(json, unit, str, parent)
                             <span class="n">skip_comments</span><span class="o">=</span><span class="n">json</span><span class="p">%</span><span class="n">allow_comments</span><span class="p">,</span> <span class="n">popped</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">eof</span><span class="p">)</span> <span class="k">then</span>
 <span class="k">            call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in parse_object:&#39;</span><span class="o">//</span><span class="p">&amp;</span>
-                                 <span class="s1">&#39; Unexpected end of file while parsing start of object.&#39;</span><span class="p">)</span>
+                                      <span class="s1">&#39; Unexpected end of file while parsing start of object.&#39;</span><span class="p">)</span>
             <span class="k">return</span>
 <span class="k">        else if</span> <span class="p">(</span><span class="n">end_object</span> <span class="o">==</span> <span class="n">c</span><span class="p">)</span> <span class="k">then</span>
             <span class="c">! end of an empty object</span>
@@ -524,8 +524,9 @@ private recursive subroutine parse_object(json, unit, str, parent)
         <span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">pop_char</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span> <span class="n">str</span><span class="o">=</span><span class="n">str</span><span class="p">,</span> <span class="n">eof</span><span class="o">=</span><span class="n">eof</span><span class="p">,</span> <span class="n">skip_ws</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.,</span> <span class="p">&amp;</span>
                             <span class="n">skip_comments</span><span class="o">=</span><span class="n">json</span><span class="p">%</span><span class="n">allow_comments</span><span class="p">,</span> <span class="n">popped</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">eof</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">            call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in parse_object:&#39;</span><span class="o">//</span><span class="p">&amp;</span>
-                                 <span class="s1">&#39; Unexpected end of file while parsing object member.&#39;</span><span class="p">)</span>
+<span class="k">            call </span><span class="n">json</span><span class="p">%</span><span class="n">destroy</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in parse_object:&#39;</span><span class="o">//</span><span class="p">&amp;</span>
+                                      <span class="s1">&#39; Unexpected end of file while parsing object member.&#39;</span><span class="p">)</span>
             <span class="k">return</span>
 <span class="k">        else if</span> <span class="p">(</span><span class="n">colon_char</span> <span class="o">==</span> <span class="n">c</span><span class="p">)</span> <span class="k">then</span>
             <span class="c">! parse the value</span>
@@ -537,7 +538,8 @@ private recursive subroutine parse_object(json, unit, str, parent)
 <span class="k">                call </span><span class="n">json</span><span class="p">%</span><span class="n">add</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">pair</span><span class="p">)</span>
             <span class="k">end if</span>
 <span class="k">        else</span>
-<span class="k">            call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in parse_object:&#39;</span><span class="o">//</span><span class="p">&amp;</span>
+<span class="k">            call </span><span class="n">json</span><span class="p">%</span><span class="n">destroy</span><span class="p">(</span><span class="n">pair</span><span class="p">)</span>
+            <span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in parse_object:&#39;</span><span class="o">//</span><span class="p">&amp;</span>
                                       <span class="s1">&#39; Expecting : and then a value: &#39;</span><span class="o">//</span><span class="n">c</span><span class="p">)</span>
             <span class="k">return</span>
 <span class="k">        end if</span>
@@ -547,7 +549,7 @@ private recursive subroutine parse_object(json, unit, str, parent)
                             <span class="n">skip_comments</span><span class="o">=</span><span class="n">json</span><span class="p">%</span><span class="n">allow_comments</span><span class="p">,</span> <span class="n">popped</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">eof</span><span class="p">)</span> <span class="k">then</span>
 <span class="k">            call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in parse_object: &#39;</span><span class="o">//</span><span class="p">&amp;</span>
-                                 <span class="s1">&#39;End of file encountered when parsing an object&#39;</span><span class="p">)</span>
+                                      <span class="s1">&#39;End of file encountered when parsing an object&#39;</span><span class="p">)</span>
             <span class="k">return</span>
 <span class="k">        else if</span> <span class="p">(</span><span class="n">delimiter</span> <span class="o">==</span> <span class="n">c</span><span class="p">)</span> <span class="k">then</span>
             <span class="c">! read the next member</span>
@@ -585,7 +587,7 @@ private recursive subroutine parse_object(json, unit, str, parent)
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-08-16 04:14  
+             on 2021-08-17 21:18  
             
           </p>
         </div>
