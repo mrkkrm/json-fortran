@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="JSON-Fortran – A Modern Fortran JSON API">
+    <meta name="author" content="Jacob Williams" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>jf_test_38_mod &ndash; JSON-Fortran</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">JSON-Fortran </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href='../page/index.html'>Other Docs</a></li>
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="../lists/files.html">Source Files</a></li>
+            <li><a href="../lists/modules.html">Modules</a></li>
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+            <li><a href="../lists/programs.html">Programs</a></li>
+       
+            </ul>
+        
+            </li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+          </ul>
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+  <div class="row">
+    <h1>jf_test_38_mod 
+    <small>Module</small>
+    </h1>
+    <div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     <li><i class="fa fa-pencil"></i> Jacob Williams</li>
+    <li><i class="fa fa-calendar-o"></i> 1/21/2019</li>
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 0.7% of total for modules and submodules.">86 statements</a>
+     </li> 
+    <li><i class="fa fa-code"></i><a href="../src/jf_test_38.F90"> Source File</a></li>
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+     <li><a href='../sourcefile/jf_test_38.f90.html'>jf_test_38.F90</a></li>
+     <li class="active">jf_test_38_mod</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    <div id="sidebar">
+  <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      <a class="list-group-item" href="../module/jf_test_38_mod.html#proc-test_38">test_38</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <p>Module for the 38th unit test.</p>
+<p></p><div class="alert alert-info" role="alert"><h4>Note</h4><p>This test assumes the library is compiled
+      including <code>real32</code> (or greater) support.</p></div>
+<br>        <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      <li class="list-group-item">
+  <ul class="list-inline">
+    <li><a href="https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html">iso_fortran_env</a></li>
+    <li><a href='../module/json_module.html'>json_module</a></li>
+  </ul>
+      </li>
+      <li class="list-group-item">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~jf_test_38_mod~~UsesGraph Pages: 1 -->
+<svg id="modulejf_test_38_modUsesGraph" width="641pt" height="157pt"
+ viewBox="0.00 0.00 641.00 157.34" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~jf_test_38_mod~~UsesGraph" class="graph" transform="scale(1.6 1.6) rotate(0) translate(4 247.6)">
+<title>module~~jf_test_38_mod~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-247.6 1021,-247.6 1021,4 -4,4"/>
+<!-- module~jf_test_38_mod -->
+<g id="module~~jf_test_38_mod~~UsesGraph_node1" class="node">
+<title>module~jf_test_38_mod</title>
+<polygon fill="none" stroke="black" points="1017,-211.39 925,-211.39 925,-187.39 1017,-187.39 1017,-211.39"/>
+<text text-anchor="middle" x="971" y="-196.99" font-family="Helvetica,sans-Serif" font-size="10.50">jf_test_38_mod</text>
+</g>
+<!-- iso_fortran_env -->
+<g id="module~~jf_test_38_mod~~UsesGraph_node2" class="node">
+<title>iso_fortran_env</title>
+<g id="a_module~~jf_test_38_mod~~UsesGraph_node2"><a xlink:href="https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html" xlink:title="iso_fortran_env">
+<polygon fill="#337ab7" stroke="#337ab7" points="94,-73.39 0,-73.39 0,-49.39 94,-49.39 94,-73.39"/>
+<text text-anchor="middle" x="47" y="-58.99" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">iso_fortran_env</text>
+</a>
+</g>
+</g>
+<!-- module~jf_test_38_mod&#45;&gt;iso_fortran_env -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge1" class="edge">
+<title>module~jf_test_38_mod&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M924.81,-210.88C875.54,-222.38 794.2,-238.39 723,-238.39 723,-238.39 723,-238.39 576.5,-238.39 391.64,-238.39 328.61,-266.47 164.5,-181.39"/>
+</g>
+<!-- module~json_module -->
+<g id="module~~jf_test_38_mod~~UsesGraph_node3" class="node">
+<title>module~json_module</title>
+<g id="a_module~~jf_test_38_mod~~UsesGraph_node3"><a xlink:href=".././module/json_module.html" xlink:title="json_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="889,-191.39 809,-191.39 809,-167.39 889,-167.39 889,-191.39"/>
+<text text-anchor="middle" x="849" y="-176.99" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_module</text>
+</a>
+</g>
+</g>
+<!-- module~jf_test_38_mod&#45;&gt;module~json_module -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge2" class="edge">
+<title>module~jf_test_38_mod&#45;&gt;module~json_module</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M924.98,-191.89C916.65,-190.5 907.92,-189.04 899.48,-187.64"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="899.8,-184.14 889.37,-185.95 898.65,-191.05 899.8,-184.14"/>
+</g>
+<!-- module~json_value_module -->
+<g id="module~~jf_test_38_mod~~UsesGraph_node4" class="node">
+<title>module~json_value_module</title>
+<g id="a_module~~jf_test_38_mod~~UsesGraph_node4"><a xlink:href=".././module/json_value_module.html" xlink:title="json_value_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="635,-66.39 520,-66.39 520,-42.39 635,-42.39 635,-66.39"/>
+<text text-anchor="middle" x="577.5" y="-51.99" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_value_module</text>
+</a>
+</g>
+</g>
+<!-- module~json_module&#45;&gt;module~json_value_module -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge3" class="edge">
+<title>module~json_module&#45;&gt;module~json_value_module</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M721,-74.39C697.52,-63.97 669.91,-58.7 645.28,-56.11"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="645.56,-52.62 635.28,-55.19 644.92,-59.6 645.56,-52.62"/>
+</g>
+<!-- module~json_kinds -->
+<g id="module~~jf_test_38_mod~~UsesGraph_node5" class="node">
+<title>module~json_kinds</title>
+<g id="a_module~~jf_test_38_mod~~UsesGraph_node5"><a xlink:href=".././module/json_kinds.html" xlink:title="json_kinds">
+<polygon fill="#337ab7" stroke="#337ab7" points="197,-73.39 130,-73.39 130,-49.39 197,-49.39 197,-73.39"/>
+<text text-anchor="middle" x="163.5" y="-58.99" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_kinds</text>
+</a>
+</g>
+</g>
+<!-- module~json_module&#45;&gt;module~json_kinds -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge4" class="edge">
+<title>module~json_module&#45;&gt;module~json_kinds</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M837.73,-167.26C818.02,-144.85 772.41,-97.18 723,-74.39"/>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M721,-74.39C682.55,-56.65 675.86,-44.51 635,-33.39 505.86,1.75 468.71,-13.17 335,-7.39 289.71,-5.43 275.83,7.46 233,-7.39 213.33,-14.21 195.03,-29.28 182.31,-41.77"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="179.62,-39.51 175.14,-49.11 184.63,-44.4 179.62,-39.51"/>
+</g>
+<!-- module~json_string_utilities -->
+<g id="module~~jf_test_38_mod~~UsesGraph_node6" class="node">
+<title>module~json_string_utilities</title>
+<g id="a_module~~jf_test_38_mod~~UsesGraph_node6"><a xlink:href=".././module/json_string_utilities.html" xlink:title="json_string_utilities">
+<polygon fill="#337ab7" stroke="#337ab7" points="484,-108.39 371,-108.39 371,-84.39 484,-84.39 484,-108.39"/>
+<text text-anchor="middle" x="427.5" y="-93.99" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_string_utilities</text>
+</a>
+</g>
+</g>
+<!-- module~json_module&#45;&gt;module~json_string_utilities -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge5" class="edge">
+<title>module~json_module&#45;&gt;module~json_string_utilities</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M721,-74.39C710.79,-69.86 577.21,-81.87 494.14,-89.88"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="493.64,-86.41 484.03,-90.86 494.32,-93.38 493.64,-86.41"/>
+</g>
+<!-- module~json_parameters -->
+<g id="module~~jf_test_38_mod~~UsesGraph_node7" class="node">
+<title>module~json_parameters</title>
+<g id="a_module~~jf_test_38_mod~~UsesGraph_node7"><a xlink:href=".././module/json_parameters.html" xlink:title="json_parameters">
+<polygon fill="#337ab7" stroke="#337ab7" points="335,-153.39 233,-153.39 233,-129.39 335,-129.39 335,-153.39"/>
+<text text-anchor="middle" x="284" y="-138.99" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_parameters</text>
+</a>
+</g>
+</g>
+<!-- module~json_module&#45;&gt;module~json_parameters -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge6" class="edge">
+<title>module~json_module&#45;&gt;module~json_parameters</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M808.83,-184.23C726.65,-193.26 530.64,-209.01 371,-176.39 352.56,-172.62 333.05,-165.01 317.28,-157.84"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="318.53,-154.56 307.99,-153.48 315.55,-160.9 318.53,-154.56"/>
+</g>
+<!-- module~json_file_module -->
+<g id="module~~jf_test_38_mod~~UsesGraph_node8" class="node">
+<title>module~json_file_module</title>
+<g id="a_module~~jf_test_38_mod~~UsesGraph_node8"><a xlink:href=".././module/json_file_module.html" xlink:title="json_file_module">
+<polygon fill="#337ab7" stroke="#337ab7" points="773,-172.39 671,-172.39 671,-148.39 773,-148.39 773,-172.39"/>
+<text text-anchor="middle" x="722" y="-157.99" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_file_module</text>
+</a>
+</g>
+</g>
+<!-- module~json_module&#45;&gt;module~json_file_module -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge7" class="edge">
+<title>module~json_module&#45;&gt;module~json_file_module</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M808.79,-173.43C800.66,-172.2 791.92,-170.87 783.23,-169.55"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="783.51,-166.05 773.1,-168.01 782.46,-172.97 783.51,-166.05"/>
+</g>
+<!-- module~json_value_module&#45;&gt;iso_fortran_env -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge8" class="edge">
+<title>module~json_value_module&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M519.86,-52.53C492.27,-52.09 458.62,-52.27 428.5,-54.39"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M426.5,-54.39C362.08,-58.93 349.55,-23.38 285,-21.39"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M283,-21.39C218.7,-19.41 145.84,-34.58 98.53,-46.81"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="97.61,-43.43 88.83,-49.36 99.39,-50.2 97.61,-43.43"/>
+</g>
+<!-- module~json_value_module&#45;&gt;module~json_kinds -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge10" class="edge">
+<title>module~json_value_module&#45;&gt;module~json_kinds</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M283,-21.39C251.72,-20.43 218.09,-33.23 194.68,-44.6"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="192.97,-41.55 185.62,-49.18 196.13,-47.79 192.97,-41.55"/>
+</g>
+<!-- module~json_value_module&#45;&gt;module~json_string_utilities -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge11" class="edge">
+<title>module~json_value_module&#45;&gt;module~json_string_utilities</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M534.09,-66.43C517.52,-71.13 498.36,-76.57 480.94,-81.51"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="479.58,-78.26 470.92,-84.35 481.49,-84.99 479.58,-78.26"/>
+</g>
+<!-- module~json_value_module&#45;&gt;module~json_parameters -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge12" class="edge">
+<title>module~json_value_module&#45;&gt;module~json_parameters</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M426.5,-54.39C376.14,-57.94 328.49,-97.32 303.39,-121.86"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="300.62,-119.68 296.06,-129.25 305.59,-124.62 300.62,-119.68"/>
+</g>
+<!-- ieee_arithmetic -->
+<g id="module~~jf_test_38_mod~~UsesGraph_node9" class="node">
+<title>ieee_arithmetic</title>
+<g id="a_module~~jf_test_38_mod~~UsesGraph_node9"><a xlink:href="http://fortranwiki.org/fortran/show/ieee_arithmetic" xlink:title="ieee_arithmetic">
+<polygon fill="#337ab7" stroke="#337ab7" points="332,-73.39 236,-73.39 236,-49.39 332,-49.39 332,-73.39"/>
+<text text-anchor="middle" x="284" y="-58.99" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ieee_arithmetic</text>
+</a>
+</g>
+</g>
+<!-- module~json_value_module&#45;&gt;ieee_arithmetic -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge9" class="edge">
+<title>module~json_value_module&#45;&gt;ieee_arithmetic</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M426.5,-54.39C398.9,-56.34 368.23,-57.92 342.52,-59.09"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="342.03,-55.61 332.2,-59.55 342.34,-62.6 342.03,-55.61"/>
+</g>
+<!-- module~json_kinds&#45;&gt;iso_fortran_env -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge13" class="edge">
+<title>module~json_kinds&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#cbff00" stroke-dasharray="5,2" d="M130,-61.39C122.01,-61.39 113.23,-61.39 104.48,-61.39"/>
+<polygon fill="#cbff00" stroke="#cbff00" points="104.26,-57.89 94.26,-61.39 104.26,-64.89 104.26,-57.89"/>
+</g>
+<!-- module~json_string_utilities&#45;&gt;module~json_kinds -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge14" class="edge">
+<title>module~json_string_utilities&#45;&gt;module~json_kinds</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M370.61,-95.67C331.73,-94.36 278.85,-90.96 233,-82.39 224.48,-80.8 215.51,-78.51 206.98,-76.03"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="207.81,-72.63 197.22,-73.06 205.77,-79.32 207.81,-72.63"/>
+</g>
+<!-- module~json_string_utilities&#45;&gt;module~json_parameters -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge15" class="edge">
+<title>module~json_string_utilities&#45;&gt;module~json_parameters</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M388.58,-108.45C371.37,-113.92 350.83,-120.45 332.6,-126.25"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="331.49,-122.93 323.02,-129.3 333.61,-129.6 331.49,-122.93"/>
+</g>
+<!-- module~json_string_utilities&#45;&gt;ieee_arithmetic -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge16" class="edge">
+<title>module~json_string_utilities&#45;&gt;ieee_arithmetic</title>
+<path fill="none" stroke="#00ff66" stroke-dasharray="5,2" d="M377.8,-84.35C366.31,-81.5 353.96,-78.45 342.13,-75.52"/>
+<polygon fill="#00ff66" stroke="#00ff66" points="342.9,-72.11 332.35,-73.1 341.22,-78.9 342.9,-72.11"/>
+</g>
+<!-- module~json_parameters&#45;&gt;module~json_kinds -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge17" class="edge">
+<title>module~json_parameters&#45;&gt;module~json_kinds</title>
+<path fill="none" stroke="#0066ff" stroke-dasharray="5,2" d="M257.55,-129.33C249.52,-125.21 240.73,-120.38 233,-115.39 216.62,-104.81 199.38,-91.21 186.3,-80.3"/>
+<polygon fill="#0066ff" stroke="#0066ff" points="188.25,-77.37 178.35,-73.58 183.73,-82.71 188.25,-77.37"/>
+</g>
+<!-- module~json_file_module&#45;&gt;iso_fortran_env -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge19" class="edge">
+<title>module~json_file_module&#45;&gt;iso_fortran_env</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M283,-181.39C231.05,-172.73 211.26,-205.63 164.5,-181.39"/>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M162.5,-181.39C117.25,-157.93 79.84,-109.55 61.06,-81.92"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="63.86,-79.81 55.42,-73.41 58.03,-83.68 63.86,-79.81"/>
+</g>
+<!-- module~json_file_module&#45;&gt;module~json_value_module -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge18" class="edge">
+<title>module~json_file_module&#45;&gt;module~json_value_module</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M704.65,-148.23C679.74,-129.7 632.11,-94.27 603.04,-72.64"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="604.77,-69.57 594.66,-66.41 600.59,-75.19 604.77,-69.57"/>
+</g>
+<!-- module~json_file_module&#45;&gt;module~json_kinds -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge20" class="edge">
+<title>module~json_file_module&#45;&gt;module~json_kinds</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M426.5,-162.39C363.05,-162.17 347.59,-191.82 285,-181.39"/>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M283,-181.39C259.55,-177.48 251.65,-177.13 233,-162.39 205.64,-140.76 185.14,-105.18 173.99,-82.53"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="177.12,-80.95 169.67,-73.42 170.79,-83.96 177.12,-80.95"/>
+</g>
+<!-- module~json_file_module&#45;&gt;module~json_string_utilities -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge21" class="edge">
+<title>module~json_file_module&#45;&gt;module~json_string_utilities</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M670.76,-163.91C643.41,-165.12 609.02,-165.49 578.5,-162.39"/>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M576.5,-162.39C530.53,-157.72 482.64,-131.88 454.2,-113.95"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="455.98,-110.93 445.68,-108.45 452.18,-116.81 455.98,-110.93"/>
+</g>
+<!-- module~json_file_module&#45;&gt;module~json_parameters -->
+<g id="module~~jf_test_38_mod~~UsesGraph_edge22" class="edge">
+<title>module~json_file_module&#45;&gt;module~json_parameters</title>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M576.5,-162.39C511.06,-155.74 494.28,-162.62 428.5,-162.39"/>
+<path fill="none" stroke="#cc00ff" stroke-dasharray="5,2" d="M426.5,-162.39C399.65,-162.3 370.25,-158.54 345.23,-154.23"/>
+<polygon fill="#cc00ff" stroke="#cc00ff" points="345.62,-150.74 335.16,-152.42 344.38,-157.63 345.62,-150.74"/>
+</g>
+</g>
+</svg>
+</div><script>var panmodulejf_test_38_modUsesGraph = svgPanZoom('#modulejf_test_38_modUsesGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </li>
+      </ul>
+    </div>
+
+        <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Used by</h3>
+      </div>
+      <ul class="list-group">
+  <li class="list-group-item">
+    <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~jf_test_38_mod~~UsedByGraph Pages: 1 -->
+<svg id="modulejf_test_38_modUsedByGraph" width="199pt" height="32pt"
+ viewBox="0.00 0.00 199.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~jf_test_38_mod~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>module~~jf_test_38_mod~~UsedByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 195,-28 195,4 -4,4"/>
+<!-- module~jf_test_38_mod -->
+<g id="module~~jf_test_38_mod~~UsedByGraph_node1" class="node">
+<title>module~jf_test_38_mod</title>
+<polygon fill="none" stroke="black" points="92,-24 0,-24 0,0 92,0 92,-24"/>
+<text text-anchor="middle" x="46" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">jf_test_38_mod</text>
+</g>
+<!-- program~jf_test_38 -->
+<g id="module~~jf_test_38_mod~~UsedByGraph_node2" class="node">
+<title>program~jf_test_38</title>
+<g id="a_module~~jf_test_38_mod~~UsedByGraph_node2"><a xlink:href=".././program/jf_test_38.html" xlink:title="jf_test_38">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="191,-24 128,-24 128,0 191,0 191,-24"/>
+<text text-anchor="middle" x="159.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">jf_test_38</text>
+</a>
+</g>
+</g>
+<!-- program~jf_test_38&#45;&gt;module~jf_test_38_mod -->
+<g id="module~~jf_test_38_mod~~UsedByGraph_edge1" class="edge">
+<title>program~jf_test_38&#45;&gt;module~jf_test_38_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M127.74,-12C119.86,-12 111.15,-12 102.44,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="102.28,-8.5 92.28,-12 102.28,-15.5 102.28,-8.5"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+  </li>
+      </ul>
+    </div>
+
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      <h3>Contents</h3>
+ 
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      <a class="list-group-item" href="../module/jf_test_38_mod.html#proc-test_38">test_38</a>
+    </div>
+  </div>
+</div>
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+
+    
+    
+
+    
+    
+
+    <section>
+    <h2>Subroutines</h2>
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-test_38"></span><h3>public subroutine <a href='../proc/test_38.html'>test_38</a>(error_cnt)</h3></div>
+  <div class="panel-body">
+       
+<p>Test of support for <code>real32</code> interfaces.</p>
+    
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" ></span>integer,</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
+  <td><strong>error_cnt</strong></td><td><p>report number of errors to caller</p></td>
+</tr>
+</tbody>
+</table>
+
+
+  </div>
+  </div>
+
+    </section>    
+    <br>
+    
+    </div>
+  </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-6"><p>JSON-Fortran was developed by Jacob Williams<br>&copy; 2022 
+</p>
+        </div>
+        <div class="col-xs-6 col-md-6">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2022-02-02 03:58            </p>
+        </div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+  </body>
+</html>

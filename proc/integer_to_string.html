@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="JSON-Fortran – A Modern Fortran JSON API">
-    
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
@@ -16,10 +14,7 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
     <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,60 +43,30 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li><a href='../page/index.html'>Other Docs</a></li>
-      
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../lists/files.html">Source Files</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-        
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
-               
-            <li><a href="../lists/types.html">Derived Types</a></li>
-        
-               
-        
-        
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+            <li><a href="../lists/programs.html">Programs</a></li>
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
-                             
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-
-
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
-        
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -110,55 +75,31 @@
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
-  
   <div class="row">
     <h1>integer_to_string
       <small>Subroutine</small>
-    
     </h1>
-    
-<div class="row">
+    <div class="row">
   <div class="col-lg-12">
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     
      <li><i class="fa fa-pencil"></i> Jacob Williams</li>
-     
-     
     <li><i class="fa fa-calendar-o"></i> 12/4/2013</li>
-     
-     
-     
-     
-    
-    
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">13 statements</a>
+    title=" 0.1% of total for procedures.">13 statements</a>
      </li> 
-     
-     
-     
     <li><i class="fa fa-code"></i><a href="../src/json_string_utilities.F90"> Source File</a></li>
-     
-     
   </ul>
   <ol class="breadcrumb in-well text-right">
-  
-    
      <li><a href='../sourcefile/json_string_utilities.f90.html'>json_string_utilities.F90</a></li>
-    
      <li><a href='../module/json_string_utilities.html'>json_string_utilities</a></li>
-    
-  
      <li class="active">integer_to_string</li>
   </ol>
 </div>
@@ -174,127 +115,54 @@
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    
-<div id="sidebar">
-  
-<h3>Contents</h3>
+    <div id="sidebar">
+  <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
-  <div class="list-group">
-    <a class="list-group-item" href="../proc/integer_to_string.html#src">integer_to_string</a>
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../proc/integer_to_string.html#variable-istat~5">istat</a>
+    </div>
   </div>
 </div>
-
-
 
 </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>
-public pure subroutine integer_to_string(ival, int_fmt, str)
+    <h2>public pure subroutine integer_to_string(ival, int_fmt, str)</h2>
     
-    
-   
-</h2>
-    
-  
 
-
-    
     <p>Convert an integer to a string.</p>
-    
 
     <h3>Arguments</h3>
-    
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
-  <td><span class="anchor" id="variable-ival"></span>integer(kind=IK),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+  <td><span class="anchor" id="variable-ival~5"></span>integer(kind=IK),</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>ival</strong></td><td><p>integer value.</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-int_fmt"></span>character(kind=CDK,len=*),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>int_fmt</strong></td><td><p>format for integers</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
-  <td><span class="anchor" id="variable-str~8"></span>character(kind=CK,len=*),</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+  <td><span class="anchor" id="variable-str~25"></span>character(kind=CK,len=*),</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>str</strong></td><td><p><code>ival</code> converted to a string.</p></td>
-  
 </tr>
-
 </tbody>
 </table>
 
-    
-    
-    
     <br>
-    
-    
-     
     <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Called by</h3>
@@ -317,19 +185,19 @@ public pure subroutine integer_to_string(ival, int_fmt, str)
 <polygon fill="none" stroke="black" points="266,-171 164,-171 164,-147 266,-147 266,-171"/>
 <text text-anchor="middle" x="215" y="-156.6" font-family="Helvetica,sans-Serif" font-size="10.50">integer_to_string</text>
 </g>
-<!-- proc~push_char -->
+<!-- proc~json_get_string -->
 <g id="proc~~integer_to_string~~CalledByGraph_node2" class="node">
-<title>proc~push_char</title>
-<g id="a_proc~~integer_to_string~~CalledByGraph_node2"><a xlink:href=".././proc/push_char.html" xlink:title="push_char">
-<polygon fill="#d9534f" stroke="#d9534f" points="97.5,-318 30.5,-318 30.5,-294 97.5,-294 97.5,-318"/>
-<text text-anchor="middle" x="64" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">push_char</text>
+<title>proc~json_get_string</title>
+<g id="a_proc~~integer_to_string~~CalledByGraph_node2"><a xlink:href=".././proc/json_get_string.html" xlink:title="json_get_string">
+<polygon fill="#d9534f" stroke="#d9534f" points="110,-318 18,-318 18,-294 110,-294 110,-318"/>
+<text text-anchor="middle" x="64" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_get_string</text>
 </a>
 </g>
 </g>
-<!-- proc~push_char&#45;&gt;proc~integer_to_string -->
-<g id="proc~~integer_to_string~~CalledByGraph_edge2" class="edge">
-<title>proc~push_char&#45;&gt;proc~integer_to_string</title>
-<path fill="none" stroke="#ff0000" d="M97.72,-299.46C108.1,-296.29 119.17,-291.67 128,-285 164.89,-257.14 191.46,-208.69 204.63,-180.68"/>
+<!-- proc~json_get_string&#45;&gt;proc~integer_to_string -->
+<g id="proc~~integer_to_string~~CalledByGraph_edge1" class="edge">
+<title>proc~json_get_string&#45;&gt;proc~integer_to_string</title>
+<path fill="none" stroke="#ff0000" d="M110.19,-294.98C116.51,-292.31 122.66,-289.03 128,-285 164.89,-257.14 191.46,-208.69 204.63,-180.68"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="207.91,-181.92 208.87,-171.36 201.54,-179.02 207.91,-181.92"/>
 </g>
 <!-- proc~json_get_by_path -->
@@ -342,24 +210,24 @@ public pure subroutine integer_to_string(ival, int_fmt, str)
 </g>
 </g>
 <!-- proc~json_get_by_path&#45;&gt;proc~integer_to_string -->
-<g id="proc~~integer_to_string~~CalledByGraph_edge3" class="edge">
+<g id="proc~~integer_to_string~~CalledByGraph_edge2" class="edge">
 <title>proc~json_get_by_path&#45;&gt;proc~integer_to_string</title>
 <path fill="none" stroke="#ff0000" d="M109.52,-251.99C115.94,-249.46 122.29,-246.48 128,-243 156.12,-225.85 182.26,-197.92 198.17,-179.02"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="201.08,-180.99 204.73,-171.04 195.67,-176.54 201.08,-180.99"/>
 </g>
-<!-- proc~json_initialize -->
+<!-- proc~push_char -->
 <g id="proc~~integer_to_string~~CalledByGraph_node4" class="node">
-<title>proc~json_initialize</title>
-<g id="a_proc~~integer_to_string~~CalledByGraph_node4"><a xlink:href=".././proc/json_initialize.html" xlink:title="json_initialize">
-<polygon fill="#d9534f" stroke="#d9534f" points="106,-234 22,-234 22,-210 106,-210 106,-234"/>
-<text text-anchor="middle" x="64" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_initialize</text>
+<title>proc~push_char</title>
+<g id="a_proc~~integer_to_string~~CalledByGraph_node4"><a xlink:href=".././proc/push_char.html" xlink:title="push_char">
+<polygon fill="#d9534f" stroke="#d9534f" points="97.5,-234 30.5,-234 30.5,-210 97.5,-210 97.5,-234"/>
+<text text-anchor="middle" x="64" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">push_char</text>
 </a>
 </g>
 </g>
-<!-- proc~json_initialize&#45;&gt;proc~integer_to_string -->
-<g id="proc~~integer_to_string~~CalledByGraph_edge4" class="edge">
-<title>proc~json_initialize&#45;&gt;proc~integer_to_string</title>
-<path fill="none" stroke="#ff0000" d="M103.94,-209.92C111.97,-207.18 120.32,-204.14 128,-201 146.39,-193.48 166.35,-183.83 182.42,-175.67"/>
+<!-- proc~push_char&#45;&gt;proc~integer_to_string -->
+<g id="proc~~integer_to_string~~CalledByGraph_edge3" class="edge">
+<title>proc~push_char&#45;&gt;proc~integer_to_string</title>
+<path fill="none" stroke="#ff0000" d="M97.67,-212.02C107.52,-208.77 118.29,-204.97 128,-201 146.39,-193.48 166.35,-183.83 182.42,-175.67"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="184.08,-178.75 191.38,-171.07 180.89,-172.52 184.08,-178.75"/>
 </g>
 <!-- proc~json_get_path -->
@@ -372,7 +240,7 @@ public pure subroutine integer_to_string(ival, int_fmt, str)
 </g>
 </g>
 <!-- proc~json_get_path&#45;&gt;proc~integer_to_string -->
-<g id="proc~~integer_to_string~~CalledByGraph_edge5" class="edge">
+<g id="proc~~integer_to_string~~CalledByGraph_edge4" class="edge">
 <title>proc~json_get_path&#45;&gt;proc~integer_to_string</title>
 <path fill="none" stroke="#ff0000" d="M107.3,-174.04C121.77,-172 138.24,-169.68 153.84,-167.48"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="154.53,-170.92 163.94,-166.06 153.55,-163.99 154.53,-170.92"/>
@@ -387,7 +255,7 @@ public pure subroutine integer_to_string(ival, int_fmt, str)
 </g>
 </g>
 <!-- proc~annotate_invalid_json&#45;&gt;proc~integer_to_string -->
-<g id="proc~~integer_to_string~~CalledByGraph_edge7" class="edge">
+<g id="proc~~integer_to_string~~CalledByGraph_edge5" class="edge">
 <title>proc~annotate_invalid_json&#45;&gt;proc~integer_to_string</title>
 <path fill="none" stroke="#ff0000" d="M128.19,-146.91C136.65,-148.1 145.31,-149.32 153.71,-150.5"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="153.42,-154 163.81,-151.93 154.4,-147.07 153.42,-154"/>
@@ -417,24 +285,24 @@ public pure subroutine integer_to_string(ival, int_fmt, str)
 </g>
 </g>
 <!-- proc~json_create_by_path&#45;&gt;proc~integer_to_string -->
-<g id="proc~~integer_to_string~~CalledByGraph_edge1" class="edge">
+<g id="proc~~integer_to_string~~CalledByGraph_edge7" class="edge">
 <title>proc~json_create_by_path&#45;&gt;proc~integer_to_string</title>
 <path fill="none" stroke="#ff0000" d="M109.52,-66.01C115.94,-68.54 122.29,-71.52 128,-75 156.12,-92.15 182.26,-120.08 198.17,-138.98"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="195.67,-141.46 204.73,-146.96 201.08,-137.01 195.67,-141.46"/>
 </g>
-<!-- proc~json_get_string -->
+<!-- proc~json_initialize -->
 <g id="proc~~integer_to_string~~CalledByGraph_node9" class="node">
-<title>proc~json_get_string</title>
-<g id="a_proc~~integer_to_string~~CalledByGraph_node9"><a xlink:href=".././proc/json_get_string.html" xlink:title="json_get_string">
-<polygon fill="#d9534f" stroke="#d9534f" points="110,-24 18,-24 18,0 110,0 110,-24"/>
-<text text-anchor="middle" x="64" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_get_string</text>
+<title>proc~json_initialize</title>
+<g id="a_proc~~integer_to_string~~CalledByGraph_node9"><a xlink:href=".././proc/json_initialize.html" xlink:title="json_initialize">
+<polygon fill="#d9534f" stroke="#d9534f" points="106,-24 22,-24 22,0 106,0 106,-24"/>
+<text text-anchor="middle" x="64" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_initialize</text>
 </a>
 </g>
 </g>
-<!-- proc~json_get_string&#45;&gt;proc~integer_to_string -->
+<!-- proc~json_initialize&#45;&gt;proc~integer_to_string -->
 <g id="proc~~integer_to_string~~CalledByGraph_edge8" class="edge">
-<title>proc~json_get_string&#45;&gt;proc~integer_to_string</title>
-<path fill="none" stroke="#ff0000" d="M110.19,-23.02C116.51,-25.69 122.66,-28.97 128,-33 164.89,-60.86 191.46,-109.31 204.63,-137.32"/>
+<title>proc~json_initialize&#45;&gt;proc~integer_to_string</title>
+<path fill="none" stroke="#ff0000" d="M106.25,-21.45C113.93,-24.36 121.56,-28.14 128,-33 164.89,-60.86 191.46,-109.31 204.63,-137.32"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="201.54,-138.98 208.87,-146.64 207.91,-136.08 201.54,-138.98"/>
 </g>
 </g>
@@ -500,110 +368,64 @@ public pure subroutine integer_to_string(ival, int_fmt, str)
     </div></div></div></div>
       </div>
     </div>
-     
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      
-<h3>Contents</h3>
+      <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
-  <div class="list-group">
-    <a class="list-group-item" href="../proc/integer_to_string.html#src">integer_to_string</a>
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      <a class="list-group-item" href="../proc/integer_to_string.html#variable-istat~5">istat</a>
+    </div>
   </div>
 </div>
-
-
 
     </section>
     <br class="visible-xs visible-sm hidden-md">
 
-    
 
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-
-
-    
-    
-    
-    <section>
-    <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">pure subroutine </span><span class="n">integer_to_string</span><span class="p">(</span><span class="n">ival</span><span class="p">,</span><span class="n">int_fmt</span><span class="p">,</span><span class="n">str</span><span class="p">)</span>
-
-    <span class="k">implicit none</span>
-
-<span class="k">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>               <span class="kd">::</span> <span class="n">ival</span>    <span class="c">!! integer value.</span>
-    <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CDK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">int_fmt</span> <span class="c">!! format for integers</span>
-    <span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">str</span>     <span class="c">!! `ival` converted to a string.</span>
-
-    <span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span> <span class="kd">::</span> <span class="n">istat</span>
-
-    <span class="k">write</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="n">int_fmt</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span> <span class="n">ival</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
-<span class="k">        </span><span class="n">str</span> <span class="o">=</span> <span class="nb">adjustl</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
-    <span class="k">else</span>
-<span class="k">        </span><span class="n">str</span> <span class="o">=</span> <span class="nb">repeat</span><span class="p">(</span><span class="n">star</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">str</span><span class="p">))</span>
-    <span class="k">end if</span>
-
-<span class="k">    end subroutine </span><span class="n">integer_to_string</span>
-</pre></div>
+    <section>    
+      <h2>Variables</h2>
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+<tbody>
+<tr>
+  <td><span class="anchor" id="variable-istat~5"></span>integer(kind=IK),</td>
+<td>private</td>  <td></td><td>::</td>
+  <td><strong>istat</strong></td><td></td><td></td><td></td>
+</tr>
+</tbody>
+</table>
 
     </section>
     <br>
     
     
+
+    
+    
+
+
+    
+    
     </div>
   </div>
-
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>JSON-Fortran was developed by Jacob Williams<br>&copy; 2021 
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>JSON-Fortran was developed by Jacob Williams<br>&copy; 2022 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-             on 2021-08-17 22:20  
-            
-          </p>
+ on 2022-02-02 03:58            </p>
         </div>
       </div>
       <br>
@@ -630,14 +452,11 @@ public pure subroutine integer_to_string(ival, int_fmt, str)
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
     <script src="../tipuesearch/tipuesearch_set.js"></script>
     <script src="../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>
