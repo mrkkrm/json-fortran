@@ -139,37 +139,37 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-verbose"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-verbose~5"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>verbose</strong></td><td><p>mainly useful for debugging (default is false)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-compact_reals"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-compact_reals~5"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>compact_reals</strong></td><td><p>to compact the real number strings for output (default is true)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-print_signs"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-print_signs~5"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>print_signs</strong></td><td><p>always print numeric sign (default is false)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-real_format"></span>character(kind=CDK,len=*),</td>
+  <td><span class="anchor" id="variable-real_format~5"></span>character(kind=CDK,len=*),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>real_format</strong></td><td><p>Real number format: &lsquo;E&rsquo; [default], &lsquo;*&rsquo;, &lsquo;G&rsquo;, &lsquo;EN&rsquo;, or &lsquo;ES&rsquo;</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-spaces_per_tab~2"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-spaces_per_tab~6"></span>integer(kind=IK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>spaces_per_tab</strong></td><td><p>number of spaces per tab for indenting (default is 2)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-strict_type_checking~2"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-strict_type_checking~6"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>strict_type_checking</strong></td><td><p>if true, no integer, double, or logical type
@@ -177,7 +177,7 @@ conversions are done for the <code>get</code> routines
 (default is false).</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-trailing_spaces_significant~2"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-trailing_spaces_significant~6"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>trailing_spaces_significant</strong></td><td><p>for name and path comparisons, is trailing
@@ -185,14 +185,14 @@ space to be considered significant.
 (default is false)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-case_sensitive_keys~2"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-case_sensitive_keys~6"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>case_sensitive_keys</strong></td><td><p>for name and path comparisons, are they
 case sensitive. (default is true)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-no_whitespace~2"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-no_whitespace~6"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>no_whitespace</strong></td><td><p>if true, printing the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure is
@@ -200,7 +200,7 @@ done without adding any non-significant
 spaces or linebreaks (default is false)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-unescape_strings"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-unescape_strings~5"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>unescape_strings</strong></td><td><p>If false, then the raw escaped
@@ -209,7 +209,7 @@ and similar routines. If true [default],
 then the string is returned unescaped.</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-comment_char~2"></span>character(kind=CK,len=*),</td>
+  <td><span class="anchor" id="variable-comment_char~6"></span>character(kind=CK,len=*),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>comment_char</strong></td><td><p>If present, these characters are used
@@ -220,7 +220,7 @@ to a blank string disables the
 ignoring of comments. (Default is <code>/!#</code>).</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-path_mode~2"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-path_mode~6"></span>integer(kind=IK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>path_mode</strong></td><td><p>How the path strings are interpreted in the
@@ -234,7 +234,7 @@ ignoring of comments. (Default is <code>/!#</code>).</p></td>
 </ul></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-path_separator~2"></span>character(kind=CK,len=1),</td>
+  <td><span class="anchor" id="variable-path_separator~6"></span>character(kind=CK,len=1),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>path_separator</strong></td><td><p>The <code>path</code> separator to use
@@ -246,7 +246,7 @@ Note: if <code>path_mode/=1</code>
 then this is ignored.</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-compress_vectors~2"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-compress_vectors~6"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>compress_vectors</strong></td><td><p>If true, then arrays of integers,
@@ -257,7 +257,7 @@ override this option if necessary].
 (Default is False).</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-allow_duplicate_keys~2"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-allow_duplicate_keys~6"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>allow_duplicate_keys</strong></td><td><ul>
@@ -270,7 +270,7 @@ override this option if necessary].
 </ul></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-escape_solidus~2"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-escape_solidus~7"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>escape_solidus</strong></td><td><ul>
@@ -283,14 +283,14 @@ override this option if necessary].
 all cases).</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-stop_on_error~2"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-stop_on_error~6"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>stop_on_error</strong></td><td><p>If an exception is raised, then immediately quit.
 (Default is False).</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-null_to_real_mode~2"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-null_to_real_mode~6"></span>integer(kind=IK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>null_to_real_mode</strong></td><td><p>if <code>strict_type_checking=false</code>:</p>
@@ -304,7 +304,7 @@ all cases).</p></td>
 </ul></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-non_normal_mode"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-non_normal_mode~5"></span>integer(kind=IK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>non_normal_mode</strong></td><td><p>How to serialize NaN, Infinity, and
@@ -316,7 +316,7 @@ all cases).</p></td>
 </ul></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-use_quiet_nan~2"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-use_quiet_nan~7"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>use_quiet_nan</strong></td><td><ul>
@@ -328,7 +328,7 @@ all cases).</p></td>
 </ul></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-strict_integer_type_checking~2"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-strict_integer_type_checking~6"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>strict_integer_type_checking</strong></td><td><ul>
@@ -344,7 +344,7 @@ all cases).</p></td>
 </tbody>
 </table>
 
-   <h3>Return Value <small><span class="anchor" id="variable-json_core_object"></span>type(<a href='../type/json_core.html'>json_core</a>)</small></h3>
+   <h3>Return Value <small><span class="anchor" id="variable-json_core_object~4"></span>type(<a href='../type/json_core.html'>json_core</a>)</small></h3>
     
     <br>
     <div class="panel panel-default">
@@ -482,7 +482,7 @@ all cases).</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-02 03:58            </p>
+ on 2022-02-13 14:43            </p>
         </div>
       </div>
       <br>

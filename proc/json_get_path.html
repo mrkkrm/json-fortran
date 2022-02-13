@@ -124,16 +124,16 @@
       <a class="list-group-item" href="../proc/json_get_path.html#variable-array_start">array_start</a>
       <a class="list-group-item" href="../proc/json_get_path.html#variable-consecutive_arrays">consecutive_arrays</a>
       <a class="list-group-item" href="../proc/json_get_path.html#variable-element~4">element</a>
-      <a class="list-group-item" href="../proc/json_get_path.html#variable-i~13">i</a>
+      <a class="list-group-item" href="../proc/json_get_path.html#variable-i~19">i</a>
       <a class="list-group-item" href="../proc/json_get_path.html#variable-istr">istr</a>
-      <a class="list-group-item" href="../proc/json_get_path.html#variable-n_children~3">n_children</a>
-      <a class="list-group-item" href="../proc/json_get_path.html#variable-name~15">name</a>
+      <a class="list-group-item" href="../proc/json_get_path.html#variable-n_children~5">n_children</a>
+      <a class="list-group-item" href="../proc/json_get_path.html#variable-name~23">name</a>
       <a class="list-group-item" href="../proc/json_get_path.html#variable-parent_is_root">parent_is_root</a>
       <a class="list-group-item" href="../proc/json_get_path.html#variable-parent_name">parent_name</a>
       <a class="list-group-item" href="../proc/json_get_path.html#variable-parents_parent_var_type">parents_parent_var_type</a>
-      <a class="list-group-item" href="../proc/json_get_path.html#variable-tmp~13">tmp</a>
+      <a class="list-group-item" href="../proc/json_get_path.html#variable-tmp~16">tmp</a>
       <a class="list-group-item" href="../proc/json_get_path.html#variable-use_brackets">use_brackets</a>
-      <a class="list-group-item" href="../proc/json_get_path.html#variable-var_type~4">var_type</a>
+      <a class="list-group-item" href="../proc/json_get_path.html#variable-var_type~8">var_type</a>
     </div>
   </div>
 </div>
@@ -181,19 +181,19 @@
   <td><strong>json</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-p~33"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-p~40"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td>intent(in),</td>
   <td></td>  <td>pointer</td><td>::</td>
   <td><strong>p</strong></td><td><p>a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> linked list object</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-path~31"></span>character(kind=CK,len=:),</td>
+  <td><span class="anchor" id="variable-path~107"></span>character(kind=CK,len=:),</td>
 <td>intent(out),</td>
   <td></td>  <td>allocatable</td><td>::</td>
   <td><strong>path</strong></td><td><p>path to the variable</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-found~31"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-found~105"></span>logical(kind=LK),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>found</strong></td><td><p>true if there were no problems</p></td>
@@ -240,45 +240,45 @@ otherwise, &lsquo;[]&rsquo; are used [default]
 <polygon fill="none" stroke="black" points="86,-66 0,-66 0,-42 86,-42 86,-66"/>
 <text text-anchor="middle" x="43" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">json_get_path</text>
 </g>
-<!-- proc~encode_rfc6901 -->
+<!-- none~add_to_path -->
 <g id="proc~~json_get_path~~CallsGraph_node2" class="node">
+<title>none~add_to_path</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="212,-108 134,-108 134,-84 212,-84 212,-108"/>
+<text text-anchor="middle" x="173" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">add_to_path</text>
+</g>
+<!-- proc~json_get_path&#45;&gt;none~add_to_path -->
+<g id="proc~~json_get_path~~CallsGraph_edge1" class="edge">
+<title>proc~json_get_path&#45;&gt;none~add_to_path</title>
+<path fill="none" stroke="#ff0000" d="M80.68,-66.04C94.74,-70.65 110.96,-75.97 125.8,-80.84"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="124.72,-84.17 135.31,-83.96 126.9,-77.52 124.72,-84.17"/>
+</g>
+<!-- proc~encode_rfc6901 -->
+<g id="proc~~json_get_path~~CallsGraph_node3" class="node">
 <title>proc~encode_rfc6901</title>
-<g id="a_proc~~json_get_path~~CallsGraph_node2"><a xlink:href=".././proc/encode_rfc6901.html" xlink:title="encode_rfc6901">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="222.5,-108 123.5,-108 123.5,-84 222.5,-84 222.5,-108"/>
-<text text-anchor="middle" x="173" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">encode_rfc6901</text>
+<g id="a_proc~~json_get_path~~CallsGraph_node3"><a xlink:href=".././proc/encode_rfc6901.html" xlink:title="encode_rfc6901">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="222.5,-66 123.5,-66 123.5,-42 222.5,-42 222.5,-66"/>
+<text text-anchor="middle" x="173" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">encode_rfc6901</text>
 </a>
 </g>
 </g>
 <!-- proc~json_get_path&#45;&gt;proc~encode_rfc6901 -->
-<g id="proc~~json_get_path~~CallsGraph_edge1" class="edge">
+<g id="proc~~json_get_path~~CallsGraph_edge2" class="edge">
 <title>proc~json_get_path&#45;&gt;proc~encode_rfc6901</title>
-<path fill="none" stroke="#ff0000" d="M80.68,-66.04C94.74,-70.65 110.96,-75.97 125.8,-80.84"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="124.72,-84.17 135.31,-83.96 126.9,-77.52 124.72,-84.17"/>
+<path fill="none" stroke="#ff0000" d="M86.27,-54C94.84,-54 104,-54 113.03,-54"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="113.12,-57.5 123.12,-54 113.12,-50.5 113.12,-57.5"/>
 </g>
 <!-- proc~integer_to_string -->
-<g id="proc~~json_get_path~~CallsGraph_node3" class="node">
+<g id="proc~~json_get_path~~CallsGraph_node4" class="node">
 <title>proc~integer_to_string</title>
-<g id="a_proc~~json_get_path~~CallsGraph_node3"><a xlink:href=".././proc/integer_to_string.html" xlink:title="integer_to_string">
-<polygon fill="#d9534f" stroke="#d9534f" points="224,-66 122,-66 122,-42 224,-42 224,-66"/>
-<text text-anchor="middle" x="173" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">integer_to_string</text>
+<g id="a_proc~~json_get_path~~CallsGraph_node4"><a xlink:href=".././proc/integer_to_string.html" xlink:title="integer_to_string">
+<polygon fill="#d9534f" stroke="#d9534f" points="224,-24 122,-24 122,0 224,0 224,-24"/>
+<text text-anchor="middle" x="173" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">integer_to_string</text>
 </a>
 </g>
 </g>
 <!-- proc~json_get_path&#45;&gt;proc~integer_to_string -->
-<g id="proc~~json_get_path~~CallsGraph_edge2" class="edge">
-<title>proc~json_get_path&#45;&gt;proc~integer_to_string</title>
-<path fill="none" stroke="#ff0000" d="M86.27,-54C94.43,-54 103.13,-54 111.74,-54"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="111.77,-57.5 121.77,-54 111.77,-50.5 111.77,-57.5"/>
-</g>
-<!-- none~add_to_path -->
-<g id="proc~~json_get_path~~CallsGraph_node4" class="node">
-<title>none~add_to_path</title>
-<polygon fill="#d9534f" stroke="#d9534f" points="212,-24 134,-24 134,0 212,0 212,-24"/>
-<text text-anchor="middle" x="173" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">add_to_path</text>
-</g>
-<!-- proc~json_get_path&#45;&gt;none~add_to_path -->
 <g id="proc~~json_get_path~~CallsGraph_edge3" class="edge">
-<title>proc~json_get_path&#45;&gt;none~add_to_path</title>
+<title>proc~json_get_path&#45;&gt;proc~integer_to_string</title>
 <path fill="none" stroke="#ff0000" d="M80.68,-41.96C94.74,-37.35 110.96,-32.03 125.8,-27.16"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="126.9,-30.48 135.31,-24.04 124.72,-23.83 126.9,-30.48"/>
 </g>
@@ -286,16 +286,16 @@ otherwise, &lsquo;[]&rsquo; are used [default]
 <g id="proc~~json_get_path~~CallsGraph_node5" class="node">
 <title>proc~replace_string</title>
 <g id="a_proc~~json_get_path~~CallsGraph_node5"><a xlink:href=".././proc/replace_string.html" xlink:title="replace_string">
-<polygon fill="#d9534f" stroke="#d9534f" points="348,-108 260,-108 260,-84 348,-84 348,-108"/>
-<text text-anchor="middle" x="304" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">replace_string</text>
+<polygon fill="#d9534f" stroke="#d9534f" points="348,-66 260,-66 260,-42 348,-42 348,-66"/>
+<text text-anchor="middle" x="304" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">replace_string</text>
 </a>
 </g>
 </g>
 <!-- proc~encode_rfc6901&#45;&gt;proc~replace_string -->
 <g id="proc~~json_get_path~~CallsGraph_edge4" class="edge">
 <title>proc~encode_rfc6901&#45;&gt;proc~replace_string</title>
-<path fill="none" stroke="#ff0000" d="M222.77,-96C231.49,-96 240.61,-96 249.46,-96"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="249.67,-99.5 259.67,-96 249.67,-92.5 249.67,-99.5"/>
+<path fill="none" stroke="#00ff00" d="M222.77,-54C231.49,-54 240.61,-54 249.46,-54"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="249.67,-57.5 259.67,-54 249.67,-50.5 249.67,-57.5"/>
 </g>
 </g>
 </svg>
@@ -373,16 +373,16 @@ otherwise, &lsquo;[]&rsquo; are used [default]
       <a class="list-group-item" href="../proc/json_get_path.html#variable-array_start">array_start</a>
       <a class="list-group-item" href="../proc/json_get_path.html#variable-consecutive_arrays">consecutive_arrays</a>
       <a class="list-group-item" href="../proc/json_get_path.html#variable-element~4">element</a>
-      <a class="list-group-item" href="../proc/json_get_path.html#variable-i~13">i</a>
+      <a class="list-group-item" href="../proc/json_get_path.html#variable-i~19">i</a>
       <a class="list-group-item" href="../proc/json_get_path.html#variable-istr">istr</a>
-      <a class="list-group-item" href="../proc/json_get_path.html#variable-n_children~3">n_children</a>
-      <a class="list-group-item" href="../proc/json_get_path.html#variable-name~15">name</a>
+      <a class="list-group-item" href="../proc/json_get_path.html#variable-n_children~5">n_children</a>
+      <a class="list-group-item" href="../proc/json_get_path.html#variable-name~23">name</a>
       <a class="list-group-item" href="../proc/json_get_path.html#variable-parent_is_root">parent_is_root</a>
       <a class="list-group-item" href="../proc/json_get_path.html#variable-parent_name">parent_name</a>
       <a class="list-group-item" href="../proc/json_get_path.html#variable-parents_parent_var_type">parents_parent_var_type</a>
-      <a class="list-group-item" href="../proc/json_get_path.html#variable-tmp~13">tmp</a>
+      <a class="list-group-item" href="../proc/json_get_path.html#variable-tmp~16">tmp</a>
       <a class="list-group-item" href="../proc/json_get_path.html#variable-use_brackets">use_brackets</a>
-      <a class="list-group-item" href="../proc/json_get_path.html#variable-var_type~4">var_type</a>
+      <a class="list-group-item" href="../proc/json_get_path.html#variable-var_type~8">var_type</a>
     </div>
   </div>
 </div>
@@ -425,7 +425,7 @@ otherwise, &lsquo;[]&rsquo; are used [default]
   <td><strong>element</strong></td><td></td><td></td><td><p>for traversing the structure</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-i~13"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-i~19"></span>integer(kind=IK),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>i</strong></td><td></td><td></td><td><p>counter</p></td>
 </tr>
@@ -436,12 +436,12 @@ otherwise, &lsquo;[]&rsquo; are used [default]
 (array indices)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-n_children~3"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-n_children~5"></span>integer(kind=IK),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>n_children</strong></td><td></td><td></td><td><p>number of children for parent</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-name~15"></span>character(kind=CK,len=:),</td>
+  <td><span class="anchor" id="variable-name~23"></span>character(kind=CK,len=:),</td>
 <td>private,</td>  <td>allocatable</td><td>::</td>
   <td><strong>name</strong></td><td></td><td></td><td><p>variable name</p></td>
 </tr>
@@ -461,7 +461,7 @@ otherwise, &lsquo;[]&rsquo; are used [default]
   <td><strong>parents_parent_var_type</strong></td><td></td><td></td><td><p><code>var_type</code> for parent&rsquo;s parent</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-tmp~13"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-tmp~16"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td>private,</td>  <td>pointer</td><td>::</td>
   <td><strong>tmp</strong></td><td></td><td></td><td><p>for traversing the structure</p></td>
 </tr>
@@ -471,7 +471,7 @@ otherwise, &lsquo;[]&rsquo; are used [default]
   <td><strong>use_brackets</strong></td><td></td><td></td><td><p>to use &lsquo;[]&rsquo; characters for arrays</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-var_type~4"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-var_type~8"></span>integer(kind=IK),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>var_type</strong></td><td></td><td></td><td><p><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> <abbr title="json_unknown, json_null, json_object, json_array, json_logical, json_integer, json_double, json_string">variable type</abbr> flag</p></td>
 </tr>
@@ -536,7 +536,7 @@ otherwise, &lsquo;[]&rsquo; are used [default]
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-02 03:58            </p>
+ on 2022-02-13 14:43            </p>
         </div>
       </div>
       <br>

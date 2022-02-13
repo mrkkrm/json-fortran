@@ -123,10 +123,10 @@
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
       <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-child">child</a>
-      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-found~19">found</a>
-      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-i~8">i</a>
-      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-j">j</a>
-      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-n_children~2">n_children</a>
+      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-found~93">found</a>
+      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-i~14">i</a>
+      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-j~2">j</a>
+      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-n_children~4">n_children</a>
       <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-names">names</a>
     </div>
   </div>
@@ -164,7 +164,7 @@
   <td><strong>json</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-p~19"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-p~26"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td>intent(in),</td>
   <td></td>  <td>pointer</td><td>::</td>
   <td><strong>p</strong></td><td><p>the object to search. If <code>p</code> is
@@ -180,7 +180,7 @@ two children have duplicate
 <code>name</code> values.</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-name~14"></span>character(kind=CK,len=:),</td>
+  <td><span class="anchor" id="variable-name~22"></span>character(kind=CK,len=:),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td>allocatable</td><td>::</td>
   <td><strong>name</strong></td><td><p>the duplicate name
@@ -188,7 +188,7 @@ two children have duplicate
 duplicate was found)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-path~19"></span>character(kind=CK,len=:),</td>
+  <td><span class="anchor" id="variable-path~95"></span>character(kind=CK,len=:),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td>allocatable</td><td>::</td>
   <td><strong>path</strong></td><td><p>the full path to the
@@ -209,10 +209,10 @@ duplicate was found)</p></td>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
       <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-child">child</a>
-      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-found~19">found</a>
-      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-i~8">i</a>
-      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-j">j</a>
-      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-n_children~2">n_children</a>
+      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-found~93">found</a>
+      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-i~14">i</a>
+      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-j~2">j</a>
+      <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-n_children~4">n_children</a>
       <a class="list-group-item" href="../proc/json_check_children_for_duplicate_keys.html#variable-names">names</a>
     </div>
   </div>
@@ -241,22 +241,22 @@ duplicate was found)</p></td>
   <td><strong>child</strong></td><td></td><td></td><td><p>pointer to a child of <code>p</code></p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-found~19"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-found~93"></span>logical(kind=LK),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>found</strong></td><td></td><td></td><td><p>flag for <code>get_child</code></p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-i~8"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-i~14"></span>integer(kind=IK),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>i</strong></td><td></td><td></td><td><p>counter</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-j"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-j~2"></span>integer(kind=IK),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>j</strong></td><td></td><td></td><td><p>counter</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-n_children~2"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-n_children~4"></span>integer(kind=IK),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>n_children</strong></td><td></td><td></td><td><p>number of children of <code>p</code></p></td>
 </tr>
@@ -286,7 +286,7 @@ child name strings</p></td>
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-str~4"></span>character(kind=CK,len=:),</td>
+  <td><span class="anchor" id="variable-str~27"></span>character(kind=CK,len=:),</td>
 <td>private,</td>  <td>allocatable</td><td>::</td>
   <td><strong>str</strong></td><td></td><td></td><td><p>name string</p></td>
 </tr>
@@ -319,7 +319,7 @@ child name strings</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-02 03:58            </p>
+ on 2022-02-13 14:43            </p>
         </div>
       </div>
       <br>

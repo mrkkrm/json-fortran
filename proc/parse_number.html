@@ -122,15 +122,15 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../proc/parse_number.html#variable-c~6">c</a>
+      <a class="list-group-item" href="../proc/parse_number.html#variable-c~8">c</a>
       <a class="list-group-item" href="../proc/parse_number.html#variable-eof~4">eof</a>
       <a class="list-group-item" href="../proc/parse_number.html#variable-first">first</a>
       <a class="list-group-item" href="../proc/parse_number.html#variable-ip">ip</a>
       <a class="list-group-item" href="../proc/parse_number.html#variable-is_integer">is_integer</a>
-      <a class="list-group-item" href="../proc/parse_number.html#variable-ival~4">ival</a>
-      <a class="list-group-item" href="../proc/parse_number.html#variable-rval~2">rval</a>
+      <a class="list-group-item" href="../proc/parse_number.html#variable-ival~6">ival</a>
+      <a class="list-group-item" href="../proc/parse_number.html#variable-rval~4">rval</a>
       <a class="list-group-item" href="../proc/parse_number.html#variable-saved_err_message">saved_err_message</a>
-      <a class="list-group-item" href="../proc/parse_number.html#variable-tmp~21">tmp</a>
+      <a class="list-group-item" href="../proc/parse_number.html#variable-tmp~24">tmp</a>
     </div>
   </div>
 </div>
@@ -159,13 +159,13 @@
   <td><strong>json</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-unit~5"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-unit~6"></span>integer(kind=IK),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>unit</strong></td><td><p>file unit number (if parsing from a file)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-str~11"></span>character(kind=CK,len=*),</td>
+  <td><span class="anchor" id="variable-str~34"></span>character(kind=CK,len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>str</strong></td><td><p><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> string (if parsing from a string)</p></td>
@@ -188,15 +188,15 @@
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      <a class="list-group-item" href="../proc/parse_number.html#variable-c~6">c</a>
+      <a class="list-group-item" href="../proc/parse_number.html#variable-c~8">c</a>
       <a class="list-group-item" href="../proc/parse_number.html#variable-eof~4">eof</a>
       <a class="list-group-item" href="../proc/parse_number.html#variable-first">first</a>
       <a class="list-group-item" href="../proc/parse_number.html#variable-ip">ip</a>
       <a class="list-group-item" href="../proc/parse_number.html#variable-is_integer">is_integer</a>
-      <a class="list-group-item" href="../proc/parse_number.html#variable-ival~4">ival</a>
-      <a class="list-group-item" href="../proc/parse_number.html#variable-rval~2">rval</a>
+      <a class="list-group-item" href="../proc/parse_number.html#variable-ival~6">ival</a>
+      <a class="list-group-item" href="../proc/parse_number.html#variable-rval~4">rval</a>
       <a class="list-group-item" href="../proc/parse_number.html#variable-saved_err_message">saved_err_message</a>
-      <a class="list-group-item" href="../proc/parse_number.html#variable-tmp~21">tmp</a>
+      <a class="list-group-item" href="../proc/parse_number.html#variable-tmp~24">tmp</a>
     </div>
   </div>
 </div>
@@ -211,7 +211,7 @@
 <thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-c~6"></span>character(kind=CK,len=1),</td>
+  <td><span class="anchor" id="variable-c~8"></span>character(kind=CK,len=1),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>c</strong></td><td></td><td></td><td><p>character returned by <a href="../proc/pop_char.html">pop_char</a></p></td>
 </tr>
@@ -238,12 +238,12 @@ of character string reallocations]</p></td>
   <td><strong>is_integer</strong></td><td></td><td></td><td><p>it is an integer</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-ival~4"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-ival~6"></span>integer(kind=IK),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>ival</strong></td><td></td><td></td><td><p>integer value</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-rval~2"></span>real(kind=RK),</td>
+  <td><span class="anchor" id="variable-rval~4"></span>real(kind=RK),</td>
 <td>private</td>  <td></td><td>::</td>
   <td><strong>rval</strong></td><td></td><td></td><td><p>real value</p></td>
 </tr>
@@ -254,7 +254,7 @@ of character string reallocations]</p></td>
 string to int conversion</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-tmp~21"></span>character(kind=CK,len=:),</td>
+  <td><span class="anchor" id="variable-tmp~24"></span>character(kind=CK,len=:),</td>
 <td>private,</td>  <td>allocatable</td><td>::</td>
   <td><strong>tmp</strong></td><td></td><td></td><td><p>temp string</p></td>
 </tr>
@@ -287,7 +287,7 @@ string to int conversion</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-02 03:58            </p>
+ on 2022-02-13 14:43            </p>
         </div>
       </div>
       <br>
