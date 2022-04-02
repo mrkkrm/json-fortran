@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -93,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">35 statements</a>
+    title=" 0.5% of total for procedures.">35 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
   </ul>
@@ -119,11 +117,9 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <div id="subs-0" class="panel-collapse collapse">
-      <a class="list-group-item" href="../proc/json_check_all_for_duplicate_keys.html#proc-duplicate_key_func">duplicate_key_func</a>
-    </div>
+    <a class="list-group-item" href="../proc/json_check_all_for_duplicate_keys.html#src">json_check_all_for_duplicate_keys</a>
   </div>
 </div>
 
@@ -153,7 +149,7 @@
   <td><strong>json</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-p~25"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-p~17"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td>intent(in),</td>
   <td></td>  <td>pointer</td><td>::</td>
   <td><strong>p</strong></td><td><p>the object to search. If <code>p</code> is
@@ -169,7 +165,7 @@ one duplicate <code>name</code> key anywhere
 in the structure.</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-name~21"></span>character(kind=CK,len=:),</td>
+  <td><span class="anchor" id="variable-name~11"></span>character(kind=CK,len=:),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td>allocatable</td><td>::</td>
   <td><strong>name</strong></td><td><p>the duplicate name
@@ -194,11 +190,9 @@ duplicate was found)</p></td>
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <div id="subs-1" class="panel-collapse collapse">
-      <a class="list-group-item" href="../proc/json_check_all_for_duplicate_keys.html#proc-duplicate_key_func">duplicate_key_func</a>
-    </div>
+    <a class="list-group-item" href="../proc/json_check_all_for_duplicate_keys.html#src">json_check_all_for_duplicate_keys</a>
   </div>
 </div>
 
@@ -213,45 +207,81 @@ duplicate was found)</p></td>
     
 
 
+    
     <section>
-    <h2>Subroutines</h2>
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-duplicate_key_func"></span><h3>subroutine duplicate_key_func(json, p, finished)</h3></div>
-  <div class="panel-body">
-       
-<p>Callback function to check each element
-for duplicate child names.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/json_core.html'>json_core</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>json</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-<td>intent(in),</td>
-  <td></td>  <td>pointer</td><td>::</td>
-  <td><strong>p</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>logical(kind=LK),</td>
-<td>intent(out)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>finished</strong></td><td></td>
-</tr>
-</tbody>
-</table>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">json_check_all_for_duplicate_keys</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">has_duplicate</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">path</span><span class="p">)</span><span class="w"></span>
 
+<span class="w">    </span><span class="k">implicit none</span>
 
-  </div>
-  </div>
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">p</span><span class="w">  </span><span class="c">!! the object to search. If `p` is</span>
+<span class="w">                                              </span><span class="c">!! not a `json_object`, then `has_duplicate`</span>
+<span class="w">                                              </span><span class="c">!! will be false.</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">has_duplicate</span><span class="w">  </span><span class="c">!! true if there is at least</span>
+<span class="w">                                              </span><span class="c">!! one duplicate `name` key anywhere</span>
+<span class="w">                                              </span><span class="c">!! in the structure.</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="c">!! the duplicate name</span>
+<span class="w">                                                                      </span><span class="c">!! (unallocated if no</span>
+<span class="w">                                                                      </span><span class="c">!! duplicates were found)</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="c">!! the full path to the</span>
+<span class="w">                                                                      </span><span class="c">!! duplicate name</span>
+<span class="w">                                                                      </span><span class="c">!! (unallocated if no</span>
+<span class="w">                                                                      </span><span class="c">!! duplicate was found)</span>
 
-    </section>    
-    
+<span class="w">    </span><span class="n">has_duplicate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">exception_thrown</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        call </span><span class="n">json</span><span class="p">%</span><span class="n">traverse</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">duplicate_key_func</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    contains</span>
+
+<span class="k">        subroutine </span><span class="n">duplicate_key_func</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">finished</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="c">!! Callback function to check each element</span>
+<span class="w">        </span><span class="c">!! for duplicate child names.</span>
+
+<span class="w">        </span><span class="k">implicit none</span>
+
+<span class="k">        class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">p</span><span class="w"></span>
+<span class="w">        </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">finished</span><span class="w"></span>
+
+<span class="cp">#if defined __GFORTRAN__</span>
+
+<span class="w">        </span><span class="c">! this is a workaround for a gfortran bug (6 and 7),</span>
+
+<span class="w">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tmp_name</span><span class="w"> </span><span class="c">!! temp variable for `name` string</span>
+<span class="w">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tmp_path</span><span class="w"> </span><span class="c">!! temp variable for `path` string</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">path</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">json</span><span class="p">%</span><span class="n">check_children_for_duplicate_keys</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">has_duplicate</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="n">tmp_name</span><span class="p">,</span><span class="n">path</span><span class="o">=</span><span class="n">tmp_path</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">else if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">path</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">json</span><span class="p">%</span><span class="n">check_children_for_duplicate_keys</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">has_duplicate</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="n">tmp_name</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">else if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">path</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">json</span><span class="p">%</span><span class="n">check_children_for_duplicate_keys</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">has_duplicate</span><span class="p">,</span><span class="n">path</span><span class="o">=</span><span class="n">tmp_path</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">            call </span><span class="n">json</span><span class="p">%</span><span class="n">check_children_for_duplicate_keys</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">has_duplicate</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
+
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">has_duplicate</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">name</span><span class="p">))</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp_name</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">path</span><span class="p">))</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp_path</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span><span class="w"></span>
+
+<span class="cp">#else</span>
+<span class="w">        </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">check_children_for_duplicate_keys</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">has_duplicate</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">path</span><span class="p">)</span><span class="w"></span>
+<span class="cp">#endif</span>
+
+<span class="w">        </span><span class="n">finished</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">has_duplicate</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">exception_thrown</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">end subroutine </span><span class="n">duplicate_key_func</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">json_check_all_for_duplicate_keys</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
     
     </div>
   </div>
@@ -268,7 +298,7 @@ for duplicate child names.</p>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 14:43            </p>
+ on 2022-04-02 13:18            </p>
         </div>
       </div>
       <br>

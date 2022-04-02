@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -91,7 +89,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">47 statements</a>
+    title=" 0.7% of total for procedures.">47 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
   </ul>
@@ -117,15 +115,9 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/parse_string.html#variable-c~10">c</a>
-      <a class="list-group-item" href="../proc/parse_string.html#variable-eof~6">eof</a>
-      <a class="list-group-item" href="../proc/parse_string.html#variable-error_message~2">error_message</a>
-      <a class="list-group-item" href="../proc/parse_string.html#variable-escape">escape</a>
-      <a class="list-group-item" href="../proc/parse_string.html#variable-ip~2">ip</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/parse_string.html#src">parse_string</a>
   </div>
 </div>
 
@@ -164,7 +156,7 @@
 parsing from a file)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-str~36"></span>character(kind=CK,len=*),</td>
+  <td><span class="anchor" id="variable-str~35"></span>character(kind=CK,len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>str</strong></td><td><p><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> string (if parsing
@@ -302,15 +294,9 @@ if necessary)</p></td>
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/parse_string.html#variable-c~10">c</a>
-      <a class="list-group-item" href="../proc/parse_string.html#variable-eof~6">eof</a>
-      <a class="list-group-item" href="../proc/parse_string.html#variable-error_message~2">error_message</a>
-      <a class="list-group-item" href="../proc/parse_string.html#variable-escape">escape</a>
-      <a class="list-group-item" href="../proc/parse_string.html#variable-ip~2">ip</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/parse_string.html#src">parse_string</a>
   </div>
 </div>
 
@@ -318,51 +304,105 @@ if necessary)</p></td>
     <br class="visible-xs visible-sm hidden-md">
 
 
-    <section>    
-      <h2>Variables</h2>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-c~10"></span>character(kind=CK,len=1),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>c</strong></td><td></td><td></td><td><p>character returned by <a href="../proc/pop_char.html">pop_char</a></p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-eof~6"></span>logical(kind=LK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>eof</strong></td><td></td><td></td><td><p>end of file flag</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-error_message~2"></span>character(kind=CK,len=:),</td>
-<td>private,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>error_message</strong></td><td></td><td></td><td><p>for string unescaping</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-escape"></span>logical(kind=LK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>escape</strong></td><td></td><td></td><td><p>for escape string parsing</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-ip~2"></span>integer(kind=IK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>ip</strong></td><td></td><td></td><td><p>index to put next character,
-to speed up by reducing the number
-of character string reallocations.</p></td>
-</tr>
-</tbody>
-</table>
+    
+    
+
+    
+    
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">parse_string</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="w"> </span><span class="n">unit</span><span class="p">,</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">                   </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">                           </span><span class="kd">::</span><span class="w"> </span><span class="n">unit</span><span class="w">   </span><span class="c">!! file unit number (if</span>
+<span class="w">                                                               </span><span class="c">!! parsing from a file)</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">str</span><span class="w">    </span><span class="c">!! JSON string (if parsing</span>
+<span class="w">                                                               </span><span class="c">!! from a string)</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="c">!! the string (unescaped</span>
+<span class="w">                                                               </span><span class="c">!! if necessary)</span>
+
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">eof</span><span class="w">      </span><span class="c">!! end of file flag</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">escape</span><span class="w">   </span><span class="c">!! for escape string parsing</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c</span><span class="w">        </span><span class="c">!! character returned by [[pop_char]]</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">ip</span><span class="w">       </span><span class="c">!! index to put next character,</span>
+<span class="w">                                         </span><span class="c">!! to speed up by reducing the number</span>
+<span class="w">                                         </span><span class="c">!! of character string reallocations.</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">error_message</span><span class="w"> </span><span class="c">!! for string unescaping</span>
+
+<span class="w">    </span><span class="c">!at least return a blank string if there is a problem:</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">blank_chunk</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">exception_thrown</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+
+<span class="w">        </span><span class="c">!initialize:</span>
+<span class="w">        </span><span class="n">escape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="n">ip</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">do</span><span class="w"></span>
+
+<span class="w">            </span><span class="c">!get the next character from the file:</span>
+<span class="w">            </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">pop_char</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span><span class="w"> </span><span class="n">str</span><span class="o">=</span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="n">eof</span><span class="o">=</span><span class="n">eof</span><span class="p">,</span><span class="w"> </span><span class="n">skip_ws</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.,</span><span class="w"> </span><span class="n">popped</span><span class="o">=</span><span class="n">c</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">eof</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">                call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in parse_string: Expecting end of string&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">return</span>
+
+<span class="k">            else if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="o">==</span><span class="n">quotation_mark</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">escape</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w">  </span><span class="c">!end of string</span>
+
+<span class="w">                </span><span class="k">exit</span>
+
+<span class="k">            else</span><span class="w"></span>
+
+<span class="w">                </span><span class="c">!if the string is not big enough, then add another chunk:</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ip</span><span class="o">&gt;</span><span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">))</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">blank_chunk</span><span class="w"></span>
+
+<span class="w">                </span><span class="c">!append to string:</span>
+<span class="w">                </span><span class="n">string</span><span class="p">(</span><span class="n">ip</span><span class="p">:</span><span class="n">ip</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"></span>
+<span class="w">                </span><span class="n">ip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ip</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+
+<span class="w">                </span><span class="c">! check for escape character, so we don&#39;t</span>
+<span class="w">                </span><span class="c">! exit prematurely if escaping a quotation</span>
+<span class="w">                </span><span class="c">! character:</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">escape</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    </span><span class="n">escape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">                </span><span class="k">else</span>
+<span class="k">                    </span><span class="n">escape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="o">==</span><span class="n">backslash</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">end if</span>
+
+<span class="k">            end if</span>
+
+<span class="k">        end do</span><span class="w"></span>
+
+<span class="w">        </span><span class="c">!trim the string if necessary:</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ip</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="n">ip</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                </span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CK_</span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">            </span><span class="k">else</span>
+<span class="k">                </span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">string</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">ip</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">end if</span>
+<span class="k">        end if</span><span class="w"></span>
+
+<span class="w">        </span><span class="c">! string is returned unescaped:</span>
+<span class="w">        </span><span class="c">! (this will also validate any hex strings present)</span>
+<span class="w">        </span><span class="k">call </span><span class="n">unescape_string</span><span class="p">(</span><span class="n">string</span><span class="p">,</span><span class="n">error_message</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">error_message</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">deallocate</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span><span class="w">  </span><span class="c">!cleanup</span>
+<span class="w">        </span><span class="k">end if</span>
+
+<span class="k">    end if</span>
+
+<span class="k">    end subroutine </span><span class="n">parse_string</span><span class="w"></span>
+</pre></div>
 
     </section>
     <br>
-    
-    
-
-    
-    
-
-
-    
     
     </div>
   </div>
@@ -379,7 +419,7 @@ of character string reallocations.</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 14:43            </p>
+ on 2022-04-02 13:18            </p>
         </div>
       </div>
       <br>

@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -93,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 1.2% of total for procedures.">143 statements</a>
+    title=" 2.1% of total for procedures.">143 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
   </ul>
@@ -119,18 +117,9 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-d~2">d</a>
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-e">e</a>
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-istat~4">istat</a>
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-istr~2">istr</a>
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-rl_edit_desc">rl_edit_desc</a>
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-sgn">sgn</a>
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-sgn_prnt">sgn_prnt</a>
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-w">w</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/json_initialize.html#src">json_initialize</a>
   </div>
 </div>
 
@@ -479,18 +468,9 @@ all cases).</p></td>
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-d~2">d</a>
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-e">e</a>
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-istat~4">istat</a>
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-istr~2">istr</a>
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-rl_edit_desc">rl_edit_desc</a>
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-sgn">sgn</a>
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-sgn_prnt">sgn_prnt</a>
-      <a class="list-group-item" href="../proc/json_initialize.html#variable-w">w</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/json_initialize.html#src">json_initialize</a>
   </div>
 </div>
 
@@ -498,66 +478,209 @@ all cases).</p></td>
     <br class="visible-xs visible-sm hidden-md">
 
 
-    <section>    
-      <h2>Variables</h2>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-d~2"></span>character(kind=CDK,len=10),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>d</strong></td><td></td><td></td><td><p>real precision digits</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-e"></span>character(kind=CDK,len=10),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>e</strong></td><td></td><td></td><td><p>real exponent digits</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-istat~4"></span>integer(kind=IK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>istat</strong></td><td></td><td></td><td><p><code>iostat</code> flag for
-write statements</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-istr~2"></span>character(kind=CK,len=max_integer_str_len),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>istr</strong></td><td></td><td></td><td><p>for integer to
-string conversion</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-rl_edit_desc"></span>character(kind=CDK,len=2),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>rl_edit_desc</strong></td><td></td><td></td><td><p><code>G</code>, <code>E</code>, <code>EN</code>, or <code>ES</code></p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-sgn"></span>character(kind=CDK,len=2),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>sgn</strong></td><td></td><td></td><td><p>sign flag: <code>ss</code> or <code>sp</code></p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-sgn_prnt"></span>logical(kind=LK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>sgn_prnt</strong></td><td></td><td></td><td><p>print sign flag</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-w"></span>character(kind=CDK,len=10),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>w</strong></td><td></td><td></td><td><p>max string length</p></td>
-</tr>
-</tbody>
-</table>
+    
+    
+
+    
+    
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">json_initialize</span><span class="p">(</span><span class="n">me</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="cp">#include &quot;json_initialize_dummy_arguments.inc&quot;</span>
+<span class="w">                              </span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">me</span><span class="w"></span>
+<span class="cp">#include &quot;json_initialize_arguments.inc&quot;</span>
+
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CDK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">w</span><span class="w">            </span><span class="c">!! max string length</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CDK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">d</span><span class="w">            </span><span class="c">!! real precision digits</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CDK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">e</span><span class="w">            </span><span class="c">!! real exponent digits</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CDK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">sgn</span><span class="w">          </span><span class="c">!! sign flag: `ss` or `sp`</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CDK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">rl_edit_desc</span><span class="w"> </span><span class="c">!! `G`, `E`, `EN`, or `ES`</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w">                </span><span class="kd">::</span><span class="w"> </span><span class="n">istat</span><span class="w">        </span><span class="c">!! `iostat` flag for</span>
+<span class="w">                                               </span><span class="c">!! write statements</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span><span class="w">                </span><span class="kd">::</span><span class="w"> </span><span class="n">sgn_prnt</span><span class="w">     </span><span class="c">!! print sign flag</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="n">max_integer_str_len</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">istr</span><span class="w"> </span><span class="c">!! for integer to</span>
+<span class="w">                                                       </span><span class="c">!! string conversion</span>
+
+<span class="w">    </span><span class="c">!reset exception to false:</span>
+<span class="w">    </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">clear_exceptions</span><span class="p">()</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">!Just in case, clear these global variables also:</span>
+<span class="w">    </span><span class="n">me</span><span class="p">%</span><span class="n">pushed_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">me</span><span class="p">%</span><span class="n">pushed_char</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">CK_</span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">me</span><span class="p">%</span><span class="n">char_count</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">me</span><span class="p">%</span><span class="n">line_count</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="n">me</span><span class="p">%</span><span class="n">ipos</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">use_unformatted_stream</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">me</span><span class="p">%</span><span class="n">filesize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">        </span><span class="n">me</span><span class="p">%</span><span class="n">ichunk</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">        </span><span class="n">me</span><span class="p">%</span><span class="n">chunk</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nb">repeat</span><span class="p">(</span><span class="n">space</span><span class="p">,</span><span class="w"> </span><span class="n">stream_chunk_size</span><span class="p">)</span><span class="w"> </span><span class="c">! default chunk size</span>
+<span class="w">    </span><span class="k">end if</span><span class="w"></span>
+
+<span class="cp">#ifdef USE_UCS4</span>
+<span class="w">    </span><span class="c">! reopen stdout and stderr with utf-8 encoding</span>
+<span class="w">    </span><span class="k">open</span><span class="p">(</span><span class="n">output_unit</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">open</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="w"> </span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="cp">#endif</span>
+
+<span class="w">    </span><span class="c">!various optional inputs:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">spaces_per_tab</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">        </span><span class="n">me</span><span class="p">%</span><span class="n">spaces_per_tab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">spaces_per_tab</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">stop_on_error</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">        </span><span class="n">me</span><span class="p">%</span><span class="n">stop_on_error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stop_on_error</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">verbose</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">        </span><span class="n">me</span><span class="p">%</span><span class="n">is_verbose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">verbose</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">strict_type_checking</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">        </span><span class="n">me</span><span class="p">%</span><span class="n">strict_type_checking</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strict_type_checking</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">trailing_spaces_significant</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">        </span><span class="n">me</span><span class="p">%</span><span class="n">trailing_spaces_significant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trailing_spaces_significant</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">case_sensitive_keys</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">        </span><span class="n">me</span><span class="p">%</span><span class="n">case_sensitive_keys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">case_sensitive_keys</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">no_whitespace</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">        </span><span class="n">me</span><span class="p">%</span><span class="n">no_whitespace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">no_whitespace</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">unescape_strings</span><span class="p">))</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">        </span><span class="n">me</span><span class="p">%</span><span class="n">unescaped_strings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unescape_strings</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">path_mode</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">path_mode</span><span class="o">==</span><span class="mi">1_IK</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">path_mode</span><span class="o">==</span><span class="mi">2_IK</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">path_mode</span><span class="o">==</span><span class="mi">3_IK</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">me</span><span class="p">%</span><span class="n">path_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path_mode</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">            </span><span class="n">me</span><span class="p">%</span><span class="n">path_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1_IK</span><span class="w">  </span><span class="c">! just to have a valid value</span>
+<span class="w">            </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Invalid path_mode.&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">    end if</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">! if we are allowing comments in the file:</span>
+<span class="w">    </span><span class="c">! [an empty string disables comments]</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">comment_char</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">me</span><span class="p">%</span><span class="n">allow_comments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">comment_char</span><span class="o">/=</span><span class="n">CK_</span><span class="s1">&#39;&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="n">me</span><span class="p">%</span><span class="n">comment_char</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="nb">adjustl</span><span class="p">(</span><span class="n">comment_char</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="k">end if</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">! path separator:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">path_separator</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">me</span><span class="p">%</span><span class="n">path_separator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">path_separator</span><span class="w"></span>
+<span class="w">    </span><span class="k">end if</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">! printing vectors in compressed form:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">compress_vectors</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">me</span><span class="p">%</span><span class="n">compress_vectors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">compress_vectors</span><span class="w"></span>
+<span class="w">    </span><span class="k">end if</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">! checking for duplicate keys:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">allow_duplicate_keys</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">me</span><span class="p">%</span><span class="n">allow_duplicate_keys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">allow_duplicate_keys</span><span class="w"></span>
+<span class="w">    </span><span class="k">end if</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">! if escaping the forward slash:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">escape_solidus</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">me</span><span class="p">%</span><span class="n">escape_solidus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">escape_solidus</span><span class="w"></span>
+<span class="w">    </span><span class="k">end if</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">! how to handle null to read conversions:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">null_to_real_mode</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        select case</span><span class="w"> </span><span class="p">(</span><span class="n">null_to_real_mode</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="p">(</span><span class="mi">1_IK</span><span class="p">:</span><span class="mi">3_IK</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">me</span><span class="p">%</span><span class="n">null_to_real_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">null_to_real_mode</span><span class="w"></span>
+<span class="w">        </span><span class="k">case </span><span class="n">default</span><span class="w"></span>
+<span class="w">            </span><span class="n">me</span><span class="p">%</span><span class="n">null_to_real_mode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2_IK</span><span class="w">  </span><span class="c">! just to have a valid value</span>
+<span class="w">            </span><span class="k">call </span><span class="n">integer_to_string</span><span class="p">(</span><span class="n">null_to_real_mode</span><span class="p">,</span><span class="n">int_fmt</span><span class="p">,</span><span class="n">istr</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Invalid null_to_real_mode: &#39;</span><span class="o">//</span><span class="n">istr</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">end select</span>
+<span class="k">    end if</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">! how to handle NaN and Infinities:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">non_normal_mode</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        select case</span><span class="w"> </span><span class="p">(</span><span class="n">non_normal_mode</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="p">(</span><span class="mi">1_IK</span><span class="p">)</span><span class="w"> </span><span class="c">! use strings</span>
+<span class="w">            </span><span class="n">me</span><span class="p">%</span><span class="n">non_normals_to_null</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="p">(</span><span class="mi">2_IK</span><span class="p">)</span><span class="w"> </span><span class="c">! use null</span>
+<span class="w">            </span><span class="n">me</span><span class="p">%</span><span class="n">non_normals_to_null</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="k">case </span><span class="n">default</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">integer_to_string</span><span class="p">(</span><span class="n">non_normal_mode</span><span class="p">,</span><span class="n">int_fmt</span><span class="p">,</span><span class="n">istr</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Invalid non_normal_mode: &#39;</span><span class="o">//</span><span class="n">istr</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">end select</span>
+<span class="k">    end if</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">use_quiet_nan</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">me</span><span class="p">%</span><span class="n">use_quiet_nan</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">use_quiet_nan</span><span class="w"></span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">strict_integer_type_checking</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">me</span><span class="p">%</span><span class="n">strict_integer_type_checking</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">strict_integer_type_checking</span><span class="w"></span>
+<span class="w">    </span><span class="k">end if</span><span class="w"></span>
+
+<span class="w">    </span><span class="c">!Set the format for real numbers:</span>
+<span class="w">    </span><span class="c">! [if not changing it, then it remains the same]</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="nb">allocated</span><span class="p">(</span><span class="n">me</span><span class="p">%</span><span class="n">real_fmt</span><span class="p">))</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span><span class="w">  </span><span class="c">! if this hasn&#39;t been done yet</span>
+<span class="w">          </span><span class="nb">present</span><span class="p">(</span><span class="n">compact_reals</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">          </span><span class="nb">present</span><span class="p">(</span><span class="n">print_signs</span><span class="p">)</span><span class="w">   </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">          </span><span class="nb">present</span><span class="p">(</span><span class="n">real_format</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+
+<span class="w">        </span><span class="c">!allow the special case where real format is &#39;*&#39;:</span>
+<span class="w">        </span><span class="c">! [this overrides the other options]</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">real_format</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="n">real_format</span><span class="o">==</span><span class="n">star</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">compact_reals</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">                    </span><span class="c">! we will also allow for compact reals with</span>
+<span class="w">                    </span><span class="c">! &#39;*&#39; format, if both arguments are present.</span>
+<span class="w">                    </span><span class="n">me</span><span class="p">%</span><span class="n">compact_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">compact_reals</span><span class="w"></span>
+<span class="w">                </span><span class="k">else</span>
+<span class="k">                    </span><span class="n">me</span><span class="p">%</span><span class="n">compact_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">                </span><span class="k">end if</span>
+<span class="k">                </span><span class="n">me</span><span class="p">%</span><span class="n">real_fmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">star</span><span class="w"></span>
+<span class="w">                </span><span class="k">return</span>
+<span class="k">            end if</span>
+<span class="k">        end if</span>
+
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">compact_reals</span><span class="p">))</span><span class="w"> </span><span class="n">me</span><span class="p">%</span><span class="n">compact_real</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">compact_reals</span><span class="w"></span>
+
+<span class="w">        </span><span class="c">!set defaults</span>
+<span class="w">        </span><span class="n">sgn_prnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="w"> </span><span class="n">print_signs</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">sgn_prnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">print_signs</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">sgn_prnt</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">           </span><span class="n">sgn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;sp&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">           </span><span class="n">sgn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;ss&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
+
+<span class="k">        </span><span class="n">rl_edit_desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;E&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="w"> </span><span class="n">real_format</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">           select case</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">real_format</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">           </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;g&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;en&#39;</span><span class="p">,</span><span class="s1">&#39;EN&#39;</span><span class="p">,</span><span class="s1">&#39;es&#39;</span><span class="p">,</span><span class="s1">&#39;ES&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">              </span><span class="n">rl_edit_desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">real_format</span><span class="w"></span>
+<span class="w">           </span><span class="k">case </span><span class="n">default</span><span class="w"></span>
+<span class="w">              </span><span class="k">call </span><span class="n">me</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Invalid real format, &quot;&#39;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                        </span><span class="nb">trim</span><span class="p">(</span><span class="n">real_format</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s1">&#39;&quot;, passed to json_initialize.&#39;</span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                        </span><span class="nb">new_line</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s1">&#39;Acceptable formats are: &quot;G&quot;, &quot;E&quot;, &quot;EN&quot;, and &quot;ES&quot;.&#39;</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">           </span><span class="k">end select</span>
+<span class="k">        end if</span><span class="w"></span>
+
+<span class="w">        </span><span class="c">! set the default output/input format for reals:</span>
+<span class="w">                      </span><span class="k">write</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="s1">&#39;(ss,I0)&#39;</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span><span class="w"> </span><span class="n">max_numeric_str_len</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">write</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="s1">&#39;(ss,I0)&#39;</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span><span class="w"> </span><span class="n">real_precision</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">write</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="s1">&#39;(ss,I0)&#39;</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">istat</span><span class="p">)</span><span class="w"> </span><span class="n">real_exponent_digits</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">istat</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">me</span><span class="p">%</span><span class="n">real_fmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">sgn</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">rl_edit_desc</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                            </span><span class="nb">trim</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s1">&#39;.&#39;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s1">&#39;E&#39;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s1">&#39;)&#39;</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">            </span><span class="n">me</span><span class="p">%</span><span class="n">real_fmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;(&#39;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">sgn</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="s1">&#39;,&#39;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">rl_edit_desc</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                            </span><span class="s1">&#39;27.17E4)&#39;</span><span class="w">  </span><span class="c">!just use this one (should never happen)</span>
+<span class="w">        </span><span class="k">end if</span>
+
+<span class="k">    end if</span>
+
+<span class="k">    end subroutine </span><span class="n">json_initialize</span><span class="w"></span>
+</pre></div>
 
     </section>
     <br>
-    
-    
-
-    
-    
-
-
-    
     
     </div>
   </div>
@@ -574,7 +697,7 @@ string conversion</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 14:43            </p>
+ on 2022-04-02 13:18            </p>
         </div>
       </div>
       <br>

@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -91,7 +89,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.8% of total for procedures.">94 statements</a>
+    title=" 1.4% of total for procedures.">94 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
   </ul>
@@ -117,16 +115,9 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/pop_char.html#variable-c~12">c</a>
-      <a class="list-group-item" href="../proc/pop_char.html#variable-ignore">ignore</a>
-      <a class="list-group-item" href="../proc/pop_char.html#variable-ignore_comments">ignore_comments</a>
-      <a class="list-group-item" href="../proc/pop_char.html#variable-ios~2">ios</a>
-      <a class="list-group-item" href="../proc/pop_char.html#variable-parsing_comment">parsing_comment</a>
-      <a class="list-group-item" href="../proc/pop_char.html#variable-str_len">str_len</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/pop_char.html#src">pop_char</a>
   </div>
 </div>
 
@@ -164,7 +155,7 @@
 from a file)</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-str~38"></span>character(kind=CK,len=*),</td>
+  <td><span class="anchor" id="variable-str~37"></span>character(kind=CK,len=*),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>str</strong></td><td><p><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> string (if parsing from a
@@ -183,7 +174,7 @@ string) &ndash; only used if <code>unit=0</code></p></td>
   <td><strong>skip_comments</strong></td><td><p>to ignore comment lines [default False]</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-eof~8"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-eof"></span>logical(kind=LK),</td>
 <td>intent(out)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>eof</strong></td><td><p>true if the end of the file has
@@ -204,16 +195,9 @@ been reached.</p></td>
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/pop_char.html#variable-c~12">c</a>
-      <a class="list-group-item" href="../proc/pop_char.html#variable-ignore">ignore</a>
-      <a class="list-group-item" href="../proc/pop_char.html#variable-ignore_comments">ignore_comments</a>
-      <a class="list-group-item" href="../proc/pop_char.html#variable-ios~2">ios</a>
-      <a class="list-group-item" href="../proc/pop_char.html#variable-parsing_comment">parsing_comment</a>
-      <a class="list-group-item" href="../proc/pop_char.html#variable-str_len">str_len</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/pop_char.html#src">pop_char</a>
   </div>
 </div>
 
@@ -221,55 +205,172 @@ been reached.</p></td>
     <br class="visible-xs visible-sm hidden-md">
 
 
-    <section>    
-      <h2>Variables</h2>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-c~12"></span>character(kind=CK,len=1),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>c</strong></td><td></td><td></td><td><p>a character read from the file (or string)</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-ignore"></span>logical(kind=LK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>ignore</strong></td><td></td><td></td><td><p>if whitespace is to be ignored</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-ignore_comments"></span>logical(kind=LK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>ignore_comments</strong></td><td></td><td></td><td><p>if comment lines are to be ignored</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-ios~2"></span>integer(kind=IK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>ios</strong></td><td></td><td></td><td><p><code>iostat</code> flag</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-parsing_comment"></span>logical(kind=LK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>parsing_comment</strong></td><td></td><td></td><td><p>if we are in the process
-of parsing a comment line</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-str_len"></span>integer(kind=IK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>str_len</strong></td><td></td><td></td><td><p>length of <code>str</code></p></td>
-</tr>
-</tbody>
-</table>
+    
+    
+
+    
+    
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">pop_char</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="n">unit</span><span class="p">,</span><span class="n">str</span><span class="p">,</span><span class="n">skip_ws</span><span class="p">,</span><span class="n">skip_comments</span><span class="p">,</span><span class="n">eof</span><span class="p">,</span><span class="n">popped</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">               </span><span class="kd">::</span><span class="w"> </span><span class="n">unit</span><span class="w">          </span><span class="c">!! file unit number (if parsing</span>
+<span class="w">                                                          </span><span class="c">!! from a file)</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">str</span><span class="w">           </span><span class="c">!! JSON string (if parsing from a</span>
+<span class="w">                                                          </span><span class="c">!! string) -- only used if `unit=0`</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">skip_ws</span><span class="w">       </span><span class="c">!! to ignore whitespace [default False]</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">skip_comments</span><span class="w"> </span><span class="c">!! to ignore comment lines [default False]</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">eof</span><span class="w">           </span><span class="c">!! true if the end of the file has</span>
+<span class="w">                                                          </span><span class="c">!! been reached.</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">popped</span><span class="w">        </span><span class="c">!! the popped character returned</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">ios</span><span class="w">             </span><span class="c">!! `iostat` flag</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">str_len</span><span class="w">         </span><span class="c">!! length of `str`</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c</span><span class="w">               </span><span class="c">!! a character read from the file (or string)</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">ignore</span><span class="w">          </span><span class="c">!! if whitespace is to be ignored</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">ignore_comments</span><span class="w"> </span><span class="c">!! if comment lines are to be ignored</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">parsing_comment</span><span class="w"> </span><span class="c">!! if we are in the process</span>
+<span class="w">                                                </span><span class="c">!! of parsing a comment line</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">exception_thrown</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">        </span><span class="n">eof</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">skip_ws</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">ignore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">            </span><span class="n">ignore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">skip_ws</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">        </span><span class="n">parsing_comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">skip_comments</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">ignore_comments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">            </span><span class="n">ignore_comments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">skip_comments</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
+
+<span class="k">        do</span>
+
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">pushed_index</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+
+<span class="w">                </span><span class="c">! there is a character pushed back on, most likely</span>
+<span class="w">                </span><span class="c">! from the number parsing. Note: this can only occur if</span>
+<span class="w">                </span><span class="c">! reading from a file when use_unformatted_stream=.false.</span>
+<span class="w">                </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">pushed_char</span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">pushed_index</span><span class="p">:</span><span class="n">json</span><span class="p">%</span><span class="n">pushed_index</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="n">json</span><span class="p">%</span><span class="n">pushed_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">pushed_index</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">else</span>
+
+<span class="k">                if</span><span class="w"> </span><span class="p">(</span><span class="n">unit</span><span class="o">/=</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w">    </span><span class="c">!read from the file</span>
+
+<span class="w">                    </span><span class="c">!read the next character:</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">use_unformatted_stream</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+
+<span class="w">                        </span><span class="c">! in this case, we read the file in chunks.</span>
+<span class="w">                        </span><span class="c">! if we already have the character we need,</span>
+<span class="w">                        </span><span class="c">! then get it from the chunk. Otherwise,</span>
+<span class="w">                        </span><span class="c">! read in another chunk.</span>
+<span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">ichunk</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">                            </span><span class="c">! read in a chunk:</span>
+<span class="w">                            </span><span class="n">json</span><span class="p">%</span><span class="n">ichunk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">                            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">filesize</span><span class="o">&lt;</span><span class="n">json</span><span class="p">%</span><span class="n">ipos</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">chunk</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">                                </span><span class="c">! for the last chunk, we resize</span>
+<span class="w">                                </span><span class="c">! it to the correct size:</span>
+<span class="w">                                </span><span class="n">json</span><span class="p">%</span><span class="n">chunk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">repeat</span><span class="p">(</span><span class="n">space</span><span class="p">,</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">filesize</span><span class="o">-</span><span class="n">json</span><span class="p">%</span><span class="n">ipos</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">                            </span><span class="k">end if</span>
+<span class="k">                            read</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">,</span><span class="n">pos</span><span class="o">=</span><span class="n">json</span><span class="p">%</span><span class="n">ipos</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">chunk</span><span class="w"></span>
+<span class="w">                        </span><span class="k">else</span>
+<span class="k">                            </span><span class="n">ios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">                        </span><span class="k">end if</span>
+<span class="k">                        </span><span class="n">json</span><span class="p">%</span><span class="n">ichunk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">ichunk</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">ichunk</span><span class="o">&gt;</span><span class="nb">len</span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">chunk</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">                            </span><span class="c">! check this just in case</span>
+<span class="w">                            </span><span class="n">ios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IOSTAT_END</span><span class="w"></span>
+<span class="w">                        </span><span class="k">else</span><span class="w"></span>
+<span class="w">                            </span><span class="c">! get the next character from the chunk:</span>
+<span class="w">                            </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">chunk</span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">ichunk</span><span class="p">:</span><span class="n">json</span><span class="p">%</span><span class="n">ichunk</span><span class="p">)</span><span class="w"></span>
+<span class="w">                            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">ichunk</span><span class="o">==</span><span class="nb">len</span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">chunk</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                                </span><span class="n">json</span><span class="p">%</span><span class="n">ichunk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="c">! reset for next chunk</span>
+<span class="w">                            </span><span class="k">end if</span>
+<span class="k">                        end if</span>
+
+<span class="k">                    else</span><span class="w"></span>
+<span class="w">                        </span><span class="c">! a formatted read:</span>
+<span class="w">                        </span><span class="k">read</span><span class="p">(</span><span class="n">unit</span><span class="o">=</span><span class="n">unit</span><span class="p">,</span><span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;(A1)&#39;</span><span class="p">,</span><span class="n">advance</span><span class="o">=</span><span class="s1">&#39;NO&#39;</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span><span class="w"> </span><span class="n">c</span><span class="w"></span>
+<span class="w">                    </span><span class="k">end if</span>
+<span class="k">                    </span><span class="n">json</span><span class="p">%</span><span class="n">ipos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">ipos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+
+<span class="w">                </span><span class="k">else</span><span class="w">    </span><span class="c">!read from the string</span>
+
+<span class="w">                    </span><span class="n">str_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="w">   </span><span class="c">!length of the string</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">ipos</span><span class="o">&lt;=</span><span class="n">str_len</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                        </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">ipos</span><span class="p">:</span><span class="n">json</span><span class="p">%</span><span class="n">ipos</span><span class="p">)</span><span class="w"></span>
+<span class="w">                        </span><span class="n">ios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">                    </span><span class="k">else</span>
+<span class="k">                        </span><span class="n">ios</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IOSTAT_END</span><span class="w">  </span><span class="c">!end of the string</span>
+<span class="w">                    </span><span class="k">end if</span>
+<span class="k">                    </span><span class="n">json</span><span class="p">%</span><span class="n">ipos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">ipos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+
+<span class="w">                </span><span class="k">end if</span>
+
+<span class="k">                </span><span class="n">json</span><span class="p">%</span><span class="n">char_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">char_count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w">    </span><span class="c">!character count in the current line</span>
+
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">IS_IOSTAT_END</span><span class="p">(</span><span class="n">ios</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w">  </span><span class="c">!end of file</span>
+
+<span class="w">                    </span><span class="c">! no character to return</span>
+<span class="w">                    </span><span class="n">json</span><span class="p">%</span><span class="n">char_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">                    </span><span class="n">eof</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span><span class="w"></span>
+<span class="w">                    </span><span class="n">popped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">space</span><span class="w"> </span><span class="c">! just to set a value</span>
+<span class="w">                    </span><span class="k">exit</span>
+
+<span class="k">                else if</span><span class="w"> </span><span class="p">(</span><span class="nb">IS_IOSTAT_EOR</span><span class="p">(</span><span class="n">ios</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">c</span><span class="o">==</span><span class="n">newline</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w">    </span><span class="c">!end of record</span>
+
+<span class="w">                    </span><span class="n">json</span><span class="p">%</span><span class="n">char_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">                    </span><span class="n">json</span><span class="p">%</span><span class="n">line_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">line_count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ignore_comments</span><span class="p">)</span><span class="w"> </span><span class="n">parsing_comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"> </span><span class="c">! done parsing this comment line</span>
+<span class="w">                    </span><span class="k">cycle</span>
+
+<span class="k">                end if</span>
+
+<span class="k">            end if</span>
+
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="n">ignore_comments</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">(</span><span class="n">parsing_comment</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="nb">scan</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">json</span><span class="p">%</span><span class="n">comment_char</span><span class="p">,</span><span class="nb">kind</span><span class="o">=</span><span class="n">IK</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0_IK</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+
+<span class="w">                </span><span class="c">! skipping the comment</span>
+<span class="w">                </span><span class="n">parsing_comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span><span class="w"></span>
+<span class="w">                </span><span class="k">cycle</span>
+
+<span class="k">            else if</span><span class="w"> </span><span class="p">(</span><span class="nb">any</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">control_chars</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+
+<span class="w">                </span><span class="c">! non printing ascii characters</span>
+<span class="w">                </span><span class="k">cycle</span>
+
+<span class="k">            else if</span><span class="w"> </span><span class="p">(</span><span class="n">ignore</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">space</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+
+<span class="w">                </span><span class="c">! ignoring whitespace</span>
+<span class="w">                </span><span class="k">cycle</span>
+
+<span class="k">            else</span><span class="w"></span>
+
+<span class="w">                </span><span class="c">! return the character</span>
+<span class="w">                </span><span class="n">popped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="w"></span>
+<span class="w">                </span><span class="k">exit</span>
+
+<span class="k">            end if</span>
+
+<span class="k">        end do</span>
+
+<span class="k">    end if</span>
+
+<span class="k">    end subroutine </span><span class="n">pop_char</span><span class="w"></span>
+</pre></div>
 
     </section>
     <br>
-    
-    
-
-    
-    
-
-
-    
     
     </div>
   </div>
@@ -286,7 +387,7 @@ of parsing a comment line</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 14:43            </p>
+ on 2022-04-02 13:18            </p>
         </div>
       </div>
       <br>

@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -91,7 +89,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">46 statements</a>
+    title=" 0.7% of total for procedures.">46 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
   </ul>
@@ -117,14 +115,9 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/json_value_insert_after.html#variable-last">last</a>
-      <a class="list-group-item" href="../proc/json_value_insert_after.html#variable-n~4">n</a>
-      <a class="list-group-item" href="../proc/json_value_insert_after.html#variable-next~3">next</a>
-      <a class="list-group-item" href="../proc/json_value_insert_after.html#variable-parent~4">parent</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/json_value_insert_after.html#src">json_value_insert_after</a>
   </div>
 </div>
 
@@ -184,7 +177,7 @@
   <td><strong>json</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-p~95"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-p~76"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td></td>
   <td></td>  <td>pointer</td><td>::</td>
   <td><strong>p</strong></td><td><p>a value from a <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> structure
@@ -192,7 +185,7 @@
 an object or array).</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-element~5"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-element~2"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td></td>
   <td></td>  <td>pointer</td><td>::</td>
   <td><strong>element</strong></td><td><p>the element to insert after <code>p</code></p></td>
@@ -206,14 +199,9 @@ an object or array).</p></td>
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/json_value_insert_after.html#variable-last">last</a>
-      <a class="list-group-item" href="../proc/json_value_insert_after.html#variable-n~4">n</a>
-      <a class="list-group-item" href="../proc/json_value_insert_after.html#variable-next~3">next</a>
-      <a class="list-group-item" href="../proc/json_value_insert_after.html#variable-parent~4">parent</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/json_value_insert_after.html#src">json_value_insert_after</a>
   </div>
 </div>
 
@@ -221,44 +209,95 @@ an object or array).</p></td>
     <br class="visible-xs visible-sm hidden-md">
 
 
-    <section>    
-      <h2>Variables</h2>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-last"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-<td>private,</td>  <td>pointer</td><td>::</td>
-  <td><strong>last</strong></td><td></td><td></td><td><p>the last of the items being inserted</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-n~4"></span>integer,</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>n</strong></td><td></td><td></td><td><p>number of items being inserted</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-next~3"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-<td>private,</td>  <td>pointer</td><td>::</td>
-  <td><strong>next</strong></td><td></td><td></td><td><p>temp pointer for traversing structure</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-parent~4"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-<td>private,</td>  <td>pointer</td><td>::</td>
-  <td><strong>parent</strong></td><td></td><td></td><td><p>the parent of <code>p</code></p></td>
-</tr>
-</tbody>
-</table>
+    
+    
+
+    
+    
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">json_value_insert_after</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">element</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">p</span><span class="w">       </span><span class="c">!! a value from a JSON structure</span>
+<span class="w">                                              </span><span class="c">!! (presumably, this is a child of</span>
+<span class="w">                                              </span><span class="c">!! an object or array).</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="c">!! the element to insert after `p`</span>
+
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">parent</span><span class="w">  </span><span class="c">!! the parent of `p`</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">next</span><span class="w">  </span><span class="c">!! temp pointer for traversing structure</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">last</span><span class="w">  </span><span class="c">!! the last of the items being inserted</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span><span class="w">  </span><span class="c">!! number of items being inserted</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">exception_thrown</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">        </span><span class="n">parent</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">%</span><span class="n">parent</span><span class="w"></span>
+
+<span class="w">        </span><span class="c">! set first parent of inserted list:</span>
+<span class="w">        </span><span class="n">element</span><span class="p">%</span><span class="n">parent</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">parent</span><span class="w"></span>
+
+<span class="w">        </span><span class="c">! Count the number of inserted elements.</span>
+<span class="w">        </span><span class="c">! and set their parents.</span>
+<span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="c">! initialize counter</span>
+<span class="w">        </span><span class="n">next</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">element</span><span class="p">%</span><span class="n">next</span><span class="w"></span>
+<span class="w">        </span><span class="n">last</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">element</span><span class="w"></span>
+<span class="w">        </span><span class="k">do</span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="nb">associated</span><span class="p">(</span><span class="n">next</span><span class="p">))</span><span class="w"> </span><span class="k">exit</span>
+<span class="k">            </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">            </span><span class="n">next</span><span class="p">%</span><span class="n">parent</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">parent</span><span class="w"></span>
+<span class="w">            </span><span class="n">last</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">next</span><span class="w"></span>
+<span class="w">            </span><span class="n">next</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">next</span><span class="p">%</span><span class="n">next</span><span class="w"></span>
+<span class="w">        </span><span class="k">end do</span>
+
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">parent</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">            </span><span class="c">! update parent&#39;s child counter:</span>
+<span class="w">            </span><span class="n">parent</span><span class="p">%</span><span class="n">n_children</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parent</span><span class="p">%</span><span class="n">n_children</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="w"></span>
+<span class="w">            </span><span class="c">! if p is last of parents children then</span>
+<span class="w">            </span><span class="c">! also have to update parent tail pointer:</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">parent</span><span class="p">%</span><span class="n">tail</span><span class="p">,</span><span class="n">p</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                </span><span class="n">parent</span><span class="p">%</span><span class="n">tail</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">last</span><span class="w"></span>
+<span class="w">            </span><span class="k">end if</span>
+<span class="k">        end if</span>
+
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">element</span><span class="p">%</span><span class="n">previous</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">            </span><span class="c">! element is apparently part of an existing list,</span>
+<span class="w">            </span><span class="c">! so have to update that as well.</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">element</span><span class="p">%</span><span class="n">previous</span><span class="p">%</span><span class="n">parent</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                </span><span class="n">element</span><span class="p">%</span><span class="n">previous</span><span class="p">%</span><span class="n">parent</span><span class="p">%</span><span class="n">n_children</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">element</span><span class="p">%</span><span class="n">previous</span><span class="p">%</span><span class="n">parent</span><span class="p">%</span><span class="n">n_children</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">n</span><span class="w"></span>
+<span class="w">                </span><span class="n">element</span><span class="p">%</span><span class="n">previous</span><span class="p">%</span><span class="n">parent</span><span class="p">%</span><span class="n">tail</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                    </span><span class="n">element</span><span class="p">%</span><span class="n">previous</span><span class="w"> </span><span class="c">! now the last one in the list</span>
+<span class="w">            </span><span class="k">else</span><span class="w"></span>
+<span class="w">                </span><span class="c">! this would be a memory leak if the previous entries</span>
+<span class="w">                </span><span class="c">! are not otherwise being pointed too</span>
+<span class="w">                </span><span class="c">! [throw an error in this case???]</span>
+<span class="w">            </span><span class="k">end if</span><span class="w"></span>
+<span class="w">            </span><span class="c">!remove element from the other list:</span>
+<span class="w">            </span><span class="n">element</span><span class="p">%</span><span class="n">previous</span><span class="p">%</span><span class="n">next</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nb">null</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">        </span><span class="n">element</span><span class="p">%</span><span class="n">previous</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">next</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">            </span><span class="c">! if there are any in the list after p:</span>
+<span class="w">            </span><span class="n">last</span><span class="p">%</span><span class="n">next</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">%</span><span class="n">next</span><span class="w"></span>
+<span class="w">            </span><span class="n">last</span><span class="p">%</span><span class="n">next</span><span class="p">%</span><span class="n">previous</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">element</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">            </span><span class="n">last</span><span class="p">%</span><span class="n">next</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nb">null</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">        </span><span class="n">p</span><span class="p">%</span><span class="n">next</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">element</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    end subroutine </span><span class="n">json_value_insert_after</span><span class="w"></span>
+</pre></div>
 
     </section>
     <br>
-    
-    
-
-    
-    
-
-
-    
     
     </div>
   </div>
@@ -275,7 +314,7 @@ an object or array).</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 14:43            </p>
+ on 2022-04-02 13:18            </p>
         </div>
       </div>
       <br>

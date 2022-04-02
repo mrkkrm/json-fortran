@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -92,7 +90,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">38 statements</a>
+    title=" 0.6% of total for procedures.">38 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
   </ul>
@@ -118,15 +116,9 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/get_current_line_from_file_stream.html#variable-c~3">c</a>
-      <a class="list-group-item" href="../proc/get_current_line_from_file_stream.html#variable-done">done</a>
-      <a class="list-group-item" href="../proc/get_current_line_from_file_stream.html#variable-iend">iend</a>
-      <a class="list-group-item" href="../proc/get_current_line_from_file_stream.html#variable-ios">ios</a>
-      <a class="list-group-item" href="../proc/get_current_line_from_file_stream.html#variable-istart">istart</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/get_current_line_from_file_stream.html#src">get_current_line_from_file_stream</a>
   </div>
 </div>
 
@@ -159,7 +151,7 @@
   <td><strong>iunit</strong></td><td><p>file unit number</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-line~3"></span>character(kind=CK,len=:),</td>
+  <td><span class="anchor" id="variable-line~2"></span>character(kind=CK,len=:),</td>
 <td>intent(out),</td>
   <td></td>  <td>allocatable</td><td>::</td>
   <td><strong>line</strong></td><td><p>current line</p></td>
@@ -173,15 +165,9 @@
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/get_current_line_from_file_stream.html#variable-c~3">c</a>
-      <a class="list-group-item" href="../proc/get_current_line_from_file_stream.html#variable-done">done</a>
-      <a class="list-group-item" href="../proc/get_current_line_from_file_stream.html#variable-iend">iend</a>
-      <a class="list-group-item" href="../proc/get_current_line_from_file_stream.html#variable-ios">ios</a>
-      <a class="list-group-item" href="../proc/get_current_line_from_file_stream.html#variable-istart">istart</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/get_current_line_from_file_stream.html#src">get_current_line_from_file_stream</a>
   </div>
 </div>
 
@@ -189,49 +175,64 @@
     <br class="visible-xs visible-sm hidden-md">
 
 
-    <section>    
-      <h2>Variables</h2>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-c~3"></span>character(kind=CK,len=1),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>c</strong></td><td></td><td></td><td><p>a character read from the file</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-done"></span>logical,</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>done</strong></td><td></td><td></td><td><p>flag to exit the loop</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-iend"></span>integer(kind=IK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>iend</strong></td><td></td><td></td><td><p>end position of current line</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-ios"></span>integer(kind=IK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>ios</strong></td><td></td><td></td><td><p>file read <code>iostat</code> code</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-istart"></span>integer(kind=IK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>istart</strong></td><td></td><td></td><td><p>start position of current line</p></td>
-</tr>
-</tbody>
-</table>
+    
+    
+
+    
+    
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">get_current_line_from_file_stream</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="n">iunit</span><span class="p">,</span><span class="n">line</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">                   </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">                           </span><span class="kd">::</span><span class="w"> </span><span class="n">iunit</span><span class="w">  </span><span class="c">!! file unit number</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">line</span><span class="w">   </span><span class="c">!! current line</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">istart</span><span class="w">  </span><span class="c">!! start position of current line</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">iend</span><span class="w">    </span><span class="c">!! end position of current line</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">ios</span><span class="w">     </span><span class="c">!! file read `iostat` code</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c</span><span class="w">       </span><span class="c">!! a character read from the file</span>
+<span class="w">    </span><span class="kt">logical</span><span class="w">                  </span><span class="kd">::</span><span class="w"> </span><span class="n">done</span><span class="w">    </span><span class="c">!! flag to exit the loop</span>
+
+<span class="w">    </span><span class="n">istart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">ipos</span><span class="w"></span>
+<span class="w">    </span><span class="k">do</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">istart</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">istart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">            </span><span class="k">exit</span>
+<span class="k">        end if</span>
+<span class="k">        read</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span><span class="n">pos</span><span class="o">=</span><span class="n">istart</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span><span class="w"> </span><span class="n">c</span><span class="w"></span>
+<span class="w">        </span><span class="n">done</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ios</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mi">0_IK</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">done</span><span class="p">)</span><span class="w"> </span><span class="n">done</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="o">==</span><span class="n">newline</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">done</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="n">istart</span><span class="o">/=</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">istart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">istart</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">            </span><span class="k">exit</span>
+<span class="k">        end if</span>
+<span class="k">        </span><span class="n">istart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">istart</span><span class="o">-</span><span class="mi">1</span><span class="w">  </span><span class="c">!rewind until the beginning of the line</span>
+<span class="w">    </span><span class="k">end do</span>
+<span class="k">    </span><span class="n">iend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">ipos</span><span class="w"></span>
+<span class="w">    </span><span class="k">do</span>
+<span class="k">        read</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span><span class="n">pos</span><span class="o">=</span><span class="n">iend</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span><span class="w"> </span><span class="n">c</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">IS_IOSTAT_END</span><span class="p">(</span><span class="n">ios</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">            </span><span class="c">! account for end of file without linebreak</span>
+<span class="w">            </span><span class="n">iend</span><span class="o">=</span><span class="n">iend</span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">            </span><span class="k">exit</span>
+<span class="k">        end if</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="o">==</span><span class="n">newline</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">ios</span><span class="o">/=</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
+<span class="k">        </span><span class="n">iend</span><span class="o">=</span><span class="n">iend</span><span class="o">+</span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="k">end do</span>
+<span class="k">    allocate</span><span class="p">(</span><span class="w"> </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="n">iend</span><span class="o">-</span><span class="n">istart</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">read</span><span class="p">(</span><span class="n">iunit</span><span class="p">,</span><span class="n">pos</span><span class="o">=</span><span class="n">istart</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ios</span><span class="p">)</span><span class="w"> </span><span class="n">line</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">get_current_line_from_file_stream</span><span class="w"></span>
+</pre></div>
 
     </section>
     <br>
-    
-    
-
-    
-    
-
-
-    
     
     </div>
   </div>
@@ -248,7 +249,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 14:43            </p>
+ on 2022-04-02 13:18            </p>
         </div>
       </div>
       <br>

@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -118,7 +116,12 @@
     <div id="sidebar">
   <h3>Contents</h3>
  
-<em>None</em>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/initialize_json_file_v2.html#src">initialize_json_file_v2</a>
+  </div>
+</div>
 
 </div>
 
@@ -136,13 +139,13 @@
 <thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
 <tr>
-  <td><span class="anchor" id="variable-json_value_object"></span>type(json_value),</td>
+  <td><span class="anchor" id="variable-json_value_object"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td>intent(in),</td>
   <td></td>  <td>pointer</td><td>::</td>
   <td><strong>json_value_object</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-json_core_object~2"></span>type(json_core),</td>
+  <td><span class="anchor" id="variable-json_core_object~2"></span>type(<a href='../type/json_core.html'>json_core</a>),</td>
 <td>intent(in)</td>
   <td></td>  <td></td><td>::</td>
   <td><strong>json_core_object</strong></td><td></td>
@@ -258,7 +261,12 @@
     <section class="visible-xs visible-sm hidden-md">
       <h3>Contents</h3>
  
-<em>None</em>
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/initialize_json_file_v2.html#src">initialize_json_file_v2</a>
+  </div>
+</div>
 
     </section>
     <br class="visible-xs visible-sm hidden-md">
@@ -272,6 +280,25 @@
 
 
     
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">function </span><span class="n">initialize_json_file_v2</span><span class="p">(</span><span class="n">json_value_object</span><span class="p">,</span><span class="n">json_core_object</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                                        </span><span class="k">result</span><span class="p">(</span><span class="n">file_object</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    type</span><span class="p">(</span><span class="n">json_file</span><span class="p">)</span><span class="w">                     </span><span class="kd">::</span><span class="w"> </span><span class="n">file_object</span><span class="w"></span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">json_value_object</span><span class="w"></span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">json_core_object</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">file_object</span><span class="p">%</span><span class="n">p</span><span class="w">    </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">json_value_object</span><span class="w"></span>
+<span class="w">    </span><span class="n">file_object</span><span class="p">%</span><span class="n">core</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json_core_object</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">end function </span><span class="n">initialize_json_file_v2</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
     
     </div>
   </div>
@@ -288,7 +315,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 14:43            </p>
+ on 2022-04-02 13:18            </p>
         </div>
       </div>
       <br>

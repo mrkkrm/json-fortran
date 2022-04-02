@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -91,7 +89,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.3% of total for procedures.">35 statements</a>
+    title=" 0.5% of total for procedures.">35 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
   </ul>
@@ -117,17 +115,9 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/json_is_vector.html#variable-count~4">count</a>
-      <a class="list-group-item" href="../proc/json_is_vector.html#variable-element~2">element</a>
-      <a class="list-group-item" href="../proc/json_is_vector.html#variable-i~8">i</a>
-      <a class="list-group-item" href="../proc/json_is_vector.html#variable-json_invalid">json_invalid</a>
-      <a class="list-group-item" href="../proc/json_is_vector.html#variable-json_numeric">json_numeric</a>
-      <a class="list-group-item" href="../proc/json_is_vector.html#variable-var_type~6">var_type</a>
-      <a class="list-group-item" href="../proc/json_is_vector.html#variable-var_type_prev">var_type_prev</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/json_is_vector.html#src">json_is_vector</a>
   </div>
 </div>
 
@@ -171,17 +161,9 @@ are scalars of the same type</p>
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/json_is_vector.html#variable-count~4">count</a>
-      <a class="list-group-item" href="../proc/json_is_vector.html#variable-element~2">element</a>
-      <a class="list-group-item" href="../proc/json_is_vector.html#variable-i~8">i</a>
-      <a class="list-group-item" href="../proc/json_is_vector.html#variable-json_invalid">json_invalid</a>
-      <a class="list-group-item" href="../proc/json_is_vector.html#variable-json_numeric">json_numeric</a>
-      <a class="list-group-item" href="../proc/json_is_vector.html#variable-var_type~6">var_type</a>
-      <a class="list-group-item" href="../proc/json_is_vector.html#variable-var_type_prev">var_type_prev</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/json_is_vector.html#src">json_is_vector</a>
   </div>
 </div>
 
@@ -189,59 +171,71 @@ are scalars of the same type</p>
     <br class="visible-xs visible-sm hidden-md">
 
 
-    <section>    
-      <h2>Variables</h2>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-count~4"></span>integer(kind=IK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>count</strong></td><td></td><td></td><td><p>number of children</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-element~2"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-<td>private,</td>  <td>pointer</td><td>::</td>
-  <td><strong>element</strong></td><td></td><td></td><td><p>for getting children</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-i~8"></span>integer(kind=IK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>i</strong></td><td></td><td></td><td><p>counter</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-json_invalid"></span>integer(kind=IK),</td>
-<td>private,</td>  <td>parameter</td><td>::</td>
-  <td><strong>json_invalid</strong></td><td> =</td><td>-1_IK</td><td><p>to initialize the flag. an invalid value</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-json_numeric"></span>integer(kind=IK),</td>
-<td>private,</td>  <td>parameter</td><td>::</td>
-  <td><strong>json_numeric</strong></td><td> =</td><td>-2_IK</td><td><p>indicates <code>json_integer</code> or <code>json_real</code></p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-var_type~6"></span>integer(kind=IK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>var_type</strong></td><td></td><td></td><td><p>for getting the <abbr title="json_unknown, json_null, json_object, json_array, json_logical, json_integer, json_double, json_string">variable type</abbr> of children</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-var_type_prev"></span>integer(kind=IK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>var_type_prev</strong></td><td></td><td></td><td><p>for getting the <abbr title="json_unknown, json_null, json_object, json_array, json_logical, json_integer, json_double, json_string">variable type</abbr> of children</p></td>
-</tr>
-</tbody>
-</table>
+    
+    
+
+    
+    
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">function </span><span class="n">json_is_vector</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">is_vector</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">p</span><span class="w"></span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span><span class="w">                    </span><span class="kd">::</span><span class="w"> </span><span class="n">is_vector</span><span class="w">  </span><span class="c">!! if all elements of a vector</span>
+<span class="w">                                                 </span><span class="c">!! are scalars of the same type</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">var_type_prev</span><span class="w"> </span><span class="c">!! for getting the variable type of children</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">var_type</span><span class="w"> </span><span class="c">!! for getting the variable type of children</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="c">!! for getting children</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="c">!! counter</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="nb">count</span><span class="w"> </span><span class="c">!! number of children</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">json_invalid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">1_IK</span><span class="w">  </span><span class="c">!! to initialize the flag. an invalid value</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">json_numeric</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">2_IK</span><span class="w">  </span><span class="c">!! indicates `json_integer` or `json_real`</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">compress_vectors</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">        </span><span class="c">! check to see if every child is the same type,</span>
+<span class="w">        </span><span class="c">! and a scalar:</span>
+<span class="w">        </span><span class="n">is_vector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="n">var_type_prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json_invalid</span><span class="w"></span>
+<span class="w">        </span><span class="nb">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="nb">count</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">element</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">%</span><span class="n">children</span><span class="w"></span>
+<span class="w">        </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1_IK</span><span class="p">,</span><span class="w"> </span><span class="nb">count</span>
+<span class="nb">            </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="nb">associated</span><span class="p">(</span><span class="n">element</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in json_is_vector: &#39;</span><span class="o">//</span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                                          </span><span class="s1">&#39;Malformed JSON linked list&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">return</span>
+<span class="k">            end if</span><span class="w"></span>
+<span class="w">            </span><span class="c">! check variable type of all the children.</span>
+<span class="w">            </span><span class="c">! They must all be the same, and a scalar.</span>
+<span class="w">            </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">info</span><span class="p">(</span><span class="n">element</span><span class="p">,</span><span class="n">var_type</span><span class="o">=</span><span class="n">var_type</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="c">! special check for numeric values:</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">var_type</span><span class="o">==</span><span class="n">json_integer</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">var_type</span><span class="o">==</span><span class="n">json_real</span><span class="p">)</span><span class="w"> </span><span class="n">var_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">json_numeric</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">var_type</span><span class="o">==</span><span class="n">json_object</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                </span><span class="n">var_type</span><span class="o">==</span><span class="n">json_array</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                </span><span class="p">(</span><span class="n">i</span><span class="o">&gt;</span><span class="mi">1_IK</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">var_type</span><span class="o">/=</span><span class="n">var_type_prev</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                </span><span class="n">is_vector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">                </span><span class="k">exit</span>
+<span class="k">            end if</span>
+<span class="k">            </span><span class="n">var_type_prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">var_type</span><span class="w"></span>
+<span class="w">            </span><span class="c">! get the next child the list:</span>
+<span class="w">            </span><span class="n">element</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">element</span><span class="p">%</span><span class="n">next</span><span class="w"></span>
+<span class="w">        </span><span class="k">end do</span>
+<span class="k">    else</span>
+<span class="k">        </span><span class="n">is_vector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    end function </span><span class="n">json_is_vector</span><span class="w"></span>
+</pre></div>
 
     </section>
     <br>
-    
-    
-
-    
-    
-
-
-    
     
     </div>
   </div>
@@ -258,7 +252,7 @@ are scalars of the same type</p>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 14:43            </p>
+ on 2022-04-02 13:18            </p>
         </div>
       </div>
       <br>

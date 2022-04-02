@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -93,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">43 statements</a>
+    title=" 0.6% of total for procedures.">43 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
   </ul>
@@ -119,13 +117,9 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/json_value_destroy.html#variable-child~2">child</a>
-      <a class="list-group-item" href="../proc/json_value_destroy.html#variable-circular">circular</a>
-      <a class="list-group-item" href="../proc/json_value_destroy.html#variable-des_next">des_next</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/json_value_destroy.html#src">json_value_destroy</a>
   </div>
 </div>
 
@@ -162,7 +156,7 @@
   <td><strong>json</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-p~91"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-p~72"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td></td>
   <td></td>  <td>pointer</td><td>::</td>
   <td><strong>p</strong></td><td><p>variable to destroy</p></td>
@@ -284,13 +278,9 @@ is also destroyed (default is true)</p></td>
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/json_value_destroy.html#variable-child~2">child</a>
-      <a class="list-group-item" href="../proc/json_value_destroy.html#variable-circular">circular</a>
-      <a class="list-group-item" href="../proc/json_value_destroy.html#variable-des_next">des_next</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/json_value_destroy.html#src">json_value_destroy</a>
   </div>
 </div>
 
@@ -298,40 +288,85 @@ is also destroyed (default is true)</p></td>
     <br class="visible-xs visible-sm hidden-md">
 
 
-    <section>    
-      <h2>Variables</h2>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-child~2"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-<td>private,</td>  <td>pointer</td><td>::</td>
-  <td><strong>child</strong></td><td></td><td></td><td><p>for getting child elements</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-circular"></span>logical,</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>circular</strong></td><td></td><td></td><td><p>to check to malformed linked lists</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-des_next"></span>logical(kind=LK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>des_next</strong></td><td></td><td></td><td><p>local copy of <code>destroy_next</code>
-optional argument</p></td>
-</tr>
-</tbody>
-</table>
+    
+    
+
+    
+    
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">pure recursive subroutine </span><span class="n">json_value_destroy</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">destroy_next</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">p</span><span class="w">            </span><span class="c">!! variable to destroy</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">destroy_next</span><span class="w"> </span><span class="c">!! if true, then `p%next`</span>
+<span class="w">                                                    </span><span class="c">!! is also destroyed (default is true)</span>
+
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">des_next</span><span class="w">  </span><span class="c">!! local copy of `destroy_next`</span>
+<span class="w">                                          </span><span class="c">!! optional argument</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">child</span><span class="w">     </span><span class="c">!! for getting child elements</span>
+<span class="w">    </span><span class="kt">logical</span><span class="w">                  </span><span class="kd">::</span><span class="w"> </span><span class="n">circular</span><span class="w">  </span><span class="c">!! to check to malformed linked lists</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">destroy_next</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">des_next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">destroy_next</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">            </span><span class="n">des_next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
+
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">name</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">name</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">call </span><span class="n">destroy_json_data</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">next</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">            </span><span class="c">! check for circular references:</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">%</span><span class="n">next</span><span class="p">))</span><span class="w"> </span><span class="k">nullify</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">next</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
+
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">children</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            do while</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">n_children</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="n">child</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">%</span><span class="n">children</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">child</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    </span><span class="n">p</span><span class="p">%</span><span class="n">children</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">%</span><span class="n">children</span><span class="p">%</span><span class="n">next</span><span class="w"></span>
+<span class="w">                    </span><span class="n">p</span><span class="p">%</span><span class="n">n_children</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">%</span><span class="n">n_children</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">                    </span><span class="c">! check children for circular references:</span>
+<span class="w">                    </span><span class="n">circular</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">children</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                                </span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">children</span><span class="p">,</span><span class="n">child</span><span class="p">))</span><span class="w"></span>
+<span class="w">                    </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">destroy</span><span class="p">(</span><span class="n">child</span><span class="p">,</span><span class="n">destroy_next</span><span class="o">=</span><span class="p">.</span><span class="n">false</span><span class="p">.)</span><span class="w"></span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">circular</span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
+<span class="k">                else</span><span class="w"></span>
+<span class="w">                    </span><span class="c">! it is a malformed JSON object. But, we will</span>
+<span class="w">                    </span><span class="c">! press ahead with the destroy process, since</span>
+<span class="w">                    </span><span class="c">! otherwise, there would be no way to destroy it.</span>
+<span class="w">                    </span><span class="k">exit</span>
+<span class="k">                end if</span>
+<span class="k">            end do</span>
+<span class="k">            nullify</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">children</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">nullify</span><span class="p">(</span><span class="n">child</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
+
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">next</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">des_next</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">destroy</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">next</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">nullify</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">previous</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">nullify</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">parent</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">nullify</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">tail</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">nullify</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    end subroutine </span><span class="n">json_value_destroy</span><span class="w"></span>
+</pre></div>
 
     </section>
     <br>
-    
-    
-
-    
-    
-
-
-    
     
     </div>
   </div>
@@ -348,7 +383,7 @@ optional argument</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 14:43            </p>
+ on 2022-04-02 13:18            </p>
         </div>
       </div>
       <br>

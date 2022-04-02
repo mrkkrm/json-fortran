@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -93,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">23 statements</a>
+    title=" 0.3% of total for procedures.">23 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/json_string_utilities.F90"> Source File</a></li>
   </ul>
@@ -119,11 +117,9 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/string_to_real.html#variable-ierr~2">ierr</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/string_to_real.html#src">string_to_real</a>
   </div>
 </div>
 
@@ -199,35 +195,35 @@ otherwise, use <code>ieee_signaling_nan</code>.</p></td>
 <polygon fill="none" stroke="black" points="207,-45 123,-45 123,-21 207,-21 207,-45"/>
 <text text-anchor="middle" x="165" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">string_to_real</text>
 </g>
-<!-- proc~string_to_dble -->
-<g id="proc~~string_to_real~~CalledByGraph_node2" class="node">
-<title>proc~string_to_dble</title>
-<g id="a_proc~~string_to_real~~CalledByGraph_node2"><a xlink:href=".././proc/string_to_dble.html" xlink:title="string_to_dble">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="87,-66 0,-66 0,-42 87,-42 87,-66"/>
-<text text-anchor="middle" x="43.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">string_to_dble</text>
-</a>
-</g>
-</g>
-<!-- proc~string_to_dble&#45;&gt;proc~string_to_real -->
-<g id="proc~~string_to_real~~CalledByGraph_edge1" class="edge">
-<title>proc~string_to_dble&#45;&gt;proc~string_to_real</title>
-<path fill="none" stroke="#ff0000" d="M87.3,-46.48C95.49,-45.04 104.15,-43.52 112.57,-42.04"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="113.45,-45.44 122.69,-40.26 112.24,-38.54 113.45,-45.44"/>
-</g>
 <!-- proc~json_get_real -->
-<g id="proc~~string_to_real~~CalledByGraph_node3" class="node">
+<g id="proc~~string_to_real~~CalledByGraph_node2" class="node">
 <title>proc~json_get_real</title>
-<g id="a_proc~~string_to_real~~CalledByGraph_node3"><a xlink:href=".././proc/json_get_real.html" xlink:title="json_get_real">
-<polygon fill="#d9534f" stroke="#d9534f" points="84.5,-24 2.5,-24 2.5,0 84.5,0 84.5,-24"/>
-<text text-anchor="middle" x="43.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_get_real</text>
+<g id="a_proc~~string_to_real~~CalledByGraph_node2"><a xlink:href=".././proc/json_get_real.html" xlink:title="json_get_real">
+<polygon fill="#d9534f" stroke="#d9534f" points="84.5,-66 2.5,-66 2.5,-42 84.5,-42 84.5,-66"/>
+<text text-anchor="middle" x="43.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">json_get_real</text>
 </a>
 </g>
 </g>
 <!-- proc~json_get_real&#45;&gt;proc~string_to_real -->
-<g id="proc~~string_to_real~~CalledByGraph_edge2" class="edge">
+<g id="proc~~string_to_real~~CalledByGraph_edge1" class="edge">
 <title>proc~json_get_real&#45;&gt;proc~string_to_real</title>
-<path fill="none" stroke="#ff0000" d="M84.62,-19.05C93.69,-20.64 103.43,-22.36 112.87,-24.02"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="112.51,-27.5 122.96,-25.79 113.72,-20.61 112.51,-27.5"/>
+<path fill="none" stroke="#ff0000" d="M84.62,-46.95C93.69,-45.36 103.43,-43.64 112.87,-41.98"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="113.72,-45.39 122.96,-40.21 112.51,-38.5 113.72,-45.39"/>
+</g>
+<!-- proc~string_to_dble -->
+<g id="proc~~string_to_real~~CalledByGraph_node3" class="node">
+<title>proc~string_to_dble</title>
+<g id="a_proc~~string_to_real~~CalledByGraph_node3"><a xlink:href=".././proc/string_to_dble.html" xlink:title="string_to_dble">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="87,-24 0,-24 0,0 87,0 87,-24"/>
+<text text-anchor="middle" x="43.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">string_to_dble</text>
+</a>
+</g>
+</g>
+<!-- proc~string_to_dble&#45;&gt;proc~string_to_real -->
+<g id="proc~~string_to_real~~CalledByGraph_edge2" class="edge">
+<title>proc~string_to_dble&#45;&gt;proc~string_to_real</title>
+<path fill="none" stroke="#ff0000" d="M87.3,-19.52C95.49,-20.96 104.15,-22.48 112.57,-23.96"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="112.24,-27.46 122.69,-25.74 113.45,-20.56 112.24,-27.46"/>
 </g>
 </g>
 </svg>
@@ -298,11 +294,9 @@ otherwise, use <code>ieee_signaling_nan</code>.</p></td>
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/string_to_real.html#variable-ierr~2">ierr</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/string_to_real.html#src">string_to_real</a>
   </div>
 </div>
 
@@ -310,29 +304,50 @@ otherwise, use <code>ieee_signaling_nan</code>.</p></td>
     <br class="visible-xs visible-sm hidden-md">
 
 
-    <section>    
-      <h2>Variables</h2>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-ierr~2"></span>integer(kind=IK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>ierr</strong></td><td></td><td></td><td><p>read iostat error code</p></td>
-</tr>
-</tbody>
-</table>
+    
+    
+
+    
+    
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">string_to_real</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">use_quiet_nan</span><span class="p">,</span><span class="n">rval</span><span class="p">,</span><span class="n">status_ok</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">str</span><span class="w">           </span><span class="c">!! the string to convert to a real</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">use_quiet_nan</span><span class="w"> </span><span class="c">!! if true, return NaN&#39;s as `ieee_quiet_nan`.</span>
+<span class="w">                                                         </span><span class="c">!! otherwise, use `ieee_signaling_nan`.</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">RK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">                </span><span class="kd">::</span><span class="w"> </span><span class="n">rval</span><span class="w">          </span><span class="c">!! `str` converted to a real value</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">status_ok</span><span class="w">     </span><span class="c">!! true if there were no errors</span>
+
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ierr</span><span class="w">  </span><span class="c">!! read iostat error code</span>
+
+<span class="w">    </span><span class="k">read</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">fmt</span><span class="o">=*</span><span class="p">,</span><span class="n">iostat</span><span class="o">=</span><span class="n">ierr</span><span class="p">)</span><span class="w"> </span><span class="n">rval</span><span class="w"></span>
+<span class="w">    </span><span class="n">status_ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ierr</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">status_ok</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">rval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0_RK</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">ieee_support_nan</span><span class="p">(</span><span class="n">rval</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="n">ieee_is_nan</span><span class="p">(</span><span class="n">rval</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">                </span><span class="c">! make sure to return the correct NaN</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">use_quiet_nan</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    </span><span class="n">rval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ieee_value</span><span class="p">(</span><span class="n">rval</span><span class="p">,</span><span class="n">ieee_quiet_nan</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">else</span>
+<span class="k">                    </span><span class="n">rval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ieee_value</span><span class="p">(</span><span class="n">rval</span><span class="p">,</span><span class="n">ieee_signaling_nan</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">end if</span>
+<span class="k">            end if</span>
+<span class="k">        end if</span>
+<span class="k">    end if</span>
+
+<span class="k">    end subroutine </span><span class="n">string_to_real</span><span class="w"></span>
+</pre></div>
 
     </section>
     <br>
-    
-    
-
-    
-    
-
-
-    
     
     </div>
   </div>
@@ -349,7 +364,7 @@ otherwise, use <code>ieee_signaling_nan</code>.</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 14:43            </p>
+ on 2022-04-02 13:18            </p>
         </div>
       </div>
       <br>

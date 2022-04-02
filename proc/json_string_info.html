@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -93,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.8% of total for procedures.">89 statements</a>
+    title=" 1.3% of total for procedures.">89 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
   </ul>
@@ -119,23 +117,9 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/json_string_info.html#variable-cval">cval</a>
-      <a class="list-group-item" href="../proc/json_string_info.html#variable-get_ilen">get_ilen</a>
-      <a class="list-group-item" href="../proc/json_string_info.html#variable-get_max_len">get_max_len</a>
-      <a class="list-group-item" href="../proc/json_string_info.html#variable-initialized~6">initialized</a>
-      <a class="list-group-item" href="../proc/json_string_info.html#variable-var_type~13">var_type</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <div id="subs-0" class="panel-collapse collapse">
-      <a class="list-group-item" href="../proc/json_string_info.html#proc-get_string_lengths">get_string_lengths</a>
-    </div>
+    <a class="list-group-item" href="../proc/json_string_info.html#src">json_string_info</a>
   </div>
 </div>
 
@@ -160,13 +144,13 @@
   <td><strong>json</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-p~57"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-p~38"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td></td>
   <td></td>  <td>pointer</td><td>::</td>
   <td><strong>p</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-ilen~15"></span>integer(kind=IK),</td>
+  <td><span class="anchor" id="variable-ilen~12"></span>integer(kind=IK),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td>dimension(:), allocatable</td><td>::</td>
   <td><strong>ilen</strong></td><td><p>if <code>p</code> is an array, this
@@ -188,7 +172,7 @@ a vector, this is the maximum length of
 any element.</p></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-found~117"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-found~116"></span>logical(kind=LK),</td>
 <td>intent(out),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>found</strong></td><td><p>true if there were no errors.
@@ -204,23 +188,9 @@ throw an exception</p></td>
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/json_string_info.html#variable-cval">cval</a>
-      <a class="list-group-item" href="../proc/json_string_info.html#variable-get_ilen">get_ilen</a>
-      <a class="list-group-item" href="../proc/json_string_info.html#variable-get_max_len">get_max_len</a>
-      <a class="list-group-item" href="../proc/json_string_info.html#variable-initialized~6">initialized</a>
-      <a class="list-group-item" href="../proc/json_string_info.html#variable-var_type~13">var_type</a>
-    </div>
-  </div>
-</div>
-<div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <div id="subs-1" class="panel-collapse collapse">
-      <a class="list-group-item" href="../proc/json_string_info.html#proc-get_string_lengths">get_string_lengths</a>
-    </div>
+    <a class="list-group-item" href="../proc/json_string_info.html#src">json_string_info</a>
   </div>
 </div>
 
@@ -228,92 +198,168 @@ throw an exception</p></td>
     <br class="visible-xs visible-sm hidden-md">
 
 
-    <section>    
-      <h2>Variables</h2>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-cval"></span>character(kind=CK,len=:),</td>
-<td>private,</td>  <td>allocatable</td><td>::</td>
-  <td><strong>cval</strong></td><td></td><td></td><td><p>for getting values as strings.</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-get_ilen"></span>logical(kind=LK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>get_ilen</strong></td><td></td><td></td><td><p>if we are returning the <code>ilen</code> array</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-get_max_len"></span>logical(kind=LK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>get_max_len</strong></td><td></td><td></td><td><p>if we are returning the <code>max_str_len</code></p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-initialized~6"></span>logical(kind=LK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>initialized</strong></td><td></td><td></td><td><p>if the output array has been sized</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-var_type~13"></span>integer(kind=IK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>var_type</strong></td><td></td><td></td><td><p><abbr title="json_unknown, json_null, json_object, json_array, json_logical, json_integer, json_double, json_string">variable type</abbr></p></td>
-</tr>
-</tbody>
-</table>
+    
+    
+
+    
+    
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">json_string_info</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">ilen</span><span class="p">,</span><span class="n">max_str_len</span><span class="p">,</span><span class="n">found</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">   </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">p</span><span class="w"></span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">allocatable</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ilen</span><span class="w"> </span><span class="c">!! if `p` is an array, this</span>
+<span class="w">                                                                      </span><span class="c">!! is the actual length</span>
+<span class="w">                                                                      </span><span class="c">!! of each character</span>
+<span class="w">                                                                      </span><span class="c">!! string in the array.</span>
+<span class="w">                                                                      </span><span class="c">!! if not an array, this</span>
+<span class="w">                                                                      </span><span class="c">!! is returned unallocated.</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">max_str_len</span><span class="w"> </span><span class="c">!! The maximum length required to</span>
+<span class="w">                                                    </span><span class="c">!! hold the string representation returned</span>
+<span class="w">                                                    </span><span class="c">!! by a call to a `get` routine. If a scalar,</span>
+<span class="w">                                                    </span><span class="c">!! this is just the length of the scalar. If</span>
+<span class="w">                                                    </span><span class="c">!! a vector, this is the maximum length of</span>
+<span class="w">                                                    </span><span class="c">!! any element.</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">found</span><span class="w">   </span><span class="c">!! true if there were no errors.</span>
+<span class="w">                                                </span><span class="c">!! if not present, an error will</span>
+<span class="w">                                                </span><span class="c">!! throw an exception</span>
+
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cval</span><span class="w"> </span><span class="c">!! for getting values as strings.</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">initialized</span><span class="w"> </span><span class="c">!! if the output array has been sized</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_max_len</span><span class="w"> </span><span class="c">!! if we are returning the `max_str_len`</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_ilen</span><span class="w">    </span><span class="c">!! if we are returning the `ilen` array</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">var_type</span><span class="w">    </span><span class="c">!! variable type</span>
+
+<span class="w">    </span><span class="n">get_max_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">max_str_len</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">get_ilen</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nb">present</span><span class="p">(</span><span class="n">ilen</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">exception_thrown</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">found</span><span class="p">))</span><span class="w"> </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="n">initialized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">get_max_len</span><span class="p">)</span><span class="w"> </span><span class="n">max_str_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">select case</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">var_type</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="n">json_array</span><span class="p">)</span><span class="w"> </span><span class="c">! it&#39;s an array</span>
+
+<span class="w">            </span><span class="c">! call routine for each element</span>
+<span class="w">            </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">array_callback</span><span class="o">=</span><span class="n">get_string_lengths</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">case </span><span class="n">default</span><span class="w"> </span><span class="c">! not an array</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">strict_type_checking</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">                </span><span class="c">! only allowing strings to be returned</span>
+<span class="w">                </span><span class="c">! as strings, so we can check size directly</span>
+<span class="w">                </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">info</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">var_type</span><span class="o">=</span><span class="n">var_type</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">var_type</span><span class="o">==</span><span class="n">json_string</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">str_value</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">get_max_len</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                        </span><span class="n">max_str_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">str_value</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">else</span><span class="w"></span>
+<span class="w">                    </span><span class="c">! it isn&#39;t a string, so there is no length</span>
+<span class="w">                    </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in json_string_info: &#39;</span><span class="o">//</span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                                              </span><span class="s1">&#39;When strict_type_checking is true &#39;</span><span class="o">//</span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                                              </span><span class="s1">&#39;the variable must be a character string.&#39;</span><span class="p">,&amp;</span><span class="w"></span>
+<span class="w">                                              </span><span class="n">found</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">end if</span>
+<span class="k">            else</span><span class="w"></span>
+<span class="w">                </span><span class="c">! in this case, we have to get the value</span>
+<span class="w">                </span><span class="c">! as a string to know what size it is.</span>
+<span class="w">                </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="k">value</span><span class="o">=</span><span class="n">cval</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">json</span><span class="p">%</span><span class="n">exception_thrown</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">cval</span><span class="p">)</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">get_max_len</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                        </span><span class="n">max_str_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">cval</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">end if</span>
+<span class="k">            end if</span>
+
+<span class="k">        end select</span>
+
+<span class="k">    end if</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">exception_thrown</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">found</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            call </span><span class="n">json</span><span class="p">%</span><span class="n">clear_exceptions</span><span class="p">()</span><span class="w"></span>
+<span class="w">            </span><span class="n">found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">false</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">get_max_len</span><span class="p">)</span><span class="w"> </span><span class="n">max_str_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">get_ilen</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">ilen</span><span class="p">))</span><span class="w"> </span><span class="k">deallocate</span><span class="p">(</span><span class="n">ilen</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
+<span class="k">    end if</span>
+
+<span class="k">    contains</span>
+
+<span class="k">        subroutine </span><span class="n">get_string_lengths</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="w"> </span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="nb">count</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="c">!! callback function to call for each element in the array.</span>
+
+<span class="w">        </span><span class="k">implicit none</span>
+
+<span class="k">        class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">      </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">        </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">element</span><span class="w"></span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="w">        </span><span class="c">!! index</span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="nb">count</span><span class="w">    </span><span class="c">!! size of array</span>
+
+<span class="w">        </span><span class="kt">character</span><span class="p">(</span><span class="nb">kind</span><span class="o">=</span><span class="n">CK</span><span class="p">,</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">cval</span><span class="w"></span>
+<span class="w">        </span><span class="kt">integer</span><span class="p">(</span><span class="n">IK</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">var_type</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">exception_thrown</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="k">        if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">initialized</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="n">get_ilen</span><span class="p">)</span><span class="w"> </span><span class="k">allocate</span><span class="p">(</span><span class="n">ilen</span><span class="p">(</span><span class="nb">count</span><span class="p">))</span><span class="w"></span>
+<span class="w">            </span><span class="n">initialized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
+
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">strict_type_checking</span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">            </span><span class="c">! only allowing strings to be returned</span>
+<span class="w">            </span><span class="c">! as strings, so we can check size directly</span>
+<span class="w">            </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">info</span><span class="p">(</span><span class="n">element</span><span class="p">,</span><span class="n">var_type</span><span class="o">=</span><span class="n">var_type</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">var_type</span><span class="o">==</span><span class="n">json_string</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">element</span><span class="p">%</span><span class="n">str_value</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    if</span><span class="w"> </span><span class="p">(</span><span class="n">get_max_len</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                        if</span><span class="w"> </span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="p">%</span><span class="n">str_value</span><span class="p">)</span><span class="o">&gt;</span><span class="n">max_str_len</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                                </span><span class="n">max_str_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="p">%</span><span class="n">str_value</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="k">end if</span>
+<span class="k">                    if</span><span class="w"> </span><span class="p">(</span><span class="n">get_ilen</span><span class="p">)</span><span class="w"> </span><span class="n">ilen</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="p">%</span><span class="n">str_value</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">else</span>
+<span class="k">                    if</span><span class="w"> </span><span class="p">(</span><span class="n">get_ilen</span><span class="p">)</span><span class="w"> </span><span class="n">ilen</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">                </span><span class="k">end if</span>
+<span class="k">            else</span><span class="w"></span>
+<span class="w">                </span><span class="c">! it isn&#39;t a string, so there is no length</span>
+<span class="w">                </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in json_string_info: &#39;</span><span class="o">//</span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                                          </span><span class="s1">&#39;When strict_type_checking is true &#39;</span><span class="o">//</span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                                          </span><span class="s1">&#39;the array must contain only &#39;</span><span class="o">//</span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">                                          </span><span class="s1">&#39;character strings.&#39;</span><span class="p">,</span><span class="n">found</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">end if</span>
+<span class="k">        else</span><span class="w"></span>
+<span class="w">            </span><span class="c">! in this case, we have to get the value</span>
+<span class="w">            </span><span class="c">! as a string to know what size it is.</span>
+<span class="w">            </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="n">element</span><span class="p">,</span><span class="w"> </span><span class="k">value</span><span class="o">=</span><span class="n">cval</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">json</span><span class="p">%</span><span class="n">exception_thrown</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="nb">allocated</span><span class="p">(</span><span class="n">cval</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                if</span><span class="w"> </span><span class="p">(</span><span class="n">get_max_len</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    if</span><span class="w"> </span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cval</span><span class="p">)</span><span class="o">&gt;</span><span class="n">max_str_len</span><span class="p">)</span><span class="w"> </span><span class="n">max_str_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">cval</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">end if</span>
+<span class="k">                if</span><span class="w"> </span><span class="p">(</span><span class="n">get_ilen</span><span class="p">)</span><span class="w"> </span><span class="n">ilen</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="n">cval</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">else</span>
+<span class="k">                if</span><span class="w"> </span><span class="p">(</span><span class="n">get_ilen</span><span class="p">)</span><span class="w"> </span><span class="n">ilen</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">            </span><span class="k">end if</span>
+<span class="k">        end if</span>
+
+<span class="k">        end subroutine </span><span class="n">get_string_lengths</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">end subroutine </span><span class="n">json_string_info</span><span class="w"></span>
+</pre></div>
 
     </section>
     <br>
-    
-    
-
-    
-    
-
-
-    <section>
-    <h2>Subroutines</h2>
-      <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-get_string_lengths"></span><h3>subroutine get_string_lengths(json, element, i, count)</h3></div>
-  <div class="panel-body">
-       
-<p>callback function to call for each element in the array.</p>
-    
-<h4>Arguments</h4>      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" ></span>class(<a href='../type/json_core.html'>json_core</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>json</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-<td>intent(in),</td>
-  <td></td>  <td>pointer</td><td>::</td>
-  <td><strong>element</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer(kind=IK),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>i</strong></td><td><p>index</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" ></span>integer(kind=IK),</td>
-<td>intent(in)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>count</strong></td><td><p>size of array</p></td>
-</tr>
-</tbody>
-</table>
-
-
-  </div>
-  </div>
-
-    </section>    
-    
     
     </div>
   </div>
@@ -330,7 +376,7 @@ throw an exception</p></td>
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 14:43            </p>
+ on 2022-04-02 13:18            </p>
         </div>
       </div>
       <br>

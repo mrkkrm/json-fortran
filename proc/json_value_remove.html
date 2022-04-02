@@ -55,7 +55,6 @@
             <li><a href="../lists/procedures.html">Procedures</a></li>
             <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
                    <li><a href="../lists/types.html">Derived Types</a></li>
-            <li><a href="../lists/programs.html">Programs</a></li>
        
             </ul>
         
@@ -65,7 +64,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
                              <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
           </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
@@ -93,7 +91,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.4% of total for procedures.">45 statements</a>
+    title=" 0.7% of total for procedures.">45 statements</a>
      </li> 
     <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
   </ul>
@@ -119,14 +117,9 @@
   <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
-  <div id="vars-0" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/json_value_remove.html#variable-destroy_it">destroy_it</a>
-      <a class="list-group-item" href="../proc/json_value_remove.html#variable-next~4">next</a>
-      <a class="list-group-item" href="../proc/json_value_remove.html#variable-parent~5">parent</a>
-      <a class="list-group-item" href="../proc/json_value_remove.html#variable-previous~4">previous</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/json_value_remove.html#src">json_value_remove</a>
   </div>
 </div>
 
@@ -177,13 +170,13 @@
   <td><strong>json</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-p~98"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
+  <td><span class="anchor" id="variable-p~79"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
 <td></td>
   <td></td>  <td>pointer</td><td>::</td>
   <td><strong>p</strong></td><td></td>
 </tr>
 <tr>
-  <td><span class="anchor" id="variable-destroy~4"></span>logical(kind=LK),</td>
+  <td><span class="anchor" id="variable-destroy~3"></span>logical(kind=LK),</td>
 <td>intent(in),</td>
   <td>optional</td>  <td></td><td>::</td>
   <td><strong>destroy</strong></td><td><p>Option to destroy <code>p</code> after it is removed:</p>
@@ -202,14 +195,9 @@
       <h3>Contents</h3>
  
 <div class="panel panel-primary">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
-  <div id="vars-1" class="panel-collapse collapse">
-    <div class="list-group">
-      <a class="list-group-item" href="../proc/json_value_remove.html#variable-destroy_it">destroy_it</a>
-      <a class="list-group-item" href="../proc/json_value_remove.html#variable-next~4">next</a>
-      <a class="list-group-item" href="../proc/json_value_remove.html#variable-parent~5">parent</a>
-      <a class="list-group-item" href="../proc/json_value_remove.html#variable-previous~4">previous</a>
-    </div>
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../proc/json_value_remove.html#src">json_value_remove</a>
   </div>
 </div>
 
@@ -217,44 +205,95 @@
     <br class="visible-xs visible-sm hidden-md">
 
 
-    <section>    
-      <h2>Variables</h2>
-    <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-destroy_it"></span>logical(kind=LK),</td>
-<td>private</td>  <td></td><td>::</td>
-  <td><strong>destroy_it</strong></td><td></td><td></td><td><p>if <code>p</code> should be destroyed</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-next~4"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-<td>private,</td>  <td>pointer</td><td>::</td>
-  <td><strong>next</strong></td><td></td><td></td><td><p>pointer to next</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-parent~5"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-<td>private,</td>  <td>pointer</td><td>::</td>
-  <td><strong>parent</strong></td><td></td><td></td><td><p>pointer to parent</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-previous~4"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-<td>private,</td>  <td>pointer</td><td>::</td>
-  <td><strong>previous</strong></td><td></td><td></td><td><p>pointer to previous</p></td>
-</tr>
-</tbody>
-</table>
+    
+    
+
+    
+    
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">json_value_remove</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">destroy</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w">        </span><span class="kd">::</span><span class="w"> </span><span class="n">p</span><span class="w"></span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">destroy</span><span class="w">  </span><span class="c">!! Option to destroy `p` after it is removed:</span>
+<span class="w">                                                </span><span class="c">!!</span>
+<span class="w">                                                </span><span class="c">!! * If `destroy` is not present, it is also destroyed.</span>
+<span class="w">                                                </span><span class="c">!! * If `destroy` is present and true, it is destroyed.</span>
+<span class="w">                                                </span><span class="c">!! * If `destroy` is present and false, it is not destroyed.</span>
+
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">parent</span><span class="w">     </span><span class="c">!! pointer to parent</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">previous</span><span class="w">   </span><span class="c">!! pointer to previous</span>
+<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">next</span><span class="w">       </span><span class="c">!! pointer to next</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">(</span><span class="n">LK</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">destroy_it</span><span class="w"> </span><span class="c">!! if `p` should be destroyed</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+
+<span class="w">        </span><span class="c">!optional input argument:</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">destroy</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+<span class="k">            </span><span class="n">destroy_it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">destroy</span><span class="w"></span>
+<span class="w">        </span><span class="k">else</span>
+<span class="k">            </span><span class="n">destroy_it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="n">true</span><span class="p">.</span><span class="w"></span>
+<span class="w">        </span><span class="k">end if</span>
+
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">parent</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
+
+<span class="k">            </span><span class="n">parent</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">%</span><span class="n">parent</span><span class="w"></span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">next</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+
+<span class="w">                </span><span class="c">!there are later items in the list:</span>
+<span class="w">                </span><span class="n">next</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">%</span><span class="n">next</span><span class="w"></span>
+
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">previous</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">                    </span><span class="c">!there are earlier items in the list</span>
+<span class="w">                    </span><span class="n">previous</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">%</span><span class="n">previous</span><span class="w"></span>
+<span class="w">                    </span><span class="n">previous</span><span class="p">%</span><span class="n">next</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">next</span><span class="w"></span>
+<span class="w">                    </span><span class="n">next</span><span class="p">%</span><span class="n">previous</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">previous</span><span class="w"></span>
+<span class="w">                </span><span class="k">else</span><span class="w"></span>
+<span class="w">                    </span><span class="c">!this is the first item in the list</span>
+<span class="w">                    </span><span class="n">parent</span><span class="p">%</span><span class="n">children</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">next</span><span class="w"></span>
+<span class="w">                    </span><span class="k">nullify</span><span class="p">(</span><span class="n">next</span><span class="p">%</span><span class="n">previous</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">end if</span>
+
+<span class="k">            else</span>
+
+<span class="k">                if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">previous</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
+<span class="w">                    </span><span class="c">!there are earlier items in the list:</span>
+<span class="w">                    </span><span class="n">previous</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">%</span><span class="n">previous</span><span class="w"></span>
+<span class="w">                    </span><span class="k">nullify</span><span class="p">(</span><span class="n">previous</span><span class="p">%</span><span class="n">next</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="n">parent</span><span class="p">%</span><span class="n">tail</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">previous</span><span class="w"></span>
+<span class="w">                </span><span class="k">else</span><span class="w"></span>
+<span class="w">                    </span><span class="c">!this is the only item in the list:</span>
+<span class="w">                    </span><span class="k">nullify</span><span class="p">(</span><span class="n">parent</span><span class="p">%</span><span class="n">children</span><span class="p">)</span><span class="w"></span>
+<span class="w">                    </span><span class="k">nullify</span><span class="p">(</span><span class="n">parent</span><span class="p">%</span><span class="n">tail</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">end if</span>
+
+<span class="k">            end if</span><span class="w"></span>
+
+<span class="w">            </span><span class="c">! nullify all pointers to original structure:</span>
+<span class="w">            </span><span class="k">nullify</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">next</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">nullify</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">previous</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">nullify</span><span class="p">(</span><span class="n">p</span><span class="p">%</span><span class="n">parent</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">parent</span><span class="p">%</span><span class="n">n_children</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parent</span><span class="p">%</span><span class="n">n_children</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">end if</span>
+
+<span class="k">        if</span><span class="w"> </span><span class="p">(</span><span class="n">destroy_it</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">destroy</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">end if</span>
+
+<span class="k">    end subroutine </span><span class="n">json_value_remove</span><span class="w"></span>
+</pre></div>
 
     </section>
     <br>
-    
-    
-
-    
-    
-
-
-    
     
     </div>
   </div>
@@ -271,7 +310,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-02-13 14:43            </p>
+ on 2022-04-02 13:18            </p>
         </div>
       </div>
       <br>
