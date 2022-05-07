@@ -8,7 +8,7 @@
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
-    <title>json_get_tail &ndash; JSON-Fortran</title>
+    <title>json_fortran_version &ndash; JSON-Fortran</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -79,26 +79,24 @@
 
     <div class="container">
   <div class="row">
-    <h1>json_get_tail
-      <small>Subroutine</small>
+    <h1>json_fortran_version
+      <small>Function</small>
     </h1>
     <div class="row">
   <div class="col-lg-12">
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     <li><i class="fa fa-pencil"></i> Jacob Williams</li>
-    <li><i class="fa fa-calendar-o"></i> 10/31/2015</li>
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 0.2% of total for procedures.">12 statements</a>
+    title=" 0.1% of total for procedures.">5 statements</a>
      </li> 
-    <li><i class="fa fa-code"></i><a href="../src/json_value_module.F90"> Source File</a></li>
+    <li><i class="fa fa-code"></i><a href="../src/json_module.F90"> Source File</a></li>
   </ul>
   <ol class="breadcrumb in-well text-right">
-     <li><a href='../sourcefile/json_value_module.f90.html'>json_value_module.F90</a></li>
-     <li><a href='../module/json_value_module.html'>json_value_module</a></li>
-     <li class="active">json_get_tail</li>
+     <li><a href='../sourcefile/json_module.f90.html'>json_module.F90</a></li>
+     <li><a href='../module/json_module.html'>json_module</a></li>
+     <li class="active">json_fortran_version</li>
   </ol>
 </div>
 </div>
@@ -119,7 +117,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/json_get_tail.html#src">json_get_tail</a>
+    <a class="list-group-item" href="../proc/json_fortran_version.html#src">json_fortran_version</a>
   </div>
 </div>
 
@@ -128,38 +126,16 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private subroutine json_get_tail(json, p, tail)</h2>
+    <h2>public function json_fortran_version() result(ver)</h2>
     
 
-    <p>Returns a pointer to the tail of a <a href="../type/json_value.html">json_value</a>
- (the last child of an array of object).
- If there is no tail, then a <code>null()</code> pointer is returned.</p>
+    <p>Returns the <abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran version string.</p>
 
     <h3>Arguments</h3>
-      <table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
-<tbody>
-<tr>
-  <td><span class="anchor" id="variable-json~69"></span>class(<a href='../type/json_core.html'>json_core</a>),</td>
-<td>intent(inout)</td>
-  <td></td>  <td></td><td>::</td>
-  <td><strong>json</strong></td><td></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-p~28"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-<td>intent(in),</td>
-  <td></td>  <td>pointer</td><td>::</td>
-  <td><strong>p</strong></td><td><p><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr> object</p></td>
-</tr>
-<tr>
-  <td><span class="anchor" id="variable-tail~2"></span>type(<a href='../type/json_value.html'>json_value</a>),</td>
-<td>intent(out),</td>
-  <td></td>  <td>pointer</td><td>::</td>
-  <td><strong>tail</strong></td><td><p>pointer to <code>tail</code></p></td>
-</tr>
-</tbody>
-</table>
-
+    <em>None</em>
+    <br>
+   <h3>Return Value <small><span class="anchor" id="variable-ver"></span>character(len=:),allocatable</small></h3>
+    <p><abbr title="JavaScript Object Notation: A human friendly syntax for storing and exchanging data">JSON</abbr>-Fortran version string</p>
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
@@ -168,7 +144,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
-    <a class="list-group-item" href="../proc/json_get_tail.html#src">json_get_tail</a>
+    <a class="list-group-item" href="../proc/json_fortran_version.html#src">json_fortran_version</a>
   </div>
 </div>
 
@@ -186,23 +162,15 @@
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">subroutine </span><span class="n">json_get_tail</span><span class="p">(</span><span class="n">json</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">tail</span><span class="p">)</span><span class="w"></span>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">function </span><span class="n">json_fortran_version</span><span class="p">()</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">ver</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">implicit none </span>
 
-<span class="w">    </span><span class="k">implicit none</span>
+<span class="k">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ver</span><span class="w">  </span><span class="c">!! JSON-Fortran version string</span>
 
-<span class="k">    class</span><span class="p">(</span><span class="n">json_core</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">json</span><span class="w"></span>
-<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">  </span><span class="kd">::</span><span class="w"> </span><span class="n">p</span><span class="w">        </span><span class="c">!! JSON object</span>
-<span class="w">    </span><span class="k">type</span><span class="p">(</span><span class="n">json_value</span><span class="p">),</span><span class="k">pointer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">tail</span><span class="w">     </span><span class="c">!! pointer to `tail`</span>
+<span class="w">    </span><span class="n">ver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">version</span><span class="w"></span>
 
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">associated</span><span class="p">(</span><span class="n">p</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
-<span class="k">        </span><span class="n">tail</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">%</span><span class="n">tail</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span>
-<span class="k">        nullify</span><span class="p">(</span><span class="n">tail</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">throw_exception</span><span class="p">(</span><span class="s1">&#39;Error in json_get_tail: &#39;</span><span class="o">//</span><span class="p">&amp;</span><span class="w"></span>
-<span class="w">                                  </span><span class="s1">&#39;pointer is not associated.&#39;</span><span class="p">)</span><span class="w"></span>
-<span class="w">    </span><span class="k">end if</span>
-
-<span class="k">    end subroutine </span><span class="n">json_get_tail</span><span class="w"></span>
+<span class="w">    </span><span class="k">end function </span><span class="n">json_fortran_version</span><span class="w"></span>
 </pre></div>
 
     </section>
