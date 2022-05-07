@@ -179,18 +179,18 @@
 <polygon fill="none" stroke="black" points="92,-66 0,-66 0,-42 92,-42 92,-66"/>
 <text text-anchor="middle" x="46" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">json_get_string</text>
 </g>
-<!-- proc~integer_to_string -->
+<!-- proc~escape_string -->
 <g id="proc~~json_get_string~~CallsGraph_node2" class="node">
-<title>proc~integer_to_string</title>
-<g id="a_proc~~json_get_string~~CallsGraph_node2"><a xlink:href=".././proc/integer_to_string.html" xlink:title="integer_to_string">
-<polygon fill="#d9534f" stroke="#d9534f" points="230,-108 128,-108 128,-84 230,-84 230,-108"/>
-<text text-anchor="middle" x="179" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">integer_to_string</text>
+<title>proc~escape_string</title>
+<g id="a_proc~~json_get_string~~CallsGraph_node2"><a xlink:href=".././proc/escape_string.html" xlink:title="escape_string">
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-108 136,-108 136,-84 222,-84 222,-108"/>
+<text text-anchor="middle" x="179" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">escape_string</text>
 </a>
 </g>
 </g>
-<!-- proc~json_get_string&#45;&gt;proc~integer_to_string -->
+<!-- proc~json_get_string&#45;&gt;proc~escape_string -->
 <g id="proc~~json_get_string~~CallsGraph_edge1" class="edge">
-<title>proc~json_get_string&#45;&gt;proc~integer_to_string</title>
+<title>proc~json_get_string&#45;&gt;proc~escape_string</title>
 <path fill="none" stroke="#ff0000" d="M84.54,-66.04C98.93,-70.65 115.53,-75.97 130.72,-80.84"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="129.86,-84.24 140.46,-83.96 132,-77.58 129.86,-84.24"/>
 </g>
@@ -209,20 +209,35 @@
 <path fill="none" stroke="#ff0000" d="M92.08,-54C103.19,-54 115.17,-54 126.55,-54"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="126.79,-57.5 136.79,-54 126.79,-50.5 126.79,-57.5"/>
 </g>
-<!-- proc~escape_string -->
+<!-- proc~integer_to_string -->
 <g id="proc~~json_get_string~~CallsGraph_node4" class="node">
-<title>proc~escape_string</title>
-<g id="a_proc~~json_get_string~~CallsGraph_node4"><a xlink:href=".././proc/escape_string.html" xlink:title="escape_string">
-<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 136,-24 136,0 222,0 222,-24"/>
-<text text-anchor="middle" x="179" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">escape_string</text>
+<title>proc~integer_to_string</title>
+<g id="a_proc~~json_get_string~~CallsGraph_node4"><a xlink:href=".././proc/integer_to_string.html" xlink:title="integer_to_string">
+<polygon fill="#d9534f" stroke="#d9534f" points="230,-24 128,-24 128,0 230,0 230,-24"/>
+<text text-anchor="middle" x="179" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">integer_to_string</text>
 </a>
 </g>
 </g>
-<!-- proc~json_get_string&#45;&gt;proc~escape_string -->
+<!-- proc~json_get_string&#45;&gt;proc~integer_to_string -->
 <g id="proc~~json_get_string~~CallsGraph_edge3" class="edge">
-<title>proc~json_get_string&#45;&gt;proc~escape_string</title>
+<title>proc~json_get_string&#45;&gt;proc~integer_to_string</title>
 <path fill="none" stroke="#ff0000" d="M84.54,-41.96C98.93,-37.35 115.53,-32.03 130.72,-27.16"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="132,-30.42 140.46,-24.04 129.86,-23.76 132,-30.42"/>
+</g>
+<!-- proc~valid_json_hex -->
+<g id="proc~~json_get_string~~CallsGraph_node6" class="node">
+<title>proc~valid_json_hex</title>
+<g id="a_proc~~json_get_string~~CallsGraph_node6"><a xlink:href=".././proc/valid_json_hex.html" xlink:title="valid_json_hex">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="370.5,-108 281.5,-108 281.5,-84 370.5,-84 370.5,-108"/>
+<text text-anchor="middle" x="326" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">valid_json_hex</text>
+</a>
+</g>
+</g>
+<!-- proc~escape_string&#45;&gt;proc~valid_json_hex -->
+<g id="proc~~json_get_string~~CallsGraph_edge4" class="edge">
+<title>proc~escape_string&#45;&gt;proc~valid_json_hex</title>
+<path fill="none" stroke="#ff0000" d="M222.33,-96C237.55,-96 254.94,-96 271.02,-96"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="271.36,-99.5 281.36,-96 271.36,-92.5 271.36,-99.5"/>
 </g>
 <!-- proc~compact_real_string -->
 <g id="proc~~json_get_string~~CallsGraph_node5" class="node">
@@ -234,25 +249,10 @@
 </g>
 </g>
 <!-- proc~real_to_string&#45;&gt;proc~compact_real_string -->
-<g id="proc~~json_get_string~~CallsGraph_edge4" class="edge">
+<g id="proc~~json_get_string~~CallsGraph_edge5" class="edge">
 <title>proc~real_to_string&#45;&gt;proc~compact_real_string</title>
 <path fill="none" stroke="#00ff00" d="M221.16,-54C231.91,-54 243.8,-54 255.58,-54"/>
 <polygon fill="#00ff00" stroke="#00ff00" points="255.87,-57.5 265.87,-54 255.87,-50.5 255.87,-57.5"/>
-</g>
-<!-- proc~valid_json_hex -->
-<g id="proc~~json_get_string~~CallsGraph_node6" class="node">
-<title>proc~valid_json_hex</title>
-<g id="a_proc~~json_get_string~~CallsGraph_node6"><a xlink:href=".././proc/valid_json_hex.html" xlink:title="valid_json_hex">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="370.5,-24 281.5,-24 281.5,0 370.5,0 370.5,-24"/>
-<text text-anchor="middle" x="326" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">valid_json_hex</text>
-</a>
-</g>
-</g>
-<!-- proc~escape_string&#45;&gt;proc~valid_json_hex -->
-<g id="proc~~json_get_string~~CallsGraph_edge5" class="edge">
-<title>proc~escape_string&#45;&gt;proc~valid_json_hex</title>
-<path fill="none" stroke="#0000ff" d="M222.33,-12C237.55,-12 254.94,-12 271.02,-12"/>
-<polygon fill="#0000ff" stroke="#0000ff" points="271.36,-15.5 281.36,-12 271.36,-8.5 271.36,-15.5"/>
 </g>
 </g>
 </svg>
@@ -461,7 +461,7 @@
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2022-05-07 19:35            </p>
+ on 2022-05-07 19:40            </p>
         </div>
       </div>
       <br>
