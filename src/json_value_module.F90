@@ -1406,19 +1406,21 @@
 !
 !  Returns information about a [[json_value]].
 
-    subroutine json_info(json,p,var_type,n_children,name)
+    subroutine json_info(json,p,var_type,n_children,name,is_vector)
 
     implicit none
 
     class(json_core),intent(inout)   :: json
     type(json_value),pointer         :: p
     integer(IK),intent(out),optional :: var_type   !! variable type
+    logical(LK),intent(out),optional :: is_vector  !! true if variable is a "vector"
     integer(IK),intent(out),optional :: n_children !! number of children
     character(kind=CK,len=:),allocatable,intent(out),optional :: name !! variable name
 
     if (.not. json%exception_thrown .and. associated(p)) then
 
         if (present(var_type))    var_type   = p%var_type
+        if (present(is_vector))   is_vector  = json%is_vector(p)
         if (present(n_children))  n_children = json%count(p)
         if (present(name)) then
             if (allocated(p%name)) then
@@ -1435,6 +1437,7 @@
                                       'pointer is not associated.' )
         end if
         if (present(var_type))   var_type   = json_unknown
+        if (present(is_vector))  is_vector  = .false.
         if (present(n_children)) n_children = 0
         if (present(name))       name       = CK_''
 
