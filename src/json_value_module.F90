@@ -903,6 +903,11 @@
         procedure,nopass :: json_value_clone_func
         procedure        :: is_vector => json_is_vector
 
+        !>
+        !  get a list of keys (children's names) for a json object
+        procedure,public  :: get_keys => json_get_object_keys
+
+
     end type json_core
     !*********************************************************
 
@@ -5573,6 +5578,58 @@
     end if
 
     end subroutine json_value_get_child
+!*****************************************************************************************
+
+!*****************************************************************************************
+!>
+!  Returns a list of keys (i.e. children's names) for a json object.
+!  TODO: Consider what should be returned for a [[json_value]] that is not a json object.
+
+    subroutine json_get_object_keys(json, p, names)
+
+        implicit none
+
+        class(json_core),intent(inout) :: json
+        type(json_value),pointer,intent(in) :: p !! The json object
+        character(kind=CK,len=:), dimension(:), allocatable, intent(out) :: names !! names of children of `p`
+
+        type :: alloc_str
+            !! Type definition for an allocatable array of heterogenous allocatable strings
+            character(kind=CK,len=:),allocatable :: str  !! name string
+            integer(kind=IK)                     :: len  !! length of `str`
+        end type alloc_str
+        type(alloc_str),dimension(:),allocatable :: names_struct !! array of object child name strings
+
+        type(json_value),pointer :: child       !! pointer to a child of `p`
+        integer(kind=IK)         :: n_children  !! number of children of `p`
+        integer(kind=IK)         :: ii          !! index counter
+
+        if (p%var_type==json_object) then
+
+            !! Count the number of children
+            n_children = json%count(p)
+
+            !! Populate the `names_struct` array
+            allocate(names_struct(n_children))
+            do ii=1, n_children
+                call json%get_child(p,ii,child) !! get child by index
+                names_struct(ii)%str = child%name
+                names_struct(ii)%len = len(names_struct(ii)%str)
+            enddo
+
+            !! Allocate and populate the `names` array
+            allocate(character(kind=CK, len=maxval(names_struct%len)) :: names(n_children))
+            do ii=1,n_children
+                names(ii) = names_struct(ii)%str
+            enddo
+
+        else
+            !! If not an object type, allocate and empy character array
+            allocate(character(kind=CK, len=0) :: names(0))
+
+        endif
+
+    end subroutine json_get_object_keys
 !*****************************************************************************************
 
 !*****************************************************************************************
