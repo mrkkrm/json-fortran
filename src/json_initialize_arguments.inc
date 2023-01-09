@@ -10,6 +10,8 @@ logical(LK),intent(in),optional :: print_signs
   !! always print numeric sign (default is false)
 character(kind=CDK,len=*),intent(in),optional :: real_format
   !! Real number format: 'E' [default], '*', 'G', 'EN', or 'ES'
+character(kind=CDK,len=*),intent(in),optional :: real_format_override
+  !! Real number format: e.g. '(ss,ES15.6E3)' -- overrides standard format specification
 integer(IK),intent(in),optional :: spaces_per_tab
   !! number of spaces per tab for indenting (default is 2)
 logical(LK),intent(in),optional :: strict_type_checking

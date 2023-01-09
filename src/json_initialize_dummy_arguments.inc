@@ -6,6 +6,7 @@ verbose,&
 compact_reals,&
 print_signs,&
 real_format,&
+real_format_override,&
 spaces_per_tab,&
 strict_type_checking,&
 trailing_spaces_significant,&

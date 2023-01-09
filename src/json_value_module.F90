@@ -1193,15 +1193,21 @@
         end if
 
         ! set the default output/input format for reals:
-                      write(w,'(ss,I0)',iostat=istat) max_numeric_str_len
-        if (istat==0) write(d,'(ss,I0)',iostat=istat) real_precision
-        if (istat==0) write(e,'(ss,I0)',iostat=istat) real_exponent_digits
-        if (istat==0) then
-            me%real_fmt = '(' // sgn // ',' // trim(rl_edit_desc) //&
-                            trim(w) // '.' // trim(d) // 'E' // trim(e) // ')'
+        if ( present( real_format_override ) ) then
+            ! Set to the specified override value
+            ! TODO: Add error checking to ensure the specified override value is valid
+            me%real_fmt = real_format_override
         else
-            me%real_fmt = '(' // sgn // ',' // trim(rl_edit_desc) // &
-                            '27.17E4)'  !just use this one (should never happen)
+                          write(w,'(ss,I0)',iostat=istat) max_numeric_str_len
+            if (istat==0) write(d,'(ss,I0)',iostat=istat) real_precision
+            if (istat==0) write(e,'(ss,I0)',iostat=istat) real_exponent_digits
+            if (istat==0) then
+                me%real_fmt = '(' // sgn // ',' // trim(rl_edit_desc) //&
+                            trim(w) // '.' // trim(d) // 'E' // trim(e) // ')'
+            else
+                me%real_fmt = '(' // sgn // ',' // trim(rl_edit_desc) // &
+                                '27.17E4)'  !just use this one (should never happen)
+            end if
         end if
 
     end if
